@@ -1,0 +1,1797 @@
+[
+  {
+    "id": "cmt1dmm1e0000msuzc727wo5a",
+    "slug": "confocal-laser-multi-photon-scanning-microscope",
+    "name": "Confocal Laser Multi-Photon Scanning Microscope",
+    "nameAr": "مجهر يستخدم أشعة الليزر وماسح متعدد الصور",
+    "unit": "Core Equipment Unit",
+    "unitAr": "وحدة التجهيزات الأساسية",
+    "model": "FVMPE-RS",
+    "manufacturer": "Evident (Olympus)",
+    "description": "A high-resolution optical imaging system that uses laser excitation and multi-photon absorption to capture sharp, depth-resolved images of thick or living specimens with minimal photodamage, widely used in biological and materials imaging.",
+    "descriptionAr": "نظام تصوير ضوئي عالي الدقة يستخدم الإثارة الليزرية وامتصاص الفوتونات المتعددة لالتقاط صور واضحة ومحددة العمق لعينات سميكة أو حية بأقل ضرر ضوئي، ويُستخدم على نطاق واسع في التصوير البيولوجي وتصوير المواد.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fluorescent_and_confocal_microscopes.ogv/1920px--Fluorescent_and_confocal_microscopes.ogv.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Multi-photon (femtosecond infrared) laser excitation\n- Spectral detection range: ~400–800 nm\n- Lateral resolution: <300 nm typical",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- إثارة ليزرية بالأشعة تحت الحمراء (فيمتوثانية) متعددة الفوتونات\n- نطاق الكشف الطيفي: حوالي 400–800 نانومتر\n- الدقة الجانبية: أقل من 300 نانومتر عادةً",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Evident (Olympus)"
+      },
+      {
+        "label": "Model",
+        "value": "FVMPE-RS"
+      },
+      {
+        "label": "Laser Source",
+        "value": "Tunable 680-1300 nm + fixed 1045 nm (InSight X3 Dual-OL), plus 405/458/588 nm visible lines"
+      },
+      {
+        "label": "Scan Unit",
+        "value": "Hybrid resonant (up to 438 fps) + galvanometer scanner"
+      },
+      {
+        "label": "Detectors",
+        "value": "High-sensitivity GaAsP"
+      },
+      {
+        "label": "Objective Working Distance",
+        "value": "2, 4, or 8 mm (multiphoton-dedicated objectives)"
+      },
+      {
+        "label": "Imaging Depth",
+        "value": "Up to 8 mm thick samples"
+      },
+      {
+        "label": "Frame Type",
+        "value": "Upright, gantry frame, optimized for intravital imaging"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "واضح (أوليمبوس)"
+      },
+      {
+        "label": "النموذج",
+        "value": "FVMPE - RS"
+      },
+      {
+        "label": "مصدر الليزر",
+        "value": "قابل للضبط 680-1300 نانومتر + ثابت 1045 نانومتر (InSight X3 Dual - OL)، بالإضافة إلى خطوط مرئية 405/458/588 نانومتر"
+      },
+      {
+        "label": "وحدة المسح الضوئي",
+        "value": "رنين هجين (حتى 438 إطارًا في الثانية) + ماسح غلفانومتر"
+      },
+      {
+        "label": "كواشف",
+        "value": "GaAsP عالي الحساسية"
+      },
+      {
+        "label": "مسافة العمل الموضوعية",
+        "value": "2 أو 4 أو 8 مم (أهداف مخصصة للفوتونات المتعددة)"
+      },
+      {
+        "label": "عمق التصوير",
+        "value": "عينات بسماكة تصل إلى 8 مم"
+      },
+      {
+        "label": "نوع الإطار",
+        "value": "إطار قنطري عمودي، محسّن للتصوير داخل الحي"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 0,
+    "createdAt": "2026-08-20T10:27:34.036Z",
+    "updatedAt": "2026-08-20T11:45:03.384Z"
+  },
+  {
+    "id": "cmt1dmm1z0001msuzud083ed6",
+    "slug": "field-emission-scanning-electron-microscope-with-focused-ion-beam-system",
+    "name": "Field Emission Scanning Electron Microscope with Focused Ion Beam System",
+    "nameAr": "مجهر إلكتروني ماسح ذو المجال المنبعث مزود بحزمة أيونية مركزة",
+    "unit": "Core Equipment Unit",
+    "unitAr": "وحدة التجهيزات الأساسية",
+    "model": "Helios 5 DualBeam",
+    "manufacturer": "Thermo Fisher Scientific",
+    "description": "Combines a field-emission electron source for high-resolution surface imaging down to the nanometer scale with a focused ion beam for precise milling, cross-sectioning, and nanofabrication of samples.",
+    "descriptionAr": "يجمع بين مصدر إلكترونات ذو انبعاث مجالي للتصوير السطحي عالي الدقة حتى مستوى النانومتر وحزمة أيونية مركزة للتفريز الدقيق والتقطيع المقطعي والتصنيع النانوي للعينات.",
+    "imageUrl": "https://www.nist.gov/sites/default/files/styles/480_x_480_limit/public/images/2025/09/16/ThermoFisher-Helios-5-FX-dual-beam-microscope.png?itok=9WZAFFYg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- SEM resolution: ~1 nm at 15 kV\n- FIB source: Gallium liquid-metal ion source\n- Accelerating voltage range: 0.5–30 kV",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- دقة المجهر الإلكتروني الماسح: حوالي 1 نانومتر عند 15 كيلوفولت\n- مصدر الحزمة الأيونية: غاليوم سائل معدني\n- نطاق الجهد المسرّع: 0.5–30 كيلوفولت",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Thermo Fisher Scientific"
+      },
+      {
+        "label": "Model",
+        "value": "Helios 5 DualBeam"
+      },
+      {
+        "label": "SEM Resolution",
+        "value": "<1 nm at 15 kV (sub-nm at 1 kV with monochromated Elstar column)"
+      },
+      {
+        "label": "FIB Resolution",
+        "value": "2.5 nm (Tomahawk ion column)"
+      },
+      {
+        "label": "Electron Source",
+        "value": "Schottky field-emission gun"
+      },
+      {
+        "label": "Ion Source",
+        "value": "Gallium liquid-metal ion source (LMIS)"
+      },
+      {
+        "label": "Accelerating Voltage",
+        "value": "E-beam 0.35-30 kV; I-beam 0.5-30 kV"
+      },
+      {
+        "label": "Beam Geometry",
+        "value": "52 degree coincident electron/ion beams at eucentric point"
+      },
+      {
+        "label": "Working Distance",
+        "value": "4 mm (high-resolution imaging)"
+      },
+      {
+        "label": "Capabilities",
+        "value": "Simultaneous FIB milling + SEM imaging, 3D tomography, TEM lamella preparation"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ثيرمو فيشر العلمية"
+      },
+      {
+        "label": "النموذج",
+        "value": "Helios 5 DualBeam"
+      },
+      {
+        "label": "قرار SEM",
+        "value": "<1 نانومتر عند 15 كيلو فولت (نانومتر فرعي عند 1 كيلو فولت مع عمود Elstar أحادي اللون)"
+      },
+      {
+        "label": "دقة FIB",
+        "value": "2.5 نانومتر (عمود أيون توماهوك)"
+      },
+      {
+        "label": "مصدر الإلكترون",
+        "value": "مدفع شوتكي للانبعاثات الحقلية"
+      },
+      {
+        "label": "مصدر الأيونات",
+        "value": "مصدر أيون الغاليوم السائل والمعادن (LMIS)"
+      },
+      {
+        "label": "فولطية مسارعة ",
+        "value": "E - beam 0.35-30 كيلو فولت ؛ I - beam 0.5-30 كيلو فولت"
+      },
+      {
+        "label": "هندسة الشعاع",
+        "value": "شعاع إلكترون/أيون متزامن بزاوية 52 درجة عند نقطة مركزية واحدة"
+      },
+      {
+        "label": "مَسافَةٌ تَشْغيلِيَّة",
+        "value": "4 مم (تصوير عالي الدقة)"
+      },
+      {
+        "label": "القدرات",
+        "value": "طحن FIB متزامن + تصوير SEM، تصوير مقطعي ثلاثي الأبعاد، تحضير صفيحة TEM"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 1,
+    "createdAt": "2026-08-20T10:27:34.055Z",
+    "updatedAt": "2026-08-20T11:45:04.574Z"
+  },
+  {
+    "id": "cmt1dmm250002msuzzyrzkfuu",
+    "slug": "transmission-electron-microscope-tem",
+    "name": "Transmission Electron Microscope (TEM)",
+    "nameAr": "مجهر إلكتروني نافذ",
+    "unit": "Core Equipment Unit",
+    "unitAr": "وحدة التجهيزات الأساسية",
+    "model": "JEM-2100",
+    "manufacturer": "JEOL",
+    "description": "Transmits a high-energy electron beam through ultra-thin samples to reveal internal nanostructure, crystal lattice, and defects at atomic-to-nanometer resolution.",
+    "descriptionAr": "يمرر حزمة إلكترونات عالية الطاقة عبر عينات فائقة الرقة للكشف عن البنية النانوية الداخلية والشبكة البلورية والعيوب بدقة تصل إلى المستوى الذري والنانومتري.",
+    "imageUrl": "https://www.jeol.com/products/assets/images/JEM-2100_en.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Accelerating voltage: 80–300 kV\n- Point resolution: <0.2 nm typical\n- Requires ultra-thin (electron-transparent) sample preparation",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- الجهد المسرّع: 80–300 كيلوفولت\n- دقة النقطة: أقل من 0.2 نانومتر عادةً\n- يتطلب تحضير عينات فائقة الرقة (نفاذة للإلكترونات)",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "JEOL"
+      },
+      {
+        "label": "Model",
+        "value": "JEM-2100"
+      },
+      {
+        "label": "Accelerating Voltage",
+        "value": "200 kV (multipurpose analytical TEM)"
+      },
+      {
+        "label": "Point Resolution",
+        "value": "0.19 nm (ultra-high-resolution configuration)"
+      },
+      {
+        "label": "Electron Gun",
+        "value": "LaB6 thermionic emitter"
+      },
+      {
+        "label": "Magnification Range",
+        "value": "Up to approximately 1,500,000x"
+      },
+      {
+        "label": "Applications",
+        "value": "Atomic-resolution imaging, electron diffraction, analytical electron microscopy"
+      },
+      {
+        "label": "Instrument Class",
+        "value": "Multipurpose 200 kV analytical TEM"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "جيول "
+      },
+      {
+        "label": "النموذج",
+        "value": "JEM -2100"
+      },
+      {
+        "label": "فولطية مسارعة ",
+        "value": "200 كيلو فولت (TEM تحليلي متعدد الأغراض)"
+      },
+      {
+        "label": "دقة النقاط",
+        "value": "0.19 نانومتر (تكوين فائق الدقة)"
+      },
+      {
+        "label": "قاذف الحزمة الإلكترونية",
+        "value": "باعث حراري LaB6"
+      },
+      {
+        "label": "نطاق التكبير",
+        "value": "ما يصل إلى 1,500,000 x تقريبًا"
+      },
+      {
+        "label": "الطلبات",
+        "value": "التصوير بالدقة الذرية، حيود الإلكترون، المجهر الإلكتروني التحليلي"
+      },
+      {
+        "label": "فئة الآلة",
+        "value": "TEM تحليلي متعدد الأغراض 200 كيلو فولت"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 2,
+    "createdAt": "2026-08-20T10:27:34.061Z",
+    "updatedAt": "2026-08-20T11:45:08.951Z"
+  },
+  {
+    "id": "cmt1dmm2c0003msuzyr18ebm8",
+    "slug": "field-emission-electron-probe-micro-analyzer",
+    "name": "Field Emission Electron Probe Micro-analyzer",
+    "nameAr": "مجس إلكتروني ميكرو محلل ذو المجال المنبعث",
+    "unit": "Core Equipment Unit",
+    "unitAr": "وحدة التجهيزات الأساسية",
+    "model": "JXA-8530F Plus",
+    "manufacturer": "JEOL",
+    "description": "Uses a focused field-emission electron beam to excite characteristic X-rays from a sample, enabling precise, spatially resolved quantitative elemental analysis.",
+    "descriptionAr": "يستخدم حزمة إلكترونية مركزة ذات انبعاث مجالي لإثارة الأشعة السينية المميزة من العينة، مما يتيح تحليلاً عنصريًا كميًا دقيقًا ومحدد الموقع.",
+    "imageUrl": "https://www.jeol.com/products/assets/images/JXA-8530FPlus_en.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Wavelength-dispersive spectrometers (WDS)\n- Beam energy range: 0.1–30 kV\n- Spatial resolution: ~1 μm",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مطيافات تفريق بالطول الموجي (WDS)\n- نطاق طاقة الحزمة: 0.1–30 كيلوفولت\n- الدقة المكانية: حوالي 1 ميكرومتر",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "JEOL"
+      },
+      {
+        "label": "Model",
+        "value": "JXA-8530F Plus"
+      },
+      {
+        "label": "Electron Gun",
+        "value": "Schottky field-emission gun"
+      },
+      {
+        "label": "Accelerating Voltage",
+        "value": "1-30 kV"
+      },
+      {
+        "label": "Probe Current",
+        "value": "Up to 100 nA"
+      },
+      {
+        "label": "Spot Size",
+        "value": "40 nm at 10 nA/10 kV; 100 nm at 100 nA/10 kV"
+      },
+      {
+        "label": "WDS Spectrometers",
+        "value": "Up to 5"
+      },
+      {
+        "label": "EDS Spectrometers",
+        "value": "1"
+      },
+      {
+        "label": "WDS Wavelength Range",
+        "value": "0.087-9.3 nm"
+      },
+      {
+        "label": "Elemental Range",
+        "value": "Be to U, down to approximately 0.01 wt% (sub-100 ppm in favorable cases)"
+      },
+      {
+        "label": "Scanning Magnification",
+        "value": "x40 to x300,000"
+      },
+      {
+        "label": "Vacuum",
+        "value": "FE gun chamber ~10^-8 Pa; sample chamber ~10^-4 Pa"
+      },
+      {
+        "label": "Max Specimen Size",
+        "value": "100 x 100 x 50 mm"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "جيول "
+      },
+      {
+        "label": "النموذج",
+        "value": "JXA -8530F Plus"
+      },
+      {
+        "label": "قاذف الحزمة الإلكترونية",
+        "value": "مدفع شوتكي للانبعاثات الحقلية"
+      },
+      {
+        "label": "فولطية مسارعة ",
+        "value": "1-30 كيلو فولت"
+      },
+      {
+        "label": "تيار المجس",
+        "value": "ما يصل إلى 100"
+      },
+      {
+        "label": "حجم البقعة",
+        "value": "40 نانومتر عند 10 نانومتر/10 كيلو فولت ؛ 100 نانومتر عند 100 نانومتر/10 كيلو فولت"
+      },
+      {
+        "label": "مطياف WDS",
+        "value": "حتى 5"
+      },
+      {
+        "label": "مطياف EDS",
+        "value": "1"
+      },
+      {
+        "label": "مدى الطول الموجي",
+        "value": "0.087-9.3 نانومتر"
+      },
+      {
+        "label": "نطاق العناصر",
+        "value": "يكون إلى U، وصولاً إلى ما يقرب من 0.01 ٪ بالوزن (أقل من 100 جزء في المليون في الحالات المواتية)"
+      },
+      {
+        "label": "تكبير المسح الضوئي",
+        "value": "x40 إلى x300,000"
+      },
+      {
+        "label": "مكانس كهربائية",
+        "value": "غرفة بندقية FE ~10 ^-8 باسكال ؛ غرفة العينة ~10 ^-4 باسكال"
+      },
+      {
+        "label": "الحد الأقصى لحجم العينة",
+        "value": "100 × 100 × 50 مم"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 3,
+    "createdAt": "2026-08-20T10:27:34.069Z",
+    "updatedAt": "2026-08-20T11:45:10.382Z"
+  },
+  {
+    "id": "cmt1dmm2k0004msuzeq2t5o3a",
+    "slug": "liquid-nitrogen-generator",
+    "name": "Liquid Nitrogen Generator",
+    "nameAr": "مولد نيتروجين سائل",
+    "unit": "Core Equipment Unit",
+    "unitAr": "وحدة التجهيزات الأساسية",
+    "model": "StirLIN Series",
+    "manufacturer": "Stirling Cryogenics",
+    "description": "Produces liquid nitrogen on-site from ambient air, supplying a continuous, cost-effective coolant source for cryogenic sample handling and low-temperature instrumentation across the lab.",
+    "descriptionAr": "ينتج النيتروجين السائل محليًا من الهواء الجوي، ويوفر مصدر تبريد مستمرًا واقتصاديًا للتعامل مع العينات المبردة والأجهزة منخفضة الحرارة في جميع أنحاء المختبر.",
+    "imageUrl": "https://stirlingcryogenics.com/wp-content/uploads/2021/10/Liquid-nitrogen-production-systems_1.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- On-site air-to-liquid nitrogen generation\n- Typical output: several liters per day\n- Typical purity: >99%",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- إنتاج النيتروجين السائل محليًا من الهواء\n- الإنتاجية النموذجية: عدة لترات يوميًا\n- النقاء النموذجي: أكثر من 99%",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Stirling Cryogenics"
+      },
+      {
+        "label": "Model",
+        "value": "StirLIN Series"
+      },
+      {
+        "label": "Output Range",
+        "value": "3-150 L/h (70-3,600 L/day)"
+      },
+      {
+        "label": "Cooling Technology",
+        "value": "Stirling Cycle Cryogenerator (closed helium cycle)"
+      },
+      {
+        "label": "System Components",
+        "value": "Air compressor, air dryer, PSA nitrogen generator, cryogenerator, LN2 storage vessel, control box"
+      },
+      {
+        "label": "Noise Level",
+        "value": "70-74 dBA"
+      },
+      {
+        "label": "Power Source",
+        "value": "Electric — no external cryogen delivery required"
+      },
+      {
+        "label": "Rated Operating Conditions",
+        "value": "250 m altitude, 25 degrees C ambient"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ستيرلينغ كريوجينيكس"
+      },
+      {
+        "label": "النموذج",
+        "value": "سلسلة StirLIN"
+      },
+      {
+        "label": "نطاق اخراج C:",
+        "value": "3-150 لتر/ساعة (70-3,600 لتر/يوم)"
+      },
+      {
+        "label": "تكنولوجيا تبريد",
+        "value": "مولد تبريد دورة ستيرلينغ (دورة هيليوم مغلقة)"
+      },
+      {
+        "label": "مكونات النظام",
+        "value": "ضاغط هواء، مجفف هواء، مولد نيتروجين PSA، مولد تبريد، وعاء تخزين LN2، صندوق تحكم"
+      },
+      {
+        "label": "رصد مستوى الضوضاء",
+        "value": "70-74 ديسيبل"
+      },
+      {
+        "label": "مصدر الطاقة",
+        "value": "كهربائي — لا يلزم توصيل كريوجين خارجي"
+      },
+      {
+        "label": "ظروف التشغيل المقدرة",
+        "value": "ارتفاع 250 متر، 25 درجة مئوية محيطة"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 4,
+    "createdAt": "2026-08-20T10:27:34.076Z",
+    "updatedAt": "2026-08-20T11:45:11.810Z"
+  },
+  {
+    "id": "cmt1dmm2q0005msuzjj6nuihf",
+    "slug": "laser-induced-breakdown-spectroscopy-system-libs",
+    "name": "Laser-Induced Breakdown Spectroscopy System (LIBS)",
+    "nameAr": "نظام الانهيار الليزري المستحث",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Z-300",
+    "manufacturer": "SciAps",
+    "description": "Focuses a pulsed laser onto a sample to generate a micro-plasma, analyzing the emitted light spectrum for rapid, minimally destructive elemental composition analysis.",
+    "descriptionAr": "يركز ليزرًا نبضيًا على العينة لتوليد بلازما دقيقة، ويحلل طيف الضوء المنبعث لتحديد التركيب العنصري بسرعة وبأقل قدر من التلف.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Libs_Laser-induced_breakdown_spectroscopy.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Pulsed Nd:YAG laser source (nanosecond pulse duration)\n- Detection limits down to ppm level\n- Broadband spectrometer coverage (UV–NIR)",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر ليزر Nd:YAG نبضي (مدة نبضة بالنانوثانية)\n- حدود الكشف تصل إلى مستوى أجزاء بالمليون\n- تغطية طيفية واسعة (من فوق البنفسجي إلى تحت الأحمر القريب)",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "SciAps"
+      },
+      {
+        "label": "Model",
+        "value": "Z-300 (handheld)"
+      },
+      {
+        "label": "Laser",
+        "value": "1064 nm Nd:YAG, ~5-6 mJ/pulse, up to 50 Hz repetition rate, Class 3B"
+      },
+      {
+        "label": "Spectral Range",
+        "value": "190-950 nm"
+      },
+      {
+        "label": "Elemental Coverage",
+        "value": "Full periodic table, H to U"
+      },
+      {
+        "label": "Laser Spot Size",
+        "value": "50 micrometers, with X-Y rastering stage"
+      },
+      {
+        "label": "Detection Limits",
+        "value": "2-5 ppm (e.g., lithium)"
+      },
+      {
+        "label": "Form Factor",
+        "value": "Handheld, field-portable"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "SciAps"
+      },
+      {
+        "label": "النموذج",
+        "value": "Z -300 (محمول باليد)"
+      },
+      {
+        "label": "الليزر",
+        "value": "1064 نانومتر Nd:YAG، ~5-6 مللي جول/نبض، حتى معدل تكرار 50 هرتز، الفئة 3B"
+      },
+      {
+        "label": "النطاق الطيفي",
+        "value": "190-950 نانومتر"
+      },
+      {
+        "label": "التغطية الأولية",
+        "value": "جدول دوري كامل، من H إلى U"
+      },
+      {
+        "label": "حجم بقعة الليزر",
+        "value": "50 ميكرومتر، مع مرحلة التنقيط X - Y"
+      },
+      {
+        "label": "حدود الكشف",
+        "value": "2-5 جزء في المليون (على سبيل المثال، الليثيوم)"
+      },
+      {
+        "label": "عامل الشكل.",
+        "value": "محمول باليد، محمول ميدانيًا"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 5,
+    "createdAt": "2026-08-20T10:27:34.082Z",
+    "updatedAt": "2026-08-20T11:45:12.780Z"
+  },
+  {
+    "id": "cmt1dmm2w0006msuzfgyocteo",
+    "slug": "high-resolution-atomic-force-microscope-afm",
+    "name": "High-Resolution Atomic Force Microscope (AFM)",
+    "nameAr": "ميكروسكوب القوى الذرية عالي الدقة",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Dimension Icon",
+    "manufacturer": "Bruker",
+    "description": "Scans a sharp probe across a surface to map topography and mechanical, electrical, or magnetic properties at nanometer to sub-nanometer resolution.",
+    "descriptionAr": "يمسح مجسًا دقيقًا عبر سطح العينة لرسم خريطة الطبوغرافيا والخصائص الميكانيكية أو الكهربائية أو المغناطيسية بدقة نانومترية إلى ما دون النانومتر.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/AFM_Nanoscope_IIIa.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Z-resolution: sub-nanometer\n- Scan range: up to ~100 × 100 μm\n- Multiple imaging modes (contact, tapping, non-contact)",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- دقة المحور Z: أقل من نانومتر\n- نطاق المسح: حتى حوالي 100 × 100 ميكرومتر\n- أوضاع تصوير متعددة (تماسي، نقري، بدون تماس)",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Bruker"
+      },
+      {
+        "label": "Model",
+        "value": "Dimension Icon"
+      },
+      {
+        "label": "XY Scan Range",
+        "value": "Approximately 90 micrometers"
+      },
+      {
+        "label": "Z Scan Range",
+        "value": "Approximately 10 micrometers"
+      },
+      {
+        "label": "Z Noise Floor",
+        "value": "<30 pm (sub-angstrom)"
+      },
+      {
+        "label": "Sample Size",
+        "value": "Up to 210 mm diameter, 15 mm thick"
+      },
+      {
+        "label": "Imaging Modes",
+        "value": "ScanAsyst auto-optimization; contact, tapping, and PeakForce Tapping; air or liquid"
+      },
+      {
+        "label": "Platform Type",
+        "value": "Tip-scanning AFM"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "بروكر"
+      },
+      {
+        "label": "النموذج",
+        "value": "أيقونة الأبعاد"
+      },
+      {
+        "label": "نطاق المسح الضوئي XY",
+        "value": "حوالي 90 ميكرومتر"
+      },
+      {
+        "label": "نطاق المسح الضوئي Z",
+        "value": "حوالي 10 ميكرومتر"
+      },
+      {
+        "label": "أرضية الضوضاء",
+        "value": "<30 مساءً (أنجستروم فرعي)"
+      },
+      {
+        "label": "حجم العينة",
+        "value": "يصل قطرها إلى 210 مم وسمكها إلى 15 مم"
+      },
+      {
+        "label": "أوضاع التصوير:",
+        "value": "التحسين التلقائي لـ ScanAsyst ؛ الاتصال، والتنصت، والتنصت على PeakForce ؛ الهواء أو السائل"
+      },
+      {
+        "label": "نوع المنصة",
+        "value": "AFM لمسح التلميحات"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 6,
+    "createdAt": "2026-08-20T10:27:34.088Z",
+    "updatedAt": "2026-08-20T11:48:07.306Z"
+  },
+  {
+    "id": "cmt1dmm310007msuzq744p10b",
+    "slug": "multi-range-ftir-with-raman-and-atr",
+    "name": "Multi-Range FTIR with Raman and ATR",
+    "nameAr": "جهاز الأشعة تحت الحمراء متعدد المدى مدمج مع رامان وانعكاس كلي مخفف",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "VERTEX 70",
+    "manufacturer": "Bruker",
+    "description": "Combines Fourier-transform infrared spectroscopy with Raman and attenuated total reflectance modules to identify molecular composition and chemical bonding across a wide spectral range.",
+    "descriptionAr": "يجمع بين التحليل الطيفي بالأشعة تحت الحمراء بتحويل فورييه ووحدتي رامان والانعكاس الكلي المخفف لتحديد التركيب الجزيئي والروابط الكيميائية عبر نطاق طيفي واسع.",
+    "imageUrl": "https://www.csmc.uni-hamburg.de/21671523/vertex-c9d14c1598fba1a79e130dd8bc5cdfc3611f2c53.png",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Mid-IR spectral range: ~4000–400 cm⁻¹\n- Raman excitation laser: commonly 532 nm or 785 nm\n- ATR accessory for direct solid/liquid sampling",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- النطاق الطيفي للأشعة تحت الحمراء المتوسطة: حوالي 4000–400 سم⁻¹\n- ليزر إثارة رامان: عادةً 532 أو 785 نانومتر\n- ملحق الانعكاس الكلي المخفف لأخذ العينات الصلبة والسائلة مباشرة",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Bruker"
+      },
+      {
+        "label": "Model",
+        "value": "VERTEX 70 (with Raman and ATR modules)"
+      },
+      {
+        "label": "Spectral Range",
+        "value": "15-28,000 cm^-1 with optional optics; 6000-130 cm^-1 standard in one measurement"
+      },
+      {
+        "label": "Standard Detector",
+        "value": "RT-DLaTGS, 200-12,000 cm^-1, D* > 2x10^8 cm.Hz^1/2/W"
+      },
+      {
+        "label": "Microscope Detector (optional)",
+        "value": "LN2-cooled MCT, 620-12,000 cm^-1, D* > 2x10^10 cm.Hz^1/2/W"
+      },
+      {
+        "label": "Raman Module",
+        "value": "Integrated Raman/ATR accessory for combined vibrational analysis"
+      },
+      {
+        "label": "Physical Footprint",
+        "value": "~110 kg, 130 x 65 x 85 cm"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "بروكر"
+      },
+      {
+        "label": "النموذج",
+        "value": "قمة 70 (مع وحدات رامان و ATR)"
+      },
+      {
+        "label": "النطاق الطيفي",
+        "value": "15-28000 سم^-1 مع بصريات اختيارية ؛ 6000-130 سم^-1 قياسي في قياس واحد"
+      },
+      {
+        "label": "كاشف قياسي",
+        "value": "RT - DLaTGS, 200-12,000 cm ^-1, D*> 2x10^8 cm.Hz^1/2/W"
+      },
+      {
+        "label": "كاشف المجهر (اختياري)",
+        "value": "LN2 - cooled MCT, 620-12,000 cm ^-1, D*> 2x10^10 cm.Hz^1/2/W"
+      },
+      {
+        "label": "وحدة رامان",
+        "value": "ملحق رامان/ATR المتكامل للتحليل الاهتزازي المشترك"
+      },
+      {
+        "label": "البصمة المادية",
+        "value": "~110 كجم، 130 × 65 × 85 سم"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 7,
+    "createdAt": "2026-08-20T10:27:34.093Z",
+    "updatedAt": "2026-08-20T11:45:14.868Z"
+  },
+  {
+    "id": "cmt1dmm370008msuz07wrivl4",
+    "slug": "pulsed-laser-deposition-pld-system",
+    "name": "Pulsed Laser Deposition (PLD) System",
+    "nameAr": "جهاز ترسيب أغشية رقيقة بالليزر الوميضي",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Pioneer 180",
+    "manufacturer": "Neocera",
+    "description": "Ablates a target material with a high-energy pulsed laser inside a vacuum chamber to deposit thin, precisely controlled films onto a substrate.",
+    "descriptionAr": "يزيل جزيئات من مادة مستهدفة باستخدام ليزر نبضي عالي الطاقة داخل غرفة تفريغ لترسيب أغشية رقيقة ومتحكم بها بدقة على الركيزة.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/PLD_Plume.png",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Excimer laser source (commonly KrF, 248 nm)\n- Base vacuum pressure: <10⁻⁶ mbar\n- Substrate heating typically up to ~800 °C",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر ليزر إكسايمر (عادةً KrF بطول موجي 248 نانومتر)\n- ضغط التفريغ الأساسي: أقل من 10⁻⁶ مليبار\n- تسخين الركيزة عادةً حتى حوالي 800 درجة مئوية",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Neocera"
+      },
+      {
+        "label": "Model",
+        "value": "Pioneer 180"
+      },
+      {
+        "label": "Base Vacuum",
+        "value": "8x10^-8 Torr standard; 5x10^-9 Torr UHV option"
+      },
+      {
+        "label": "Pumping System",
+        "value": "All-dry turbomolecular pump + dry mechanical backing pump"
+      },
+      {
+        "label": "Heating Stage",
+        "value": "Oxygen-compatible radiative heater, up to 1 atmosphere O2"
+      },
+      {
+        "label": "Substrate Handling",
+        "value": "Continuous rotation, load-locked"
+      },
+      {
+        "label": "Laser Optics",
+        "value": "45/22.5 degree mirrors + plano-convex lens tuned for 248 nm, ~50 cm focal length"
+      },
+      {
+        "label": "Laser Incidence Angle",
+        "value": "45 degrees"
+      },
+      {
+        "label": "Control Software",
+        "value": "LabVIEW-based control of heater, target carousel, vacuum, gas flow, and laser triggering"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "نيوسيرا"
+      },
+      {
+        "label": "النموذج",
+        "value": "بايونير 180"
+      },
+      {
+        "label": "مكنسة قاعدية",
+        "value": "8x10^-8 Torr standard; 5x10^-9 Torr UHV option"
+      },
+      {
+        "label": "نظام الضخ",
+        "value": "مضخة جزيئية توربينية جافة + مضخة دعم ميكانيكية جافة"
+      },
+      {
+        "label": "رقم مرحلة التدفئة ",
+        "value": "سخان إشعاعي متوافق مع الأكسجين، حتى 1 أكسجين جوي"
+      },
+      {
+        "label": "التعامل مع الركيزة",
+        "value": "الدوران المستمر، قفل الحمولة"
+      },
+      {
+        "label": "الليزر والبصريات<g id=\"1\"></g>",
+        "value": "مرايا 45/22.5 درجة + عدسة مستوية محدبة مضبوطة بطول بؤري 248 نانومتر، ~50 سم"
+      },
+      {
+        "label": "زاوية سقوط الليزر",
+        "value": "45 درجة"
+      },
+      {
+        "label": "برنامج التحكم:",
+        "value": "التحكم القائم على LabVIEW في السخان، ودوامة الهدف، والفراغ، وتدفق الغاز، وإطلاق الليزر"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 8,
+    "createdAt": "2026-08-20T10:27:34.099Z",
+    "updatedAt": "2026-08-20T11:45:15.935Z"
+  },
+  {
+    "id": "cmt1dmm3d0009msuzmyjxd5ai",
+    "slug": "ir-vase-mark-ii-ellipsometer",
+    "name": "IR-VASE Mark II Ellipsometer",
+    "nameAr": "جهاز مستقطب ضوئي في مجال الأشعة تحت الحمراء",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "IR-VASE Mark II",
+    "manufacturer": "J.A. Woollam Co.",
+    "description": "Measures the change in polarization of infrared light reflected from a sample to determine film thickness, optical constants, and layer structure with high precision.",
+    "descriptionAr": "يقيس التغير في استقطاب الأشعة تحت الحمراء المنعكسة من العينة لتحديد سمك الغشاء والثوابت البصرية وبنية الطبقات بدقة عالية.",
+    "imageUrl": "https://www.jawoollam.com/wp-content/uploads/ir-vase-mark-ii-ellipsometer-profile.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Spectral range: ~1.7–33 μm (infrared)\n- Variable angle of incidence: ~30–90°\n- Film thickness sensitivity down to sub-nanometer",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- النطاق الطيفي: حوالي 1.7–33 ميكرومتر (تحت الأحمر)\n- زاورية سقوط متغيرة: حوالي 30–90 درجة\n- حساسية لسمك الغشاء تصل إلى ما دون النانومتر",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "J.A. Woollam Co."
+      },
+      {
+        "label": "Model",
+        "value": "IR-VASE Mark II"
+      },
+      {
+        "label": "Spectral Range",
+        "value": "1.7-30 micrometers (333-5900 cm^-1)"
+      },
+      {
+        "label": "Spectral Resolution",
+        "value": "1-64 cm^-1"
+      },
+      {
+        "label": "Technique",
+        "value": "FTIR interferometer source combined with rotating compensator ellipsometer"
+      },
+      {
+        "label": "Design Note",
+        "value": "Mark II is half the benchtop footprint of the original IR-VASE, using less purge gas"
+      },
+      {
+        "label": "Applications",
+        "value": "Thin-film and bulk material optical constant characterization"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "J.A. Woollam Co."
+      },
+      {
+        "label": "النموذج",
+        "value": "IR - VASE Mark II"
+      },
+      {
+        "label": "النطاق الطيفي",
+        "value": "1.7-30 ميكرومتر (333-5900 سم ^-1)"
+      },
+      {
+        "label": "درجة الوضوح الطيفية",
+        "value": "1-64 سم ^-1"
+      },
+      {
+        "label": "التقنية",
+        "value": "مصدر مقياس التداخل FTIR جنبًا إلى جنب مع مقياس القطع الناقص المعادل الدوار"
+      },
+      {
+        "label": "مذكرة التصميم",
+        "value": "العلامة الثانية هي نصف البصمة المعيارية للفازة الحمراء الأصلية، باستخدام غاز تطهير أقل"
+      },
+      {
+        "label": "الطلبات",
+        "value": "توصيف ثابت بصري للأغشية الرقيقة والمواد السائبة"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 9,
+    "createdAt": "2026-08-20T10:27:34.105Z",
+    "updatedAt": "2026-08-20T11:45:16.787Z"
+  },
+  {
+    "id": "cmt1dmm3k000amsuzqd6y1dmp",
+    "slug": "photoluminescence-spectrometer-with-closed-cycle-helium-cryostat",
+    "name": "Photoluminescence Spectrometer with Closed-Cycle Helium Cryostat",
+    "nameAr": "جهاز قياس الوميض الضوئي مع كريوستات هيليوم مغلق المسار",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "FluoroLog-3",
+    "manufacturer": "HORIBA",
+    "description": "Excites a sample with a light source and analyzes its emitted photoluminescence at cryogenic temperatures to study electronic and optical properties of materials.",
+    "descriptionAr": "يثير العينة بمصدر ضوئي ويحلل الانبعاث الضوئي الناتج عنها عند درجات حرارة منخفضة جدًا لدراسة الخصائص الإلكترونية والبصرية للمواد.",
+    "imageUrl": "https://static.horiba.com/fileadmin/Horiba/_processed_/6/b/csm_FluoroMax-Plus_9dab291eff.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Closed-cycle helium cryostat temperature range: ~4–325 K\n- Configurable excitation laser sources\n- High-sensitivity CCD or PMT detection",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- نطاق درجة حرارة كريوستات الهيليوم مغلق المسار: حوالي 4–325 كلفن\n- مصادر ليزر إثارة قابلة للتهيئة\n- كشف عالي الحساسية بكاميرا CCD أو مضاعف ضوئي",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "HORIBA"
+      },
+      {
+        "label": "Model",
+        "value": "FluoroLog-3 (with closed-cycle helium cryostat option)"
+      },
+      {
+        "label": "Excitation Source",
+        "value": "450 W xenon lamp with double-grating fast-scanning monochromator"
+      },
+      {
+        "label": "Excitation Range",
+        "value": "230-1000 nm"
+      },
+      {
+        "label": "Emission Range",
+        "value": "230-3000 nm"
+      },
+      {
+        "label": "Emission Spectrograph",
+        "value": "Triax 552, 0.5 m"
+      },
+      {
+        "label": "Selectable Detectors",
+        "value": "Photon-counting PMT, CCD, ICCD, Ge diode, InGaAs array"
+      },
+      {
+        "label": "Cryostat",
+        "value": "Closed-cycle helium, integrates into large-format sample chamber"
+      },
+      {
+        "label": "Modularity",
+        "value": "Source, spectrometer, detector, and accessories independently configurable"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "Horiba"
+      },
+      {
+        "label": "النموذج",
+        "value": "FluoroLog -3 (مع خيار كريوستات الهيليوم ذات الدورة المغلقة)"
+      },
+      {
+        "label": "مصدر الإثارة",
+        "value": "مصباح زينون بقدرة 450 واط مع جهاز أحادي اللون للمسح الضوئي السريع"
+      },
+      {
+        "label": "نطاق الإثارة",
+        "value": "230-1000 نانومتر"
+      },
+      {
+        "label": "نطاق الانبعاث",
+        "value": "230-3000 نانومتر"
+      },
+      {
+        "label": "مخطط طيف الانبعاث",
+        "value": "تراياكس 552، 0.5 متر"
+      },
+      {
+        "label": "أجهزة الكشف القابلة للاختيار",
+        "value": "مصفوفة PMT و CCD و ICCD و Ge diode و InGaAs لعد الفوتونات"
+      },
+      {
+        "label": "ناظم القر",
+        "value": "الهيليوم مغلق الدورة، يندمج في غرفة عينة كبيرة الحجم"
+      },
+      {
+        "label": "النمطية",
+        "value": "المصدر ومقياس الطيف والكاشف والملحقات القابلة للتكوين بشكل مستقل"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 10,
+    "createdAt": "2026-08-20T10:27:34.112Z",
+    "updatedAt": "2026-08-20T11:45:17.561Z"
+  },
+  {
+    "id": "cmt1dmm3q000bmsuz5n9giqx2",
+    "slug": "thermal-evaporator-unit-for-organic-and-non-organic-samples",
+    "name": "Thermal Evaporator Unit for Organic and Non-Organic Samples",
+    "nameAr": "جهاز لتجهيز العينات العضوية وغير العضوية باستخدام التبخير الحراري",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Nano-36",
+    "manufacturer": "Kurt J. Lesker Company",
+    "description": "Heats source materials under vacuum until they vaporize and condense as thin films onto a substrate, suitable for both organic and inorganic coatings.",
+    "descriptionAr": "يسخّن المواد المصدرية تحت التفريغ حتى تتبخر وتتكاثف كأغشية رقيقة على الركيزة، ويناسب الطلاءات العضوية وغير العضوية على حد سواء.",
+    "imageUrl": "https://ws.engr.illinois.edu/sitemanager/viewphoto.aspx?id=42369",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Base vacuum pressure: <10⁻⁶ mbar\n- Resistive or boat-source heating\n- In-situ film thickness monitoring via quartz crystal microbalance (QCM)",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- ضغط التفريغ الأساسي: أقل من 10⁻⁶ مليبار\n- تسخين مقاوم أو بمصدر قارب\n- مراقبة سمك الغشاء أثناء الترسيب عبر ميزان الكريستال الكوارتزي",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Kurt J. Lesker Company"
+      },
+      {
+        "label": "Model",
+        "value": "Nano-36"
+      },
+      {
+        "label": "Power",
+        "value": "150 W, three independent evaporation sources"
+      },
+      {
+        "label": "Base Vacuum",
+        "value": "~10^-6 Torr (turbo pump + oil-based roughing pump)"
+      },
+      {
+        "label": "Source Capacity",
+        "value": "Up to 3 materials per batch, shielded to prevent cross-contamination"
+      },
+      {
+        "label": "Typical Materials",
+        "value": "Au, Ag, Cu, Cr (configurable for melting points below 800 degrees C)"
+      },
+      {
+        "label": "Thickness Monitoring",
+        "value": "In-situ quartz crystal thickness monitor"
+      },
+      {
+        "label": "Operation",
+        "value": "Manual load/unload; automatic or manual deposition control"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "شركة كيرت جيه. ليسكر"
+      },
+      {
+        "label": "النموذج",
+        "value": "Nano -36"
+      },
+      {
+        "label": "السلطة",
+        "value": "150 واط، ثلاثة مصادر تبخر مستقلة"
+      },
+      {
+        "label": "مكنسة قاعدية",
+        "value": "~10^-6 تور (مضخة توربو + مضخة تخشين قائمة على الزيت)"
+      },
+      {
+        "label": "سعة المصدر",
+        "value": "ما يصل إلى 3 مواد لكل دفعة، محمية لمنع التلوث المتبادل"
+      },
+      {
+        "label": "المواد الخام النموذجية:",
+        "value": "Au، Ag، Cu، Cr (قابل للتكوين لنقاط الانصهار أقل من 800 درجة مئوية)"
+      },
+      {
+        "label": "مراقبة السماكة",
+        "value": "مراقبة سُمك الكريستال الكوارتز في الموقع"
+      },
+      {
+        "label": "العمليات",
+        "value": "التحميل/التفريغ اليدوي ؛ التحكم التلقائي أو اليدوي في الترسيب"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 11,
+    "createdAt": "2026-08-20T10:27:34.118Z",
+    "updatedAt": "2026-08-20T11:45:18.548Z"
+  },
+  {
+    "id": "cmt1dmm3u000cmsuz9z9b9s1e",
+    "slug": "rf-dc-sputtering-system",
+    "name": "RF/DC Sputtering System",
+    "nameAr": "جهاز ترسيب أغشية رقيقة باستخدام الرش الذري",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Orion Series",
+    "manufacturer": "AJA International",
+    "description": "Uses radio-frequency or direct-current plasma to eject atoms from a target material, depositing uniform thin films onto substrates for conductive, insulating, or semiconductor coatings.",
+    "descriptionAr": "يستخدم بلازما بترددات راديوية أو تيار مستمر لقذف الذرات من مادة مستهدفة، وترسيب أغشية رقيقة ومنتظمة على الركائز للطلاءات الموصلة أو العازلة أو شبه الموصلة.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aluminizing_tank.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- RF power supply: 13.56 MHz\n- DC power supply for conductive targets\n- Base vacuum pressure: <10⁻⁷ mbar typical",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر طاقة بترددات راديوية: 13.56 ميجاهرتز\n- مصدر تيار مستمر للأهداف الموصلة\n- ضغط التفريغ الأساسي: أقل من 10⁻⁷ مليبار عادةً",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "AJA International"
+      },
+      {
+        "label": "Model",
+        "value": "Orion Series"
+      },
+      {
+        "label": "Magnetron Source",
+        "value": "Planar, tiltable sputter guns; modular magnet array (balanced/unbalanced/magnetic-material modes)"
+      },
+      {
+        "label": "Power Supplies",
+        "value": "Up to 1500 W DC; 600 W RF (13.56 MHz) with auto-matching network"
+      },
+      {
+        "label": "Base Pressure",
+        "value": "2-inch sources to 7x10^-4 Torr; 3-4-inch sources to 3x10^-4 Torr"
+      },
+      {
+        "label": "Film Uniformity",
+        "value": "+/-2% typical, better than +/-1% achievable"
+      },
+      {
+        "label": "Magnet Rating",
+        "value": "Rare-earth magnets, bakeable to 200 degrees C without removal"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ايه جي ايه انترناشي"
+      },
+      {
+        "label": "النموذج",
+        "value": "سلسلة أوريون"
+      },
+      {
+        "label": "مصدر المغنطرون",
+        "value": "مسدسات رش مستوية قابلة للإمالة ؛ مصفوفة مغناطيسية معيارية (أوضاع متوازنة/غير متوازنة/مغناطيسية)"
+      },
+      {
+        "label": "Power Supply",
+        "value": "حتى 1500 واط تيار مستمر ؛ 600 واط تردد لاسلكي (13.56 ميجاهرتز) مع شبكة مطابقة تلقائية"
+      },
+      {
+        "label": "ضغط القاعدة",
+        "value": "مصادر 2 بوصة إلى7x10^-4 Torr ؛ مصادر 3-4 بوصة إلى3x10^-4 Torr"
+      },
+      {
+        "label": "توحيد الفيلم",
+        "value": "+/- 2 ٪ نموذجي، أفضل من +/- 1 ٪ يمكن تحقيقه"
+      },
+      {
+        "label": "تقييم المغناطيس",
+        "value": "مغناطيسات أرضية نادرة، قابلة للخبز حتى 200 درجة مئوية دون إزالتها"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 12,
+    "createdAt": "2026-08-20T10:27:34.122Z",
+    "updatedAt": "2026-08-20T11:45:19.286Z"
+  },
+  {
+    "id": "cmt1dmm3z000dmsuzopht72wu",
+    "slug": "surface-area-pore-size-analyzer-bet",
+    "name": "Surface Area & Pore Size Analyzer (BET)",
+    "nameAr": "محلل للأسطح ومحدد لأحجام الفجوات للمركبات",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "ASAP 2020 Plus",
+    "manufacturer": "Micromeritics",
+    "description": "Measures gas adsorption/desorption isotherms to determine a material's specific surface area, pore volume, and pore size distribution.",
+    "descriptionAr": "يقيس متساويات امتصاص وامتزاز الغاز لتحديد المساحة السطحية النوعية للمادة وحجم المسام وتوزيع أحجامها.",
+    "imageUrl": "https://micromeritics.com/wp-content/uploads/2023/07/asap-2020-herox2.png",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Nitrogen (or krypton) adsorption analysis\n- Surface area range: ~0.0005–3000 m²/g\n- Pore size range: micro- to macroporous",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- تحليل امتصاص النيتروجين (أو الكريبتون)\n- نطاق المساحة السطحية: حوالي 0.0005–3000 م²/غ\n- نطاق حجم المسام: من الدقيقة إلى الكبيرة",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Micromeritics"
+      },
+      {
+        "label": "Model",
+        "value": "ASAP 2020 Plus"
+      },
+      {
+        "label": "Method",
+        "value": "Static volumetric gas adsorption (nitrogen, CO2, and other probe gases)"
+      },
+      {
+        "label": "Pore Size Range",
+        "value": "Micropore 0.35-2 nm; mesopore 2-50 nm"
+      },
+      {
+        "label": "Surface Area Model",
+        "value": "BET; pore size via BJH, DFT, and other models"
+      },
+      {
+        "label": "Recommended Sample Loading",
+        "value": "40-120 m2 total surface area (down to 10 m2 attainable)"
+      },
+      {
+        "label": "Optional Chemisorption",
+        "value": "Physical and chemical adsorption for catalyst characterization"
+      },
+      {
+        "label": "Format",
+        "value": "Tabletop, integrated multi-technique system"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ميكروميريتكس"
+      },
+      {
+        "label": "النموذج",
+        "value": "في أسرع وقت ممكن 2020 بلس"
+      },
+      {
+        "label": "الطريقة",
+        "value": "امتزاز الغاز الحجمي الثابت (النيتروجين وثاني أكسيد الكربون وغازات المسبار الأخرى)"
+      },
+      {
+        "label": "نطاق حجم المسام",
+        "value": "ميكروبور 0.35-2 نانومتر ؛ ميسوبور 2-50 نانومتر"
+      },
+      {
+        "label": "نموذج المساحة السطحية",
+        "value": "الرهان ؛ حجم المسام عبر BJH و DFT ونماذج أخرى"
+      },
+      {
+        "label": "تحميل العينة الموصى به",
+        "value": "إجمالي مساحة السطح 40-120 متر مربع (حتى 10 متر مربع يمكن تحقيقه)"
+      },
+      {
+        "label": "امتصاص كيميائي اختياري",
+        "value": "الامتزاز الفيزيائي والكيميائي لتوصيف المحفز"
+      },
+      {
+        "label": "الشكل",
+        "value": "طاولة، نظام متكامل متعدد التقنيات"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 13,
+    "createdAt": "2026-08-20T10:27:34.127Z",
+    "updatedAt": "2026-08-20T11:45:19.726Z"
+  },
+  {
+    "id": "cmt1dmm44000emsuzpf5p0v3f",
+    "slug": "x-ray-diffraction-system-xrd",
+    "name": "X-Ray Diffraction System (XRD)",
+    "nameAr": "جهاز حيود الأشعة السينية",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "SmartLab",
+    "manufacturer": "Rigaku",
+    "description": "Directs X-rays at a crystalline sample and analyzes the diffraction pattern to identify crystal structure, phase composition, and lattice parameters.",
+    "descriptionAr": "يوجه الأشعة السينية نحو عينة بلورية ويحلل نمط الانعراج لتحديد البنية البلورية وتركيب الأطوار وثوابت الشبكة البلورية.",
+    "imageUrl": "https://rigaku.com/hs-fs/hubfs/2024%20Rigaku%20Global%20Site/Products/X-ray%20diffraction%20and%20Scattering/XRD/SmartLab/SmartLab%20product%20photo%20with%20operator.jpg?width=800&height=610&name=SmartLab%20product%20photo%20with%20operator.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Cu-Kα radiation source (λ ≈ 1.5406 Å) typical\n- 2θ scan range: ~5–90°\n- Powder and thin-film sample configurations",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر إشعاع نحاس Kα (λ ≈ 1.5406 أنجستروم) عادةً\n- نطاق المسح 2θ: حوالي 5–90 درجة\n- إعدادات لعينات مسحوقية وأغشية رقيقة",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Rigaku"
+      },
+      {
+        "label": "Model",
+        "value": "SmartLab"
+      },
+      {
+        "label": "X-ray Source",
+        "value": "PhotonMax 9 kW rotating anode, 20-40 kV / 2-44 mA"
+      },
+      {
+        "label": "Detector",
+        "value": "HyPix-3000, 2D semiconductor detector (0D/1D/2D modes)"
+      },
+      {
+        "label": "Goniometer Radius",
+        "value": "330 mm"
+      },
+      {
+        "label": "2-Theta Range",
+        "value": "-3 degrees to +154 degrees"
+      },
+      {
+        "label": "Minimum Step Size",
+        "value": "0.0001 degrees"
+      },
+      {
+        "label": "Measurement Modes",
+        "value": "Powder diffraction, thin-film analysis, reciprocal space mapping, reflectometry, SAXS"
+      },
+      {
+        "label": "Automation",
+        "value": "Cross Beam Optics with automatic alignment and component recognition"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ريجاكو"
+      },
+      {
+        "label": "النموذج",
+        "value": "SmartLab"
+      },
+      {
+        "label": "مصدر الأشعة السينية",
+        "value": "PhotonMax 9 كيلو واط أنود دوار، 20-40 كيلو فولت / 2-44 مللي أمبير"
+      },
+      {
+        "label": "[ترجمة المصطلح: Detector]",
+        "value": "كاشف أشباه موصلات HyPix -3000 ثنائي الأبعاد (أوضاع 0D/1D/2D)"
+      },
+      {
+        "label": "نصف قطر مقياس الزوايا",
+        "value": "330 ملم"
+      },
+      {
+        "label": "2 - نطاق ثيتا",
+        "value": "-3 درجة إلى +154 درجة"
+      },
+      {
+        "label": "الحد الأدنى لحجم الخطوة",
+        "value": "0.0001 درجة"
+      },
+      {
+        "label": "أوضاع القياس",
+        "value": "حيود المسحوق، تحليل الأغشية الرقيقة، رسم خرائط الفضاء المتبادل، قياس الانعكاس، SAXS"
+      },
+      {
+        "label": "التشغيل الآلي",
+        "value": "بصريات العارضة المتقاطعة مع المحاذاة التلقائية والتعرف على المكونات"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 14,
+    "createdAt": "2026-08-20T10:27:34.132Z",
+    "updatedAt": "2026-08-20T11:45:21.293Z"
+  },
+  {
+    "id": "cmt1dmm4a000fmsuzqxwlb8ts",
+    "slug": "x-ray-fluorescence-spectrometer-xrf",
+    "name": "X-Ray Fluorescence Spectrometer (XRF)",
+    "nameAr": "جهاز الأشعة السينية الفلورسنتي",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "S8 TIGER Series 2",
+    "manufacturer": "Bruker",
+    "description": "Excites a sample with X-rays and measures the resulting characteristic fluorescent radiation to determine elemental composition non-destructively.",
+    "descriptionAr": "يثير العينة بأشعة سينية ويقيس الإشعاع الفلوري المميز الناتج لتحديد التركيب العنصري دون إتلاف العينة.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/LDAutoXRFPic.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Elemental detection range: typically Na to U\n- Wavelength- or energy-dispersive detection\n- Non-destructive analysis of solids, powders, and liquids",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- نطاق الكشف العنصري: عادةً من الصوديوم إلى اليورانيوم\n- كشف بتفريق الطول الموجي أو الطاقة\n- تحليل غير متلف للمواد الصلبة والمساحيق والسوائل",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Bruker"
+      },
+      {
+        "label": "Model",
+        "value": "S8 TIGER Series 2"
+      },
+      {
+        "label": "Technique",
+        "value": "Wavelength-dispersive XRF (WDXRF)"
+      },
+      {
+        "label": "X-ray Tube",
+        "value": "4 kW Rhodium anode"
+      },
+      {
+        "label": "Elemental Range",
+        "value": "Be to U"
+      },
+      {
+        "label": "Spot Sizes",
+        "value": "0.3 mm and 1.25 mm (FWHM), mapping option"
+      },
+      {
+        "label": "Concentration Range",
+        "value": "0.1-100%, reproducibility +/-0.1%"
+      },
+      {
+        "label": "Optics",
+        "value": "2 collimators (0.23, 0.46 degrees), 5 analyzer crystals, 10-position beam filter changer"
+      },
+      {
+        "label": "Interface",
+        "value": "TouchControl with SampleCare automated sample recognition"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "بروكر"
+      },
+      {
+        "label": "النموذج",
+        "value": "S8 TIGER Series 2"
+      },
+      {
+        "label": "التقنية",
+        "value": "XRF المشتت بطول الموجة (WDXRF)"
+      },
+      {
+        "label": "أُنْبُوبُ الْأَشِعَّةِ السِّينِيَّةِ",
+        "value": "4 كيلو واط أنود الروديوم"
+      },
+      {
+        "label": "نطاق العناصر",
+        "value": "Be to U"
+      },
+      {
+        "label": "الأحجام الفورية",
+        "value": "0.3 مم و 1.25 مم (FWHM)، خيار التعيين"
+      },
+      {
+        "label": "نطاق التركيز، جزء في المليون",
+        "value": "0.1-100 ٪، قابلية التكاثر +/- 0.1 ٪"
+      },
+      {
+        "label": "علم البصريات",
+        "value": "2 موجهات (0.23، 0.46 درجة)، 5 بلورات محلل، مبدل مرشح شعاع 10 مواضع"
+      },
+      {
+        "label": "الواجهة البينية",
+        "value": "TouchControl مع SampleCare التعرف الآلي على العينات"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 15,
+    "createdAt": "2026-08-20T10:27:34.138Z",
+    "updatedAt": "2026-08-20T11:48:07.325Z"
+  },
+  {
+    "id": "cmt1dmm4e000gmsuzoy4j3go7",
+    "slug": "x-ray-photoelectron-spectrometer-xps",
+    "name": "X-Ray Photoelectron Spectrometer (XPS)",
+    "nameAr": "مطياف الأشعة السينية الالكتروضوئي",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Nexsa G2",
+    "manufacturer": "Thermo Fisher Scientific",
+    "description": "Irradiates a sample surface with X-rays and analyzes emitted photoelectrons to determine elemental composition, chemical state, and electronic structure of the outermost surface layers.",
+    "descriptionAr": "يشع سطح العينة بأشعة سينية ويحلل الإلكترونات الضوئية المنبعثة لتحديد التركيب العنصري والحالة الكيميائية والبنية الإلكترونية لأقرب طبقات السطح.",
+    "imageUrl": "https://www.azom.com/images/equipments/EquipmentImage_5143_16194347837517098.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- X-ray source: Al Kα or Mg Kα\n- Analysis spot size: ~10–200 μm\n- Surface sensitivity depth: ~5–10 nm",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر الأشعة السينية: ألومنيوم Kα أو ماغنسيوم Kα\n- حجم بقعة التحليل: حوالي 10–200 ميكرومتر\n- عمق الحساسية السطحية: حوالي 5–10 نانومتر",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Thermo Fisher Scientific"
+      },
+      {
+        "label": "Model",
+        "value": "Nexsa G2"
+      },
+      {
+        "label": "X-ray Source",
+        "value": "Monochromatic Al K-alpha, 1486.6 eV, ~0.3 eV linewidth, from 12 kV electron beam"
+      },
+      {
+        "label": "Analysis Area",
+        "value": "10-400 micrometers, adjustable in 5 micrometer steps"
+      },
+      {
+        "label": "Analyzer",
+        "value": "Hemispherical, 128-channel detector"
+      },
+      {
+        "label": "Pass Energy",
+        "value": "5-200 eV"
+      },
+      {
+        "label": "Depth Profiling",
+        "value": "Monatomic and cluster Ar+ ion etching"
+      },
+      {
+        "label": "Correlative Techniques",
+        "value": "Integrated ISS, UPS, REELS, and Raman spectroscopy"
+      },
+      {
+        "label": "Angle-Resolved XPS",
+        "value": "In-situ sample tilting for near-surface depth analysis"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "ثيرمو فيشر العلمية"
+      },
+      {
+        "label": "النموذج",
+        "value": "Nexsa G2"
+      },
+      {
+        "label": "مصدر الأشعة السينية",
+        "value": "Al K - alpha أحادي اللون، 1486.6 فولت، عرض خط 0.3 فولت تقريبًا، من شعاع إلكترون 12 كيلو فولت"
+      },
+      {
+        "label": "مجال التحليل",
+        "value": "10-400 ميكرومتر، قابل للتعديل في 5 خطوات ميكرومتر"
+      },
+      {
+        "label": "التحليلات",
+        "value": "كاشف نصف كروي 128 قناة"
+      },
+      {
+        "label": "PASS Energy",
+        "value": "5-200 فولت كهربائي"
+      },
+      {
+        "label": "تحديد سمات العمق",
+        "value": "التنميش الأحادي والعنقود Ar+ ion"
+      },
+      {
+        "label": "التقنيات المترابطة",
+        "value": "محطة الفضاء الدولية المتكاملة، يو بي إس، بكرات، ومطياف رامان"
+      },
+      {
+        "label": "XPS محلول بزاوية",
+        "value": "إمالة العينة في الموقع لتحليل العمق القريب من السطح"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 16,
+    "createdAt": "2026-08-20T10:27:34.142Z",
+    "updatedAt": "2026-08-20T11:45:23.261Z"
+  },
+  {
+    "id": "cmt1dmm4k000hmsuzqz2bidd5",
+    "slug": "uv-vis-nir-spectrophotometer",
+    "name": "UV-Vis-NIR Spectrophotometer",
+    "nameAr": "سبكتروفوتوميتر",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "Cary 5000",
+    "manufacturer": "Agilent Technologies",
+    "description": "Measures light absorbance, transmittance, and reflectance across the ultraviolet, visible, and near-infrared ranges to characterize optical properties and concentration of materials.",
+    "descriptionAr": "يقيس امتصاص الضوء ونفاذيته وانعكاسه عبر نطاقات الأشعة فوق البنفسجية والمرئية وتحت الحمراء القريبة لتوصيف الخصائص البصرية وتركيز المواد.",
+    "imageUrl": "https://www.spectralabsci.com/wp-content/uploads/2024/03/20240315_153449-500x375.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Spectral range: ~175–3300 nm\n- Integrating sphere option for diffuse reflectance/transmittance\n- Suitable for solids, liquids, and thin films",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- النطاق الطيفي: حوالي 175–3300 نانومتر\n- خيار الكرة المتكاملة لقياس الانعكاس/النفاذية المنتشرة\n- مناسب للمواد الصلبة والسوائل والأغشية الرقيقة",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Agilent Technologies"
+      },
+      {
+        "label": "Model",
+        "value": "Cary 5000"
+      },
+      {
+        "label": "Wavelength Range",
+        "value": "175-3300 nm"
+      },
+      {
+        "label": "Spectral Bandwidth",
+        "value": "1 nm"
+      },
+      {
+        "label": "Photometric Range",
+        "value": "-4 to 4 Abs"
+      },
+      {
+        "label": "Photometric Accuracy",
+        "value": "+/-0.003 Abs at 1 Abs"
+      },
+      {
+        "label": "Stray Light",
+        "value": "<0.01% at 220 nm and 340 nm"
+      },
+      {
+        "label": "Noise Level",
+        "value": "<0.00015 Abs RMS at 340 nm"
+      },
+      {
+        "label": "NIR Detector",
+        "value": "PbSmart detector extending range to 3300 nm"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "Agilent Technologies"
+      },
+      {
+        "label": "النموذج",
+        "value": "كاري 5000"
+      },
+      {
+        "label": "Wavelength Range",
+        "value": "175-3300 نانومتر"
+      },
+      {
+        "label": "عرض النطاق الترددي الطيفي",
+        "value": "C"
+      },
+      {
+        "label": "نطاق القياس الضوئي",
+        "value": "-4 إلى 4 عضلات بطن"
+      },
+      {
+        "label": "الدقة الضوئية",
+        "value": "+/- 0.003 عضلات البطن عند 1 عضلات البطن"
+      },
+      {
+        "label": "ضوء شارد",
+        "value": "<0.01 ٪ عند 220 نانومتر و 340 نانومتر"
+      },
+      {
+        "label": "رصد مستوى الضوضاء",
+        "value": "<0.00015 ABS RMS عند 340 نانومتر"
+      },
+      {
+        "label": "كاشف NIR",
+        "value": "كاشف PbSmart الذي يمتد نطاقه إلى 3300 نانومتر"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 17,
+    "createdAt": "2026-08-20T10:27:34.148Z",
+    "updatedAt": "2026-08-20T11:45:24.413Z"
+  },
+  {
+    "id": "cmt1dmm4p000imsuzrddxiuxv",
+    "slug": "inductively-coupled-plasma-mass-spectrometer-icp-ms",
+    "name": "Inductively Coupled Plasma Mass Spectrometer (ICP-MS)",
+    "nameAr": "جهاز الحث الطيفي للبلازما",
+    "unit": "Basic and Applied Sciences Unit",
+    "unitAr": "وحدة العلوم الأساسية والتطبيقية",
+    "model": "7850 ICP-MS",
+    "manufacturer": "Agilent Technologies",
+    "description": "Ionizes a sample in a high-temperature argon plasma and analyzes the ions by mass spectrometry for highly sensitive, trace-level multi-element analysis.",
+    "descriptionAr": "يؤيّن العينة في بلازما آرغون عالية الحرارة ويحلل الأيونات الناتجة بمطياف الكتلة لإجراء تحليل عنصري متعدد وعالي الحساسية حتى مستويات الأثر النزرة.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Agilent_7500_ICP-MS.jpg",
+    "specs": "Typical specifications for this instrument class (confirm against your exact model's datasheet):\n- Argon inductively-coupled plasma ion source\n- Mass range: ~2–260 amu\n- Detection limits down to parts-per-trillion (ppt)",
+    "specsAr": "مواصفات نموذجية لهذه الفئة من الأجهزة (يُرجى التأكد من نشرة بيانات الطراز الفعلي):\n- مصدر أيونات بلازما آرغون مقترنة حثيًا\n- نطاق الكتلة: حوالي 2–260 وحدة كتلة ذرية\n- حدود الكشف تصل إلى أجزاء بالتريليون",
+    "specsTable": [
+      {
+        "label": "Manufacturer",
+        "value": "Agilent Technologies"
+      },
+      {
+        "label": "Model",
+        "value": "7850 ICP-MS"
+      },
+      {
+        "label": "Mass Range",
+        "value": "m/z 2-260"
+      },
+      {
+        "label": "Mass Resolution",
+        "value": "0.3-0.7 amu (FWHM)"
+      },
+      {
+        "label": "Detector",
+        "value": "Discrete-dynode electron multiplier, 9 orders of magnitude dynamic range"
+      },
+      {
+        "label": "Detection Range",
+        "value": "Sub-ppt to ppm"
+      },
+      {
+        "label": "Typical Sensitivity",
+        "value": "~1,000,000 cps per ppb"
+      },
+      {
+        "label": "Collision/Reaction Cell",
+        "value": "Helium collision cell (single quadrupole)"
+      },
+      {
+        "label": "Software",
+        "value": "Agilent MassHunter"
+      },
+      {
+        "label": "Sample Matrix Tolerance",
+        "value": "Up to 25% total dissolved solids"
+      },
+      {
+        "label": "Power Requirements",
+        "value": "200-240 V, 50/60 Hz, ~4 kVA"
+      }
+    ],
+    "specsTableAr": [
+      {
+        "label": "الشركة المُصنّعة",
+        "value": "Agilent Technologies"
+      },
+      {
+        "label": "النموذج",
+        "value": "7850 ICP - MS"
+      },
+      {
+        "label": "مدى كتلي",
+        "value": "m/z 2-260"
+      },
+      {
+        "label": "دقة الكتلة",
+        "value": "0.3-0.7 amu (FWHM)"
+      },
+      {
+        "label": "[ترجمة المصطلح: Detector]",
+        "value": "مضاعف إلكترون دينود المنفصل، 9 رتب من النطاق الديناميكي"
+      },
+      {
+        "label": "نطاق الكشف",
+        "value": "جزء فرعي إلى جزء في المليون"
+      },
+      {
+        "label": "الحساسية النموذجية",
+        "value": "~1,000,000 cps لكل جزء في البليون"
+      },
+      {
+        "label": "خلية التصادم/التفاعل",
+        "value": "خلية تصادم الهيليوم (رباعي أحادي)"
+      },
+      {
+        "label": "البرمجيات",
+        "value": "Agilent MassHunter"
+      },
+      {
+        "label": "عينة مصفوفة التسامح",
+        "value": "ما يصل إلى 25 ٪ من إجمالي المواد الصلبة الذائبة"
+      },
+      {
+        "label": "متطلبات الطاقة",
+        "value": "200-240 فولت، 50/60 هرتز، ~4 كيلو فولت أمبير"
+      }
+    ],
+    "location": null,
+    "locationAr": null,
+    "state": "PUBLISHED",
+    "sortOrder": 18,
+    "createdAt": "2026-08-20T10:27:34.153Z",
+    "updatedAt": "2026-08-20T11:45:25.853Z"
+  }
+]

@@ -1,0 +1,481 @@
+[
+  {
+    "id": "cmt0z5w220008b8uzmu1sapi5",
+    "userId": null,
+    "fullName": "Prof. Dr. El Sayed Yousef",
+    "titleOrRole": "Professor of Physics, King Khalid University",
+    "titleOrRoleAr": "أستاذ الفيزياء، جامعة الملك خالد",
+    "photoUrl": "/uploads/people/f0a51936-8bfb-4275-a569-7a4a99eb4238.jpg",
+    "bio": "Prof. Dr. El Sayed Yousef is a Professor of Physics at King Khalid University, Saudi Arabia, and Director of AMIS Lab. His research focuses on the characterization and development of glass and glass ceramics for optical, photonic, sensing, and biomedical applications, spanning novel glass synthesis, crystallization behavior, and nano/microstructural characterization of bioactive glasses for bone tissue regeneration. He has led multiple funded research projects on tellurite-based glasses, rare-earth doped optical materials, and bioactive glass scaffolds, and has authored more than 300 papers in ISI-indexed journals.",
+    "bioAr": "الأستاذ الدكتور السيد يوسف أستاذ الفيزياء بجامعة الملك خالد في المملكة العربية السعودية، ومدير مختبر AMIS. تتركز أبحاثه على توصيف وتطوير الزجاج والزجاج السيراميكي لتطبيقات بصرية وفوتونية واستشعارية وطبية حيوية، وتشمل تخليق أنواع جديدة من الزجاج، ودراسة سلوك التبلور، والتوصيف النانوي والمجهري للزجاج الحيوي النشط لتجديد أنسجة العظام. أشرف على عدة مشاريع بحثية ممولة حول الزجاج القائم على أكسيد التيلوريوم، والمواد البصرية المطعّمة بعناصر الأرض النادرة، وسقالات الزجاج الحيوي، ونشر أكثر من 300 بحث في مجلات علمية مصنّفة ضمن ISI.",
+    "category": "DIRECTOR",
+    "sortOrder": 0,
+    "cvUrl": "/uploads/people-cv/el-sayed-yousef-cv.pdf",
+    "academicDegree": "Professor",
+    "academicDegreeAr": null,
+    "email": "ayousf@kku.edu.sa",
+    "phone": "+966-0594885905",
+    "address": "Physics Department, Faculty of Science, King Khalid University, AlQura'a, Abha P.O. Box 906, Saudi Arabia. Office Tel: +966-017-2418217",
+    "addressAr": null,
+    "discipline": "Materials Science and their application",
+    "disciplineAr": null,
+    "subdiscipline": "Characterization and development of glass and glass ceramics for a wide variety of applications, indicating present and future research directions in glass and glass ceramics.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Theory, design, device technology, and applications of glass and glass ceramic.",
+      "Innovative processing and synthesis of glass ceramics and glass.",
+      "Modeling of ceramics and glasses (from atomic to micro- and macro-scales).",
+      "Crystallization, glass ceramics and glass.",
+      "Prospects for advanced glass and ceramics.",
+      "Optical technology, photonics, and lasers.",
+      "Sensing and environmental optics.",
+      "Fiber-optic sensors.",
+      "Medical application of glass and glass ceramics."
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "Principal Investigator, Project (G.R. P.127/38) — Preparation of novel glasses based on TeO2 doped with rare-earth and their optical applications (closed).",
+      "Principal Investigator, Project (RCAMS-KKU-001-17) — Characterization of Novel Material Based on Tellurite Oxide for Nonlinear Application (closed).",
+      "Principal Investigator, Project (R.G.P.2/1/38) — Investigation of novel glasses as promising materials for optical application (closed).",
+      "Principal Investigator, Project (MRMC 01-017-023) — Nano and microstructural of bioactive glasses for bone tissue regeneration (closed).",
+      "Principal Investigator, Project (MRMC 01-017-024) — In vitro characterization and structure of nanobiomaterials with inert oxides for biomedical application (closed)."
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://www.researchgate.net/profile/El-Yousef",
+        "citation": "Full publication list (over 300 papers in ISI journals) — ResearchGate profile"
+      },
+      {
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=6602856303",
+        "citation": "Full publication list — Scopus author profile"
+      }
+    ],
+    "citationCount": 6043,
+    "hIndex": 44,
+    "state": "PUBLISHED",
+    "submittedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedAt": "2026-08-20T03:42:39.238Z",
+    "rejectionReason": null,
+    "createdAt": "2026-08-20T03:42:39.242Z",
+    "updatedAt": "2026-08-25T07:30:27.019Z"
+  },
+  {
+    "id": "cmtfh8zzg0000x8uztid7wjac",
+    "userId": null,
+    "fullName": "Prof. Dr. Mohammed S. Alqahtani",
+    "titleOrRole": "Management, KKU Central Labs",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/0ad3c287-190a-40a9-8fd2-2139b6ca6cdd.jpg",
+    "bio": "Prof. Dr. Mohammed S. Alqahtani oversees King Khalid University's Central Labs (KKU Central Labs), the shared research infrastructure within which AMIS Lab operates. He is a frequent research collaborator with AMIS Lab, co-authoring dozens of publications on glass and materials science alongside the lab's director and members.",
+    "bioAr": null,
+    "category": "LAB_MANAGEMENT",
+    "sortOrder": 0,
+    "cvUrl": null,
+    "academicDegree": null,
+    "academicDegreeAr": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "addressAr": null,
+    "discipline": null,
+    "disciplineAr": null,
+    "subdiscipline": null,
+    "subdisciplineAr": null,
+    "researchInterests": null,
+    "researchInterestsAr": null,
+    "researchProjects": null,
+    "researchProjectsAr": null,
+    "publications": null,
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-30T07:17:43.854Z",
+    "updatedAt": "2026-08-30T07:17:43.854Z"
+  },
+  {
+    "id": "cmt5izjsj0000hwuzzz653j57",
+    "userId": null,
+    "fullName": "Prof. Dr. Alaa Dahshan",
+    "titleOrRole": "Professor of Physics, King Khalid University",
+    "titleOrRoleAr": "أستاذ الفيزياء، جامعة الملك خالد",
+    "photoUrl": "/uploads/people/6189e80b-5783-423f-bae1-13f61690382e.jpg",
+    "bio": "Prof. Dr. Alaa El Dein Ibrahim Dahshan is a Professor of Physics at King Khalid University, Saudi Arabia. His research focuses on amorphous semiconductors, chalcogenide glasses, and thin films, spanning their optical, electronic, photoelectrical, and thermal characterization — including composition-dependent refractive index behavior and crystallization kinetics studied via differential scanning calorimetry. He has led multiple funded research projects on chalcogenide thin films for solar cell absorption layers, thermoelectric and photovoltaic devices, and hydrogen production via water splitting, and has authored more than 300 papers in ISI-indexed journals.",
+    "bioAr": "الأستاذ الدكتور علاء الدين إبراهيم دهشان أستاذ الفيزياء بجامعة الملك خالد في المملكة العربية السعودية. تتركز أبحاثه على أشباه الموصلات اللابلورية، والزجاج الكالكوجيني، والأغشية الرقيقة، وتشمل توصيفها البصري والإلكتروني والكهروضوئي والحراري، بما في ذلك سلوك معامل الانكسار المركب بحسب التركيب، وحركية التبلور المدروسة عبر المسح الحراري التفاضلي (DSC). أشرف على عدة مشاريع بحثية ممولة حول الأغشية الكالكوجينية الرقيقة كطبقات امتصاص للخلايا الشمسية، والأجهزة الحرارية الكهربائية والكهروضوئية، وإنتاج الهيدروجين عبر تحليل الماء، ونشر أكثر من 300 بحث في مجلات علمية مصنّفة ضمن ISI.",
+    "category": "FACULTY",
+    "sortOrder": 1,
+    "cvUrl": "/uploads/people-cv/alaa-dahshan-cv.pdf",
+    "academicDegree": "Professor",
+    "academicDegreeAr": null,
+    "email": "adahshan@kku.edu.sa",
+    "phone": "+966 59 501 9799",
+    "address": "Department of Physics, Faculty of Science, King Khalid University, P.O. Box 9004, Abha, Saudi Arabia.",
+    "addressAr": null,
+    "discipline": "Physics and Materials Science",
+    "disciplineAr": null,
+    "subdiscipline": "Amorphous semiconductors, chalcogenide glasses and thin films; optical, electronic, photoelectrical and thermal characterization.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Synthesis and characterization of bulk amorphous semiconductors.",
+      "Fabrication and characterization of amorphous semiconductor thin films.",
+      "Optical characterization of amorphous thin films, including the determination of their optical constants.",
+      "Electronic and photoelectrical properties of amorphous semiconductor thin films.",
+      "Composition dependence of the complex refractive index in amorphous semiconductors.",
+      "Thermal stability and crystallization kinetics of amorphous semiconductors via differential scanning calorimetry (DSC)."
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "King Khalid University Project No. (G.R.P.2-92-45) — Metal Chalcogenide Thin Films as Solar Cell Absorption Layer.",
+      "King Khalid University Project No. (G.R.P.2-158-44) — Thermoelectric and photovoltaic properties of chalcogenes as renewable energy sources.",
+      "King Khalid University Project No. (G.R.P.2-141-43) — Study of the structural, electronic and optical properties of advanced materials for hydrogen production using water splitting.",
+      "King Khalid University Research Group (R.G.P.2/113/41) — Progressive chalcogenide compounds for thermoelectric and photovoltaic devices.",
+      "King Khalid University Research Group (R.G.P.2/34/40) — Synthesis and characterization of chalcogen-based thermophotovoltaic thin films."
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://www.researchgate.net/profile/A_Dahshan/publications",
+        "citation": "Full publication list (over 300 papers in ISI journals) — ResearchGate profile"
+      },
+      {
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=6602133954",
+        "citation": "Full publication list — Scopus author profile"
+      }
+    ],
+    "citationCount": 7284,
+    "hIndex": 46,
+    "state": "PUBLISHED",
+    "submittedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedAt": "2026-08-23T08:08:40.391Z",
+    "rejectionReason": null,
+    "createdAt": "2026-08-23T08:08:40.435Z",
+    "updatedAt": "2026-08-25T07:30:27.047Z"
+  },
+  {
+    "id": "cmtfh900c0003x8uzd50xm4nn",
+    "userId": null,
+    "fullName": "Dr. Fawaz Alqahtani",
+    "titleOrRole": "Management, KKU Central Labs",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/e431c7cb-4560-4df6-bcf6-aa1558f5f8cb.jpg",
+    "bio": "Dr. Fawaz Alqahtani is part of the management team of King Khalid University's Central Labs (KKU Central Labs), the shared research infrastructure within which AMIS Lab operates. He is a frequent research collaborator with AMIS Lab, co-authoring multiple publications on glass and materials science alongside the lab's director and members.",
+    "bioAr": null,
+    "category": "LAB_MANAGEMENT",
+    "sortOrder": 1,
+    "cvUrl": null,
+    "academicDegree": null,
+    "academicDegreeAr": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "addressAr": null,
+    "discipline": null,
+    "disciplineAr": null,
+    "subdiscipline": null,
+    "subdisciplineAr": null,
+    "researchInterests": null,
+    "researchInterestsAr": null,
+    "researchProjects": null,
+    "researchProjectsAr": null,
+    "publications": null,
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-30T07:17:43.884Z",
+    "updatedAt": "2026-08-30T07:17:43.884Z"
+  },
+  {
+    "id": "cmt5j2vrq0000ywuz1d6nhth5",
+    "userId": null,
+    "fullName": "Abdulaziz Ahmed Hadi Asiri",
+    "titleOrRole": "PhD Student",
+    "titleOrRoleAr": "طالب دكتوراه",
+    "photoUrl": "/uploads/people/350868d2-fb6b-4c2f-a85b-d9c0a76f3016.jpg",
+    "bio": "Abdulaziz Ahmed Hadi Asiri is a PhD student in the Physics Department at King Khalid University, working on scientific instrumentation, optical systems, and terahertz spectroscopy. He built and validated a photoconductive-antenna-based terahertz time-domain spectrometer (THz-TDS) for materials characterization, and contributes to a collaborative project on light-phosphor sources for plant growth at the Central Laboratories Center. His published work includes a study on the terahertz optical and dielectric properties of BK7 silicate glass.",
+    "bioAr": "عبدالعزيز أحمد هادي عسيري طالب دكتوراه بقسم الفيزياء في جامعة الملك خالد، ويعمل في مجالات الأجهزة العلمية والأنظمة البصرية ومطيافية التيراهرتز. قام ببناء واختبار مطياف تيراهرتز ذي مجال زمني (THz-TDS) باستخدام هوائي موصل ضوئيًا لتوصيف المواد، ويشارك في مشروع بحثي تعاوني حول استخدام مصادر الإضاءة الفوسفورية في نمو النباتات بمركز المعامل المركزية. ومن أعماله المنشورة دراسة حول الخصائص البصرية والعازلة لزجاج BK7 السيليكاتي في نطاق تردد التيراهرتز.",
+    "category": "STUDENT",
+    "sortOrder": 1,
+    "cvUrl": "/uploads/people-cv/abdulaziz-asiri-cv.pdf",
+    "academicDegree": "PhD Student",
+    "academicDegreeAr": null,
+    "email": "447801453@kku.edu.sa",
+    "phone": "+966-550828286",
+    "address": "Physics Department, Faculty of Science, King Khalid University, AlQura'a, Abha P.O. Box 906, Saudi Arabia.",
+    "addressAr": null,
+    "discipline": "Physics",
+    "disciplineAr": null,
+    "subdiscipline": "Scientific Instrumentation, Optical systems, and Terahertz Spectroscopy",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Terahertz Time-Domain Spectroscopy (THz-TDS)",
+      "Photoconductive antennas",
+      "Femtosecond laser systems",
+      "Optical alignment",
+      "Spectroscopy-based evaluation of functional materials"
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "THz Spectrometer Development and Materials Characterization: Built and validated a new THz spectrometer using a photoconductive antenna scheme for generation and detection.",
+      "Collaborative Applied Research Project: Member of a research group at the Central Laboratories Center contributing to the project \"Strategies Application of Light Phosphors Source Use in Plant Growth\"."
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://doi.org/10.69626/sag.2025.0207",
+        "citation": "Abdulaziz A. Asiri, Alshehri, A. M., & Ibrahim, A. (2025). Terahertz optical and dielectric properties of BK7 silicate glass: Characterization of the complex refractive index and dielectric response in the terahertz frequency region. Science of Alloys and Glasses, 1(4), 207-214."
+      }
+    ],
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedAt": "2026-08-23T08:11:15.904Z",
+    "rejectionReason": null,
+    "createdAt": "2026-08-23T08:11:15.927Z",
+    "updatedAt": "2026-08-23T08:49:02.562Z"
+  },
+  {
+    "id": "cmtfa2wzk0000bcuz984vqm2a",
+    "userId": null,
+    "fullName": "Reem Dhafer Alshehri",
+    "titleOrRole": "Master's Student",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/avatar-female.png",
+    "bio": "Master's student in the Physics Department at King Khalid University, working on characterization and development of glass for optical and photonic applications.",
+    "bioAr": null,
+    "category": "STUDENT",
+    "sortOrder": 2,
+    "cvUrl": "/uploads/people-cv/reem-alshehri-cv.pdf",
+    "academicDegree": "Master's Student",
+    "academicDegreeAr": null,
+    "email": "Alshehrireem20@gmail.com",
+    "phone": "+966-0540690733",
+    "address": "Central Labs, King Khalid University, P. O. Box, Abha, AlQaraa, 906, Saudi Arabia",
+    "addressAr": null,
+    "discipline": "Materials Science and their application",
+    "disciplineAr": null,
+    "subdiscipline": "Characterization and development of glass for a wide variety of applications, indicating present and future research directions in glass.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Theory, design, device technology, and applications of glass",
+      "Optical technology, photonics, and lasers."
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "Laboratory Experience (Academic), Master's Program – Physics (Solid State / Glass Materials): hands-on experience through course laboratories and thesis work, sample preparation and material characterization, instrument handling and data analysis, lab safety compliance and documentation."
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://doi.org/10.1016/j.ceramint.2026.08.135",
+        "citation": "Alshehri, R.D., Alshehri, A.M., Sultan, B., Almutawah, Z.S.A., Hussein, K.I., Alqahtani, M.S., Burtan-Gwizdala, B., Reben, M., & Yousef, E.S. (2026). Enhancement of spectroscopic and thermal properties of Pr3+-doped phosphate glass with MnO2/Ag2O as matrix-modifying components. Ceramics International."
+      },
+      {
+        "url": "https://doi.org/10.3390/ma19132706",
+        "citation": "Alshehri, R.D., Alshehri, A.M., Sultan, B., Almutawah, Z.S.A., Hussein, K.I., Alqahtani, M.S., Burtan-Gwizdala, B., Reben, M., & Yousef, E.S. (2026). Synthesis, Thermal Stability, and Emission Properties of Eu2O3 and Tm2O3 Doped Halide Phosphate Glasses Based on the P2O5–ZnO–BaF2–LiCl–CdO System. Materials, 19(13), 2706."
+      }
+    ],
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-30T03:57:02.721Z",
+    "updatedAt": "2026-08-30T04:18:50.534Z"
+  },
+  {
+    "id": "cmtfa2x050001bcuzhygx2o4r",
+    "userId": null,
+    "fullName": "Elham Fahad Alkhammash",
+    "titleOrRole": "PhD Student",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/avatar-female.png",
+    "bio": "PhD student in the Physics Department at King Khalid University, researching rare-earth-doped tellurite glasses for photonic applications, with a background in theoretical biophysics and computational modeling.",
+    "bioAr": null,
+    "category": "STUDENT",
+    "sortOrder": 3,
+    "cvUrl": "/uploads/people-cv/elham-alkhammash-cv.pdf",
+    "academicDegree": "PhD Student",
+    "academicDegreeAr": null,
+    "email": "443800202@kku.edu.sa",
+    "phone": "+966-0507253918",
+    "address": "Department of Physics, College of Science, King Khalid University, Abha, Saudi Arabia.",
+    "addressAr": null,
+    "discipline": "Materials Science and their application",
+    "disciplineAr": null,
+    "subdiscipline": "Advanced glass and glass-ceramic materials for optical, photonic, and biomedical applications, with expertise in theoretical biophysics and computational modeling of biochemical and neural systems.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Advanced glass and glass-ceramic materials for optical and photonic applications.",
+      "Design, composition, synthesis, and processing of functional glass systems.",
+      "Rare-earth-doped glasses: optical, spectroscopic, thermal, and structural characterization.",
+      "Luminescent materials, photonic technologies, and optical sensing.",
+      "Fiber-optic sensing and environmental optical applications.",
+      "Theoretical biophysics and computational modeling of biochemical and neural systems."
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "Master's Thesis Research Project, University of Ottawa, Canada (2020) — Modeling the Reaction Transport of Synaptic Acetylcholine Released at High Frequency in Weakly Electric Fish.",
+      "PhD Research Project, King Khalid University, Saudi Arabia (Ongoing) — Thermal Stability and Luminescence Behavior of Rare-Earth-Doped TeO2–ZnO–Nb2O5–KF–La2O3 Tellurite Glasses for Photonic Applications."
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://www.cell.com/biophysj/fulltext/S0006-3495(22)03782-1",
+        "citation": "Alkhammash, E., L'Heureux, I., Morris, C. E., & Joós, B. (2021). Reaction–diffusion modelling to assess what limits effective acetylcholine fluctuations at high-frequency cholinergic electroplaques. Biophysical Journal."
+      },
+      {
+        "url": "https://www.researchgate.net/profile/Elham-Alkhammash",
+        "citation": "Alkhammash, E., L'Heureux, I., Morris, C. E., & Joós, B. (2023). Using reaction–diffusion modeling to probe high-frequency cholinergic transmission. Biophysical Journal."
+      },
+      {
+        "citation": "Alkhammash, E., Sultan, B., Ibrahim, A., & Yousef, E. Impact of physical parameters and elasticity of composition: TeO2–ZnO–Nb2O5–KF–La2O3. (Under review)."
+      }
+    ],
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-30T03:57:02.741Z",
+    "updatedAt": "2026-08-30T04:18:50.534Z"
+  },
+  {
+    "id": "cmt5oglaw00005kuzulu86bvh",
+    "userId": null,
+    "fullName": "Prof. Dr. Hany S. Hussein",
+    "titleOrRole": "Professor, King Khalid University and Aswan University",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/dfa5a2bd-9a96-4f17-af2a-9ff7a2e21ffc.jpg",
+    "bio": "Prof. Dr. Hany S. Hussein is a Professor affiliated with King Khalid University and Aswan University. His research spans wireless communication, digital signal processing, image processing, multi-view video coding, and visible light communications, with widely cited work on deep learning applications in medical imaging and signal classification.",
+    "bioAr": null,
+    "category": "FACULTY",
+    "sortOrder": 3,
+    "cvUrl": null,
+    "academicDegree": "Professor",
+    "academicDegreeAr": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "addressAr": null,
+    "discipline": "Electrical Engineering and Communications",
+    "disciplineAr": null,
+    "subdiscipline": "Wireless communication, digital signal processing, image processing, multi-view video coding, and visible light communications.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Wireless Communication",
+      "Digital Signal Processing (DSP)",
+      "Image Processing",
+      "Multi-view Video Coding",
+      "Visible Light Communications"
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": null,
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "citation": "Automated detection of oral pre-cancerous tongue lesions using deep learning for early diagnosis of oral cavity cancer. The Computer Journal, 2022."
+      },
+      {
+        "citation": "BrainNet: optimal deep learning feature fusion for brain tumor classification. Computational Intelligence and Neuroscience, 2022."
+      },
+      {
+        "citation": "Spectral efficient spatial modulation techniques. IEEE Access, 2018."
+      },
+      {
+        "citation": "COVID-19 classification using chest X-ray images based on fusion-assisted deep Bayesian optimization and Grad-CAM visualization. Frontiers in Public Health, 2022."
+      },
+      {
+        "citation": "Progress and trends in neurological disorders research based on deep learning. Computerized Medical Imaging and Graphics, 2024."
+      },
+      {
+        "url": "https://scholar.google.com.eg/citations?user=M4k_z48AAAAJ&hl=en",
+        "citation": "Full publication list — Google Scholar profile"
+      }
+    ],
+    "citationCount": 1536,
+    "hIndex": 22,
+    "state": "PUBLISHED",
+    "submittedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedAt": "2026-08-23T10:41:53.559Z",
+    "rejectionReason": null,
+    "createdAt": "2026-08-23T10:41:53.624Z",
+    "updatedAt": "2026-08-25T07:30:27.057Z"
+  },
+  {
+    "id": "cmt5pc5qf0000icuzo17q4c7t",
+    "userId": null,
+    "fullName": "Dr. Khalid Ibrahim Hussein Ibrahim",
+    "titleOrRole": "Associate Professor, Department of Radiological Sciences, King Khalid University",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/cc5b58ab-c061-4eb0-ba45-0095151234c9.jpg",
+    "bio": "Dr. Khalid Ibrahim Hussein Ibrahim is an Associate Professor in the Department of Radiological Sciences at King Khalid University, where he serves as Bachelor Program Coordinator. He holds a PhD in Medical Physics from the University of Cape Town, South Africa, an MSc in Medical Physics from the University of Surrey, UK, and a BSc in Applied Physics and Instrumentation from the University of Gezira, Sudan. His research spans medical physics, radiation protection, radiotherapy, and nuclear medicine, alongside materials-science work on radiation-shielding glasses and functional oxide materials.",
+    "bioAr": null,
+    "category": "FACULTY",
+    "sortOrder": 4,
+    "cvUrl": null,
+    "academicDegree": "Associate Professor",
+    "academicDegreeAr": null,
+    "email": "kirahim@kku.edu.sa",
+    "phone": "+966 594667437",
+    "address": "Department of Radiological Sciences, College of Applied Medical Sciences, King Khalid University, Abha, Saudi Arabia",
+    "addressAr": null,
+    "discipline": "Medical Physics",
+    "disciplineAr": null,
+    "subdiscipline": "Medical physics, radiation protection, radiotherapy, and nuclear medicine, with additional research in radiation-shielding and functional materials.",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Medical Physics",
+      "Radiation Protection",
+      "Radiotherapy",
+      "Nuclear Medicine",
+      "Radiation-Shielding Materials"
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": null,
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "citation": "Investigation of Structural, Physical, and Attenuation Parameters of Glass: TeO2-Bi2O3-B2O3-TiO2-RE2O3. Materials, 2022."
+      },
+      {
+        "citation": "The Effect of ZnO, MgO, TiO2, and Na2O Modifiers on the Physical, Optical, and Radiation Shielding Properties of a TeTaNb Glass System. Materials, 2022."
+      },
+      {
+        "citation": "A comprehensive first-principles study on the physical properties of Sr2ScBiO6 for low-cost energy technologies. Optical and Quantum Electronics, 2023."
+      },
+      {
+        "citation": "Half-metallic ferromagnetism and thermoelectric effect in spinel chalcogenides SrX2S4. Journal of Physics and Chemistry of Solids, 2023."
+      },
+      {
+        "url": "https://scholar.google.com/citations?user=0uf5gugAAAAJ&hl=en",
+        "citation": "Full publication list — Google Scholar profile"
+      }
+    ],
+    "citationCount": 856,
+    "hIndex": 17,
+    "state": "PUBLISHED",
+    "submittedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedById": "cmt0z5vlg0000b8uzc6ebuedd",
+    "reviewedAt": "2026-08-23T11:06:26.363Z",
+    "rejectionReason": null,
+    "createdAt": "2026-08-23T11:06:26.439Z",
+    "updatedAt": "2026-08-25T07:30:27.061Z"
+  }
+]

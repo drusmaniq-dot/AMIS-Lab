@@ -1,0 +1,38 @@
+[
+  {
+    "id": "cmt0z5vlg0000b8uzc6ebuedd",
+    "name": "Lab Admin",
+    "email": "asmahafzal@gmail.com",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$3v3zIxC272gEMFrUsF7pR.uqymAcIY3DguaszrdrkTIlFsfJU2T/e",
+    "role": "ADMIN",
+    "status": "APPROVED",
+    "createdAt": "2026-08-20T03:42:38.646Z",
+    "updatedAt": "2026-08-20T03:42:38.646Z"
+  },
+  {
+    "id": "cmt0z5vtw0001b8uzxhuunb33",
+    "name": "Sana Tariq",
+    "email": "member@amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$um43ZM2XPx2Mn3OpCCFS5OSEKEoqWvpIK1uxGMIUqWcfs13KzoG/C",
+    "role": "MEMBER",
+    "status": "APPROVED",
+    "createdAt": "2026-08-20T03:42:38.948Z",
+    "updatedAt": "2026-08-20T03:42:38.948Z"
+  },
+  {
+    "id": "cmt0z5vzs0002b8uzc0ry58ni",
+    "name": "New Applicant",
+    "email": "pending@amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$ThEydK13f.3ChtrX.i5UUej66HmsRGCsr.KZbASJsA0xtG/ABAdpS",
+    "role": "MEMBER",
+    "status": "PENDING",
+    "createdAt": "2026-08-20T03:42:39.160Z",
+    "updatedAt": "2026-08-20T03:42:39.160Z"
+  }
+]

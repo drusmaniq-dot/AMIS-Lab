@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cmt0z5w0r0003b8uz74bnw4t3",
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/company/amislab",
+    "icon": "linkedin",
+    "sortOrder": 0,
+    "isActive": true
+  },
+  {
+    "id": "cmt0z5w0w0004b8uz06trs91e",
+    "platform": "X",
+    "url": "https://x.com/amislab",
+    "icon": "x",
+    "sortOrder": 1,
+    "isActive": true
+  },
+  {
+    "id": "cmt0z5w110005b8uzc4moh6j6",
+    "platform": "YouTube",
+    "url": "https://youtube.com/@amislab",
+    "icon": "youtube",
+    "sortOrder": 2,
+    "isActive": true
+  },
+  {
+    "id": "cmt0z5w150006b8uzqphkv96j",
+    "platform": "ResearchGate",
+    "url": "https://researchgate.net/lab/AMIS-Lab",
+    "icon": "researchgate",
+    "sortOrder": 3,
+    "isActive": true
+  }
+]

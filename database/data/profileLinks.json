@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cmt1hdyv40000iguz6a1kp5h7",
+    "personId": "cmt0z5w220008b8uzmu1sapi5",
+    "label": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/El-Yousef",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmt5izjsq0001hwuzk18sqonr",
+    "personId": "cmt5izjsj0000hwuzzz653j57",
+    "label": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/A_Dahshan/publications",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmt5jc2q300000guzhlgp05cf",
+    "personId": "cmt5j2vrq0000ywuz1d6nhth5",
+    "label": "Published Paper (DOI)",
+    "url": "https://doi.org/10.69626/sag.2025.0207",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmt5oglbg00015kuzaj0eiik0",
+    "personId": "cmt5oglaw00005kuzulu86bvh",
+    "label": "Google Scholar",
+    "url": "https://scholar.google.com.eg/citations?user=M4k_z48AAAAJ&hl=en",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmt5pc5r50001icuzwqxcsugy",
+    "personId": "cmt5pc5qf0000icuzo17q4c7t",
+    "label": "Google Scholar",
+    "url": "https://scholar.google.com/citations?user=0uf5gugAAAAJ&hl=en",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmtfh90060001x8uz8qy47qh8",
+    "personId": "cmtfh8zzg0000x8uztid7wjac",
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/dr-mohammed-s-alqahtani-3347697a/",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmtfh900h0004x8uz6451vzg1",
+    "personId": "cmtfh900c0003x8uzd50xm4nn",
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/fawaz-alqahtani-42381613b/",
+    "icon": null,
+    "sortOrder": 0
+  },
+  {
+    "id": "cmt5oglbh00025kuzzyv9kx5c",
+    "personId": "cmt5oglaw00005kuzulu86bvh",
+    "label": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/Hany-Hussein",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmt5pc5r50002icuz3bpzp2pb",
+    "personId": "cmt5pc5qf0000icuzo17q4c7t",
+    "label": "Faculty Profile",
+    "url": "https://cams.kku.edu.sa/en/node/512",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmt1hdyv40001iguzdwnbit1p",
+    "personId": "cmt0z5w220008b8uzmu1sapi5",
+    "label": "Scopus",
+    "url": "https://www.scopus.com/authid/detail.uri?authorId=6602856303",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmtfh900h0005x8uzt9h09di1",
+    "personId": "cmtfh900c0003x8uzd50xm4nn",
+    "label": "Google Scholar",
+    "url": "https://scholar.google.com/citations?user=CbluL4EAAAAJ&hl=en",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmtfh90060002x8uzj56s3kl6",
+    "personId": "cmtfh8zzg0000x8uztid7wjac",
+    "label": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/Mohammed-Alqahtani-38",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmt5izjsq0002hwuzi2ea8ypn",
+    "personId": "cmt5izjsj0000hwuzzz653j57",
+    "label": "Scopus",
+    "url": "https://www.scopus.com/authid/detail.uri?authorId=6602133954",
+    "icon": null,
+    "sortOrder": 1
+  },
+  {
+    "id": "cmt5rmczi0000nguzdv36md9l",
+    "personId": "cmt0z5w220008b8uzmu1sapi5",
+    "label": "Google Scholar",
+    "url": "https://scholar.google.com/citations?user=0TEPXfcAAAAJ&hl=en",
+    "icon": null,
+    "sortOrder": 2
+  },
+  {
+    "id": "cmt5rmczp0001nguzeow6ouzs",
+    "personId": "cmt5izjsj0000hwuzzz653j57",
+    "label": "Google Scholar",
+    "url": "https://scholar.google.com/citations?user=Vdctn1kAAAAJ&hl=en",
+    "icon": null,
+    "sortOrder": 2
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "cmt0z5w55000yb8uzojnlyhcg",
+    "title": "Glass Composition Simulator",
+    "titleAr": null,
+    "description": "A web tool for simulating optical properties of glass compositions before synthesis.",
+    "descriptionAr": null,
+    "url": null,
+    "screenshotUrl": null,
+    "state": "PUBLISHED",
+    "sortOrder": 0,
+    "createdAt": "2026-08-20T03:42:39.353Z",
+    "updatedAt": "2026-08-20T03:42:39.353Z"
+  },
+  {
+    "id": "cmt0z5w55000zb8uzwikz8sab",
+    "title": "Shielding Performance Calculator",
+    "titleAr": null,
+    "description": "Estimates shielding effectiveness for composite thicknesses and materials.",
+    "descriptionAr": null,
+    "url": null,
+    "screenshotUrl": null,
+    "state": "PUBLISHED",
+    "sortOrder": 0,
+    "createdAt": "2026-08-20T03:42:39.353Z",
+    "updatedAt": "2026-08-20T03:42:39.353Z"
+  }
+]

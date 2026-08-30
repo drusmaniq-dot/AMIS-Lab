@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cmt0z5w5e0010b8uz9gz3w4zi",
+    "title": "Materials Characterization",
+    "titleAr": null,
+    "description": "Optical, mechanical, and thermal characterization services for industry partners.",
+    "descriptionAr": null,
+    "ctaLabel": "Request a quote",
+    "ctaLabelAr": null,
+    "ctaUrl": null,
+    "ctaEmail": "contact@amislab.local",
+    "state": "PUBLISHED",
+    "sortOrder": 0,
+    "createdAt": "2026-08-20T03:42:39.362Z",
+    "updatedAt": "2026-08-20T03:42:39.362Z"
+  },
+  {
+    "id": "cmt0z5w5f0011b8uz9jayk8hu",
+    "title": "Custom Glass Formulation",
+    "titleAr": null,
+    "description": "Bespoke glass composition development for specialized optical, protective, or biomedical applications.",
+    "descriptionAr": null,
+    "ctaLabel": "Get in touch",
+    "ctaLabelAr": null,
+    "ctaUrl": null,
+    "ctaEmail": "contact@amislab.local",
+    "state": "PUBLISHED",
+    "sortOrder": 0,
+    "createdAt": "2026-08-20T03:42:39.362Z",
+    "updatedAt": "2026-08-20T03:42:39.362Z"
+  }
+]
