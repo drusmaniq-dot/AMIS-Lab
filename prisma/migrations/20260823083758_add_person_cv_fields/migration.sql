@@ -1,0 +1,17 @@
+-- AlterTable
+ALTER TABLE "Person" ADD COLUMN     "academicDegree" TEXT,
+ADD COLUMN     "academicDegreeAr" TEXT,
+ADD COLUMN     "address" TEXT,
+ADD COLUMN     "addressAr" TEXT,
+ADD COLUMN     "cvUrl" TEXT,
+ADD COLUMN     "discipline" TEXT,
+ADD COLUMN     "disciplineAr" TEXT,
+ADD COLUMN     "email" TEXT,
+ADD COLUMN     "phone" TEXT,
+ADD COLUMN     "publications" JSONB,
+ADD COLUMN     "researchInterests" JSONB,
+ADD COLUMN     "researchInterestsAr" JSONB,
+ADD COLUMN     "researchProjects" JSONB,
+ADD COLUMN     "researchProjectsAr" JSONB,
+ADD COLUMN     "subdiscipline" TEXT,
+ADD COLUMN     "subdisciplineAr" TEXT;

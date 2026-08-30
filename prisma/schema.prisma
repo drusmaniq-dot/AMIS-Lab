@@ -1,0 +1,343 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------- Enums ----------
+
+enum Role {
+  MEMBER
+  ADMIN
+}
+
+enum UserStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum ContentState {
+  DRAFT
+  PENDING
+  PUBLISHED
+  REJECTED
+}
+
+enum ProjectPhase {
+  PLANNED
+  ONGOING
+  COMPLETED
+}
+
+enum PublicationType {
+  JOURNAL
+  CONFERENCE
+  PATENT
+  BOOK_CHAPTER
+  OTHER
+}
+
+enum HomeMediaType {
+  IMAGE
+  VIDEO_EMBED
+}
+
+enum PersonCategory {
+  LAB_MANAGEMENT
+  DIRECTOR
+  FACULTY
+  STUDENT
+  ALUMNI
+  STAFF
+}
+
+// ---------- Auth ----------
+
+model User {
+  id            String     @id @default(cuid())
+  name          String
+  email         String     @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String
+  role          Role       @default(MEMBER)
+  status        UserStatus @default(PENDING)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  accounts Account[]
+  sessions Session[]
+  person   Person?
+
+  submittedPeople       Person[]      @relation("PersonSubmittedBy")
+  reviewedPeople        Person[]      @relation("PersonReviewedBy")
+  submittedProjects     Project[]     @relation("ProjectSubmittedBy")
+  reviewedProjects      Project[]     @relation("ProjectReviewedBy")
+  submittedPublications Publication[] @relation("PublicationSubmittedBy")
+  reviewedPublications  Publication[] @relation("PublicationReviewedBy")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ---------- Content ----------
+
+model Person {
+  id            String         @id @default(cuid())
+  userId        String?        @unique
+  fullName      String
+  titleOrRole   String
+  titleOrRoleAr String?
+  photoUrl      String?
+  bio           String         @db.Text
+  bioAr         String?        @db.Text
+  category      PersonCategory @default(STUDENT)
+  sortOrder     Int            @default(0)
+
+  // CV fields (King Khalid University letterhead CV template)
+  cvUrl               String? // real uploaded CV PDF; preferred over the generated CV when present
+  academicDegree       String?
+  academicDegreeAr     String?
+  email                String?
+  phone                String?
+  address              String? @db.Text
+  addressAr            String? @db.Text
+  discipline           String?
+  disciplineAr         String?
+  subdiscipline        String? @db.Text
+  subdisciplineAr      String? @db.Text
+  researchInterests    Json? // string[]
+  researchInterestsAr  Json? // string[]
+  researchProjects     Json? // string[]
+  researchProjectsAr   Json? // string[]
+  publications         Json? // { citation: string, url?: string }[] — not localized, citations aren't translated
+  citationCount        Int? // total citations, from Google Scholar — updated manually, not live-synced
+  hIndex               Int? // h-index, from Google Scholar — updated manually, not live-synced
+
+  state           ContentState @default(PUBLISHED)
+  submittedById   String?
+  reviewedById    String?
+  reviewedAt      DateTime?
+  rejectionReason String?      @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user         User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  submittedBy  User?         @relation("PersonSubmittedBy", fields: [submittedById], references: [id], onDelete: SetNull)
+  reviewedBy   User?         @relation("PersonReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
+  profileLinks ProfileLink[]
+
+  @@index([state])
+}
+
+model ProfileLink {
+  id        String  @id @default(cuid())
+  personId  String
+  label     String
+  url       String
+  icon      String?
+  sortOrder Int     @default(0)
+
+  person Person @relation(fields: [personId], references: [id], onDelete: Cascade)
+}
+
+model Project {
+  id            String       @id @default(cuid())
+  title         String
+  titleAr       String?
+  slug          String       @unique
+  summary       String
+  summaryAr     String?
+  description   String       @db.Text
+  descriptionAr String?      @db.Text
+  phase         ProjectPhase @default(PLANNED)
+  projectNumber String?
+  investigator  String?
+  coverImageUrl String?
+  imageUrls     String[]     @default([])
+  externalUrl   String?
+  tags          String[]     @default([])
+
+  state           ContentState @default(PUBLISHED)
+  submittedById   String?
+  reviewedById    String?
+  reviewedAt      DateTime?
+  rejectionReason String?      @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  submittedBy User? @relation("ProjectSubmittedBy", fields: [submittedById], references: [id], onDelete: SetNull)
+  reviewedBy  User? @relation("ProjectReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@index([state])
+}
+
+model Publication {
+  id         String          @id @default(cuid())
+  title      String
+  titleAr    String?
+  authors    String[]
+  venue      String
+  year       Int
+  type       PublicationType @default(JOURNAL)
+  doiOrLink  String?
+  abstract   String?         @db.Text
+  abstractAr String?         @db.Text
+  keywords   Json? // string[] — short topical tags, used for search capsules
+
+  state           ContentState @default(PUBLISHED)
+  submittedById   String?
+  reviewedById    String?
+  reviewedAt      DateTime?
+  rejectionReason String?      @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  submittedBy User? @relation("PublicationSubmittedBy", fields: [submittedById], references: [id], onDelete: SetNull)
+  reviewedBy  User? @relation("PublicationReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@index([state])
+}
+
+model DigitalTool {
+  id            String       @id @default(cuid())
+  title         String
+  titleAr       String?
+  description   String       @db.Text
+  descriptionAr String?      @db.Text
+  url           String?
+  screenshotUrl String?
+  state         ContentState @default(PUBLISHED)
+  sortOrder     Int          @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model Service {
+  id            String       @id @default(cuid())
+  title         String
+  titleAr       String?
+  description   String       @db.Text
+  descriptionAr String?      @db.Text
+  ctaLabel      String?
+  ctaLabelAr    String?
+  ctaUrl        String?
+  ctaEmail      String?
+  state         ContentState @default(PUBLISHED)
+  sortOrder     Int          @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model Equipment {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  name          String
+  nameAr        String?
+  unit          String?
+  unitAr        String?
+  model         String?
+  manufacturer  String?
+  description   String       @db.Text
+  descriptionAr String?      @db.Text
+  imageUrl      String?
+  specs         String?      @db.Text
+  specsAr       String?      @db.Text
+  specsTable    Json?
+  specsTableAr  Json?
+  location      String?
+  locationAr    String?
+  state         ContentState @default(PUBLISHED)
+  sortOrder     Int          @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model SocialLink {
+  id        String  @id @default(cuid())
+  platform  String
+  url       String
+  icon      String?
+  sortOrder Int     @default(0)
+  isActive  Boolean @default(true)
+}
+
+model SiteSettings {
+  id                String  @id @default("1")
+  homeIntroTitle    String
+  homeIntroTitleAr  String?
+  homeIntroBody     String  @db.Text
+  homeIntroBodyAr   String? @db.Text
+  directorName      String
+  directorPhotoUrl  String?
+  directorMessage   String  @db.Text
+  directorMessageAr String? @db.Text
+  contactAddress    String?
+  contactAddressAr  String?
+  contactEmail      String?
+  contactPhone      String?
+  mapEmbedUrl       String?
+
+  updatedAt DateTime @updatedAt
+}
+
+model HomeMedia {
+  id        String        @id @default(cuid())
+  type      HomeMediaType @default(IMAGE)
+  url       String
+  caption   String?
+  captionAr String?
+  sortOrder Int           @default(0)
+  isActive  Boolean       @default(true)
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
