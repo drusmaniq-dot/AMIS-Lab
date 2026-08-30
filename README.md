@@ -22,10 +22,9 @@ Stack: Next.js 16 (App Router) · TypeScript · Prisma 7 + PostgreSQL · NextAut
    ```bash
    npx prisma migrate dev
    ```
-4. Seed demo data (creates an admin account from `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` in `.env`, plus sample People/Projects/Publications/etc.):
-   ```bash
-   npx prisma db seed
-   ```
+4. Load data. Two options:
+   - **Real site content** (recommended — every person, project, and all 712 publications, exactly as they exist on the live site): `npx tsx database/seed.ts`. See `database/README.md`.
+   - **Generic demo data** (creates an admin account from `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` in `.env`, plus placeholder People/Projects/Publications): `npx prisma db seed`.
 5. Start the dev server:
    ```bash
    npm run dev
@@ -42,7 +41,7 @@ Controlled by `STORAGE_DRIVER` in `.env`:
 - `app/(public)/` — public site (Home, People, Projects, Publications, Digital Tools, Services, Equipment, Contact, login/register).
 - `app/dashboard/` — logged-in Member area (own profile, own Projects/Publications).
 - `app/admin/` — Admin-only area (approvals, full content CRUD, site settings, user management).
-- `prisma/schema.prisma` — data model. `prisma/seed.ts` — demo data.
+- `prisma/schema.prisma` — data model. `prisma/seed.ts` — generic demo data. `database/` — real site content snapshot (see `database/README.md`).
 - `lib/auth.ts`, `lib/permissions.ts` — auth config and role/ownership checks used by every Server Action.
 - `lib/storage.ts` — pluggable file upload driver (local/S3).
 - `proxy.ts` — coarse-grained route protection for `/admin` and `/dashboard` (Next.js 16 renamed `middleware.ts` to `proxy.ts`).
