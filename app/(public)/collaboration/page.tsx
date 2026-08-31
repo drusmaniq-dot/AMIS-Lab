@@ -22,6 +22,7 @@ const TIER_OVERRIDES: Record<string, number> = {
   "Dr. Khalid Ibrahim Hussein Ibrahim": 0.5,
   "Reem Dhafer Alshehri": 0.55,
   "Prof. Dr. Alaa Dahshan": 0.6,
+  "Elham Fahad Alkhammash": 1.9,
 };
 
 function shortTitle(titleOrRole: string): string {

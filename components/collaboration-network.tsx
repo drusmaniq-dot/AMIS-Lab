@@ -36,11 +36,12 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0.55: { y: 620, xs: [900] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
   0.6: { y: 620, xs: [220] }, // Dahshan — raised to Khalid's level
   0.9: { y: 900, xs: [60] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
-  1: { y: 900, xs: [880] }, // Hany, pushed out to the far right
-  1.1: { y: 1050, xs: [820] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
+  1: { y: 900, xs: [650] }, // Hany — pulled back in toward the center
+  1.1: { y: 1050, xs: [600] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
   1.3: { y: 1050, xs: [120] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
-  1.7: { y: 1050, xs: [950] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
-  2: { y: 1340, xs: [280, 720] }, // Remaining students (Reem moved up to sit by Khalid)
+  1.7: { y: 1050, xs: [780] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
+  1.9: { y: 1340, xs: [900] }, // Elham Fahad Alkhammash — directly under Reem
+  2: { y: 1340, xs: [350] }, // Remaining student (Asiri)
 };
 
 function layout(nodes: CollaborationNode[]): Map<string, { x: number; y: number }> {
@@ -154,7 +155,11 @@ function routeEdges(edges: CollaborationEdge[], nodes: CollaborationNode[], pos:
       if (!p) return false;
       return Math.hypot(p.x - mx, p.y - my) < NODE_R + 70;
     });
-    const minDepth = blockedByNode ? 240 : 60;
+    // A flat 60px floor made short-distance edges (e.g. Hany to his own
+    // collaborators, who sit close by) read as nearly straight lines — scale
+    // the floor off the edge's own length so every connection gets a visibly
+    // curved, "expanded" bow regardless of how close its two nodes are.
+    const minDepth = blockedByNode ? 240 : Math.max(110, len * 0.35);
 
     // Candidate bows: both directions, a spread of depths. Filter out any that
     // still clip a third node's circle, then keep whichever candidate crosses
