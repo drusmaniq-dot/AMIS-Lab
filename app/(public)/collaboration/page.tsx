@@ -20,6 +20,7 @@ const CATEGORY_TIER: Record<string, number> = {
 // to the center — a deliberate visual break from the flat per-category tiering.
 const TIER_OVERRIDES: Record<string, number> = {
   "Dr. Khalid Ibrahim Hussein Ibrahim": 0.5,
+  "Prof. Dr. Alaa Dahshan": 0.6,
 };
 
 function shortTitle(titleOrRole: string): string {
