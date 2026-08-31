@@ -63,10 +63,25 @@ function layout(nodes: CollaborationNode[]): Map<string, { x: number; y: number 
   return positions;
 }
 
-// Distinct hue per edge (from the brand palette) plus a varied curve depth,
-// both derived from a stable hash of the edge's node pair — keeps crossing
-// lines visually distinguishable instead of blurring into one dark mass.
-const EDGE_COLORS = ["#001041", "#10a2a4", "#c82c39", "#1c66a1", "#6eaa02"];
+// Connection strength reads directly as color, not just line thickness — every
+// edge in a bin shares one color, explained in the legend rendered below the
+// diagram. Ramps from neutral gray (barely-there links) through brand teal/
+// blue/green to gold/orange/red (the strongest handful of collaborations).
+const VALUE_BINS: { max: number; color: string; label: string }[] = [
+  { max: 2, color: "#cbd5e1", label: "1–2" },
+  { max: 5, color: "#94a3b8", label: "3–5" },
+  { max: 10, color: "#10a2a4", label: "6–10" },
+  { max: 15, color: "#1c66a1", label: "11–15" },
+  { max: 25, color: "#6eaa02", label: "16–25" },
+  { max: 30, color: "#eab308", label: "26–30" },
+  { max: 33, color: "#f97316", label: "31–33" },
+  { max: 40, color: "#c82c39", label: "34–40" },
+  { max: Infinity, color: "#7c1d2e", label: "41+" },
+];
+
+function colorForCount(count: number): string {
+  return (VALUE_BINS.find((b) => count <= b.max) ?? VALUE_BINS[VALUE_BINS.length - 1]).color;
+}
 
 function hashPair(id: string): number {
   let h = 0;
@@ -110,6 +125,15 @@ function polylineCrossings(a: Pt[], b: Pt[]): number {
   return count;
 }
 
+// Approximate bounding box of a node's name+title text below its photo —
+// treated as a keep-clear zone so lines don't route straight through it.
+function nameZoneHit(p: Pt, pt: Pt): boolean {
+  return pt.x > p.x - 95 && pt.x < p.x + 95 && pt.y > p.y + NODE_R + 6 && pt.y < p.y + NODE_R + 50;
+}
+
+const LABEL_R = 16;
+const LABEL_GAP = 40; // minimum center-to-center distance between two edge-value labels
+
 interface RoutedEdge {
   key: string;
   count: number;
@@ -124,20 +148,37 @@ interface RoutedEdge {
 // Greedy edge routing: process the strongest (most-cited) connections first so
 // they get the straightest, cleanest paths, then route each remaining edge by
 // trying several bow directions/depths and picking whichever crosses the fewest
-// already-placed edges — a practical crossing-minimization heuristic rather
-// than pure per-edge randomization.
+// already-placed edges and avoids every node's name text — a practical
+// crossing-minimization heuristic rather than pure per-edge randomization.
+// Once a line's shape is settled, its value-label is placed at whichever point
+// along that same curve is clearest of every other already-placed label,
+// rather than always sitting dead-center.
 function routeEdges(edges: CollaborationEdge[], nodes: CollaborationNode[], pos: Map<string, Pt>): RoutedEdge[] {
   const real = edges.filter((e) => e.count > 0).sort((a, b) => b.count - a.count);
-  const placed: Pt[][] = [];
+  const placedCurves: Pt[][] = [];
+  const placedLabels: Pt[] = [];
   const routed: RoutedEdge[] = [];
+
+  const hitsNode = (pt: Pt, excludeIds: string[], margin: number) =>
+    nodes.some((n) => {
+      if (excludeIds.includes(n.id)) return false;
+      const p = pos.get(n.id);
+      return p ? Math.hypot(pt.x - p.x, pt.y - p.y) < NODE_R + margin : false;
+    });
+  const hitsNameZone = (pt: Pt, excludeIds: string[]) =>
+    nodes.some((n) => {
+      if (excludeIds.includes(n.id)) return false;
+      const p = pos.get(n.id);
+      return p ? nameZoneHit(p, pt) : false;
+    });
 
   for (const e of real) {
     const a = pos.get(e.fromId);
     const b = pos.get(e.toId);
     if (!a || !b) continue;
     const key = `${e.fromId}-${e.toId}`;
-    const h = hashPair(key);
-    const color = EDGE_COLORS[h % EDGE_COLORS.length];
+    const excludeIds = [e.fromId, e.toId];
+    const color = colorForCount(e.count);
     const lineOpacity = e.count >= 10 ? 0.8 : 0.15 + ((e.count - 1) / 8) * 0.55;
     const labelOpacity = e.count >= 10 ? 1 : 0.45 + ((e.count - 1) / 8) * 0.55;
 
@@ -150,56 +191,75 @@ function routeEdges(edges: CollaborationEdge[], nodes: CollaborationNode[], pos:
     const my = (a.y + b.y) / 2;
 
     const blockedByNode = nodes.some((n) => {
-      if (n.id === e.fromId || n.id === e.toId) return false;
+      if (excludeIds.includes(n.id)) return false;
       const p = pos.get(n.id);
-      if (!p) return false;
-      return Math.hypot(p.x - mx, p.y - my) < NODE_R + 70;
+      return p ? Math.hypot(p.x - mx, p.y - my) < NODE_R + 70 : false;
     });
-    // A flat 60px floor made short-distance edges (e.g. Hany to his own
-    // collaborators, who sit close by) read as nearly straight lines — scale
-    // the floor off the edge's own length so every connection gets a visibly
-    // curved, "expanded" bow regardless of how close its two nodes are.
-    const minDepth = blockedByNode ? 240 : Math.max(110, len * 0.35);
-
-    // Candidate bows: both directions, a spread of depths. Filter out any that
-    // still clip a third node's circle, then keep whichever candidate crosses
-    // the fewest already-routed edges.
+    // A flat depth floor made short-distance edges (e.g. two people who sit
+    // right next to each other, with no one between them) read as nearly
+    // straight lines far shorter than every other connection — scale the
+    // floor inversely with the edge's own length so short and long
+    // connections both end up with a comparably "expanded" rendered arc.
+    const minDepth = blockedByNode ? 240 : Math.max(130, 320 - len * 0.6);
     const depths = [minDepth, minDepth + 60, minDepth + 130, minDepth + 220];
+
     let best: { control: Pt; curve: Pt[]; crossings: number } | null = null;
     for (const sign of [1, -1]) {
       for (const depth of depths) {
         const control = { x: mx + nx * depth * sign, y: my + ny * depth * sign };
         const curve = sampleCurve(a, control, b);
-        const clipsThirdNode = nodes.some((n) => {
-          if (n.id === e.fromId || n.id === e.toId) return false;
-          const p = pos.get(n.id);
-          if (!p) return false;
-          return curve.some((pt) => Math.hypot(pt.x - p.x, pt.y - p.y) < NODE_R + 6);
-        });
-        if (clipsThirdNode) continue;
-        const crossings = placed.reduce((sum, other) => sum + polylineCrossings(curve, other), 0);
+        const invalid = curve.some((pt) => hitsNode(pt, excludeIds, 6) || hitsNameZone(pt, excludeIds));
+        if (invalid) continue;
+        const crossings = placedCurves.reduce((sum, other) => sum + polylineCrossings(curve, other), 0);
         if (!best || crossings < best.crossings || (crossings === best.crossings && depth < Math.hypot(best.control.x - mx, best.control.y - my))) {
           best = { control, curve, crossings };
         }
       }
     }
-    // Every candidate clipped a node (rare, dense layouts only) — fall back to
-    // the deepest bow, which is the least likely to still clip anything.
+    // Every candidate clipped something (rare, dense layouts only) — fall
+    // back to the deepest bow, least likely to still clip anything.
     if (!best) {
       const depth = minDepth + 220;
       const control = { x: mx + nx * depth, y: my + ny * depth };
       best = { control, curve: sampleCurve(a, control, b), crossings: 0 };
     }
+    placedCurves.push(best.curve);
 
-    placed.push(best.curve);
+    // Label placement: search points along the finished curve for one that
+    // doesn't collide with any label already placed by a stronger connection,
+    // preferring positions closest to the curve's midpoint.
     const { control } = best;
+    const tCandidates = [0.5, 0.42, 0.58, 0.34, 0.66, 0.25, 0.75, 0.18, 0.82];
+    let labelPt: Pt = quadPoint(a, control, b, 0.5);
+    for (const t of tCandidates) {
+      const candidate = quadPoint(a, control, b, t);
+      const clashesLabel = placedLabels.some((l) => Math.hypot(l.x - candidate.x, l.y - candidate.y) < LABEL_GAP);
+      const clashesNode = hitsNode(candidate, excludeIds, LABEL_R + 4) || hitsNameZone(candidate, excludeIds);
+      if (!clashesLabel && !clashesNode) {
+        labelPt = candidate;
+        break;
+      }
+    }
+    placedLabels.push(labelPt);
+
     const path = `M ${a.x} ${a.y} Q ${control.x} ${control.y}, ${b.x} ${b.y}`;
-    const labelX = 0.25 * a.x + 0.5 * control.x + 0.25 * b.x;
-    const labelY = 0.25 * a.y + 0.5 * control.y + 0.25 * b.y;
-    routed.push({ key, count: e.count, color, path, labelX, labelY, lineOpacity, labelOpacity });
+    routed.push({ key, count: e.count, color, path, labelX: labelPt.x, labelY: labelPt.y, lineOpacity, labelOpacity });
   }
 
   return routed;
+}
+
+function Legend() {
+  return (
+    <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+      {VALUE_BINS.map((bin) => (
+        <div key={bin.label} className="flex items-center gap-1.5">
+          <span className="inline-block size-3 rounded-full" style={{ backgroundColor: bin.color }} />
+          <span className="text-xs text-muted-foreground">{bin.label}</span>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export function CollaborationNetwork({
@@ -225,12 +285,14 @@ export function CollaborationNetwork({
         {/* Edges — only real connections are drawn (zero-count pairs add pure
             clutter with no information). Routed by routeEdges(): strongest
             connections first with the straightest paths, each remaining edge
-            greedily bowed to cross as few already-placed edges as possible. */}
+            greedily bowed to cross as few already-placed edges as possible,
+            with its value-label independently placed to avoid every other
+            label and every node's name text. */}
         {routedEdges.map((e) => (
           <g key={e.key}>
             <path d={e.path} fill="none" stroke={e.color} strokeOpacity={e.lineOpacity} strokeWidth={2 + Math.min(e.count, 30) / 6} />
             <g transform={`translate(${e.labelX}, ${e.labelY})`} opacity={e.labelOpacity}>
-              <circle r={16} fill={e.color} />
+              <circle r={LABEL_R} fill={e.color} />
               <text textAnchor="middle" dominantBaseline="central" className="fill-white text-[15px] font-bold">
                 {e.count}
               </text>
@@ -261,6 +323,9 @@ export function CollaborationNetwork({
               ) : (
                 <circle cx={p.x} cy={p.y} r={NODE_R} className="fill-muted" />
               )}
+              {/* Solid backing behind the name/title so a routed line that still
+                  brushes this zone never visually cuts through the text. */}
+              <rect x={p.x - 95} y={p.y + NODE_R + 6} width={190} height={44} rx={6} className="fill-background" />
               <text x={p.x} y={p.y + NODE_R + 24} textAnchor="middle" className="fill-foreground text-[14px] font-semibold">
                 {n.name}
               </text>
@@ -272,6 +337,7 @@ export function CollaborationNetwork({
         })}
       </svg>
 
+      <Legend />
       <p className="mt-2 text-center text-xs text-muted-foreground">{dict.papersLabel}</p>
     </div>
   );
