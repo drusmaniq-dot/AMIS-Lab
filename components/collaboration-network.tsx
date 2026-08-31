@@ -21,7 +21,7 @@ export interface CollaborationNetworkDict {
 }
 
 const VIEW_W = 1000;
-const VIEW_H = 920;
+const VIEW_H = 1330;
 const NODE_R = 52;
 
 // Hand-placed layout: director top-center, research team spread across the
@@ -30,10 +30,15 @@ const NODE_R = 52;
 // apart — enough room for the node diameter (104) plus per-node jitter (±20
 // each side) plus label text below each node — so adjacent tiers never overlap.
 const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
-  0: { y: 110, xs: [150, 500, 850] },
-  0.5: { y: 330, xs: [720] },
-  1: { y: 550, xs: [220, 420] },
-  2: { y: 770, xs: [200, 500, 800] },
+  0.1: { y: 90, xs: [380, 620] }, // Manuela Reben & Essam Ramadan Shaaban — Yousef's top external collaborators, directly above him
+  0: { y: 280, xs: [150, 500, 850] },
+  0.5: { y: 500, xs: [720] }, // Khalid
+  0.9: { y: 720, xs: [60] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
+  1: { y: 720, xs: [220, 420] },
+  1.1: { y: 720, xs: [650] }, // Ehab Mahmoud Mohamed — Hany's collaborator, right of Hany
+  1.3: { y: 870, xs: [120] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
+  1.7: { y: 870, xs: [800] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of Hany
+  2: { y: 1160, xs: [200, 500, 800] },
 };
 
 function layout(nodes: CollaborationNode[]): Map<string, { x: number; y: number }> {

@@ -7199,7 +7199,7 @@
     "venue": "Materials 16 (15)",
     "year": 2023,
     "type": "JOURNAL",
-    "doiOrLink": null,
+    "doiOrLink": "https://doi.org/10.3390/ma16155501",
     "abstract": null,
     "abstractAr": null,
     "keywords": [
@@ -7212,7 +7212,7 @@
     "reviewedAt": "2026-08-25T07:59:23.345Z",
     "rejectionReason": null,
     "createdAt": "2026-08-25T07:59:23.345Z",
-    "updatedAt": "2026-08-25T19:37:49.265Z"
+    "updatedAt": "2026-08-31T11:05:42.623Z"
   },
   {
     "id": "cmt8djb9u0029ckuz3h0lkl0o",
@@ -13976,7 +13976,7 @@
     "venue": "Ceramics International 50 (19)",
     "year": 2024,
     "type": "JOURNAL",
-    "doiOrLink": null,
+    "doiOrLink": "https://doi.org/10.1016/j.ceramint.2024.07.046",
     "abstract": null,
     "abstractAr": null,
     "keywords": [
@@ -13989,7 +13989,7 @@
     "reviewedAt": "2026-08-25T07:59:23.824Z",
     "rejectionReason": null,
     "createdAt": "2026-08-25T07:59:23.824Z",
-    "updatedAt": "2026-08-25T19:45:54.705Z"
+    "updatedAt": "2026-08-31T11:05:42.789Z"
   },
   {
     "id": "cmt8djbn5008yckuznpzb6t8s",
@@ -15031,7 +15031,7 @@
     "venue": "The European Physical Journal Plus 140 (3)",
     "year": 2025,
     "type": "JOURNAL",
-    "doiOrLink": null,
+    "doiOrLink": "https://doi.org/10.1140/epjp/s13360-025-06150-1",
     "abstract": null,
     "abstractAr": null,
     "keywords": [
@@ -15043,7 +15043,7 @@
     "reviewedAt": "2026-08-25T07:59:23.896Z",
     "rejectionReason": null,
     "createdAt": "2026-08-25T07:59:23.896Z",
-    "updatedAt": "2026-08-25T19:45:54.477Z"
+    "updatedAt": "2026-08-31T11:05:42.794Z"
   },
   {
     "id": "cmt8djbp600a0ckuzn7ft7ibc",
@@ -16650,7 +16650,7 @@
     "venue": "IEEE Access 12, 6298-6317",
     "year": 2024,
     "type": "JOURNAL",
-    "doiOrLink": null,
+    "doiOrLink": "https://doi.org/10.1109/access.2024.3351106",
     "abstract": null,
     "abstractAr": null,
     "keywords": [],
@@ -16660,7 +16660,7 @@
     "reviewedAt": "2026-08-25T16:27:57.013Z",
     "rejectionReason": null,
     "createdAt": "2026-08-25T16:27:57.014Z",
-    "updatedAt": "2026-08-25T19:32:37.007Z"
+    "updatedAt": "2026-08-31T11:05:42.802Z"
   },
   {
     "id": "cmt8vpbrw00052kuzwrplm8oa",
@@ -18359,7 +18359,7 @@
     "venue": "Cluster Computing 29 (6), 336",
     "year": 2026,
     "type": "JOURNAL",
-    "doiOrLink": null,
+    "doiOrLink": "https://doi.org/10.1007/s10586-026-06112-x",
     "abstract": null,
     "abstractAr": null,
     "keywords": [],
@@ -18369,7 +18369,7 @@
     "reviewedAt": "2026-08-25T16:27:57.446Z",
     "rejectionReason": null,
     "createdAt": "2026-08-25T16:27:57.447Z",
-    "updatedAt": "2026-08-25T19:32:37.409Z"
+    "updatedAt": "2026-08-31T11:05:42.798Z"
   },
   {
     "id": "cmt8vpc3x001z2kuzu4c9iag5",
