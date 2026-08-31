@@ -33,13 +33,14 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0.1: { y: 90, xs: [380, 620] }, // Manuela Reben & Essam Ramadan Shaaban — Yousef's top external collaborators, directly above him
   0: { y: 280, xs: [150, 500, 850] },
   0.5: { y: 620, xs: [500] }, // Khalid — directly under Yousef, pushed well down for clearer connections
+  0.55: { y: 620, xs: [900] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
   0.6: { y: 620, xs: [220] }, // Dahshan — raised to Khalid's level
   0.9: { y: 900, xs: [60] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
   1: { y: 900, xs: [880] }, // Hany, pushed out to the far right
   1.1: { y: 1050, xs: [820] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
   1.3: { y: 1050, xs: [120] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
   1.7: { y: 1050, xs: [950] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
-  2: { y: 1340, xs: [200, 500, 800] },
+  2: { y: 1340, xs: [280, 720] }, // Remaining students (Reem moved up to sit by Khalid)
 };
 
 function layout(nodes: CollaborationNode[]): Map<string, { x: number; y: number }> {
