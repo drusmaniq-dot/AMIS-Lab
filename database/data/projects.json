@@ -396,5 +396,31 @@
     "rejectionReason": null,
     "createdAt": "2026-08-29T22:03:19.294Z",
     "updatedAt": "2026-08-29T22:03:19.294Z"
+  },
+  {
+    "id": "cmth3atul0000lcuzo1loexdw",
+    "title": "Strategies Application of Light Phosphors Source Use in Plant Growth",
+    "titleAr": null,
+    "slug": "strategies-application-of-light-phosphors-source-use-in-plant-growth",
+    "summary": "Applied research into light phosphor sources for optimizing plant-growth lighting, conducted through King Khalid University's Central Labs.",
+    "summaryAr": null,
+    "description": "Applied research into light phosphor sources for optimizing plant-growth lighting, conducted through King Khalid University's Central Labs (KKU Central Labs).",
+    "descriptionAr": null,
+    "phase": "ONGOING",
+    "projectNumber": null,
+    "investigator": "Principal Investigator: Prof. Dr. El Sayed Yousef",
+    "coverImageUrl": null,
+    "imageUrls": [],
+    "externalUrl": null,
+    "tags": [
+      "optic-glasses"
+    ],
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-31T10:22:46.943Z",
+    "updatedAt": "2026-08-31T10:22:46.943Z"
   }
 ]

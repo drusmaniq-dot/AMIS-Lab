@@ -106,10 +106,20 @@ export function CollaborationNetwork({
             const len = Math.sqrt(dx * dx + dy * dy) || 1;
             const nx = -dy / len;
             const ny = dx / len;
-            const depth = 35 + (h % 4) * 22;
             const sign = h % 2 === 0 ? 1 : -1;
             const mx = (a.x + b.x) / 2;
             const my = (a.y + b.y) / 2;
+            // A third node sitting near the straight-line midpoint (e.g. the
+            // Director centered between two flanking collaborators) needs a much
+            // deeper bow, or the curve's own midpoint still lands inside that
+            // node's circle and its value-label ends up hidden underneath it.
+            const blockedByNode = nodes.some((n) => {
+              if (n.id === e.fromId || n.id === e.toId) return false;
+              const p = pos.get(n.id);
+              if (!p) return false;
+              return Math.hypot(p.x - mx, p.y - my) < NODE_R + 70;
+            });
+            const depth = (blockedByNode ? 260 : 75) + (h % 4) * 35;
             const cx = mx + nx * depth * sign;
             const cyy = my + ny * depth * sign;
             const path = `M ${a.x} ${a.y} Q ${cx} ${cyy}, ${b.x} ${b.y}`;
