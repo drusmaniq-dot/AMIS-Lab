@@ -21,24 +21,24 @@ export interface CollaborationNetworkDict {
 }
 
 const VIEW_W = 1000;
-const VIEW_H = 1330;
+const VIEW_H = 1500;
 const NODE_R = 52;
 
 // Hand-placed layout: director top-center, research team spread across the
 // middle row, student offset off-center at the bottom so no straight edge
-// between two other nodes happens to pass through it. Tiers are spaced ~220px
-// apart — enough room for the node diameter (104) plus per-node jitter (±20
-// each side) plus label text below each node — so adjacent tiers never overlap.
+// between two other nodes happens to pass through it. Khalid sits well below
+// Yousef's row (300px) so the dense Yousef/MS Alqahtani/Fawaz/Khalid bundle of
+// connections has room to breathe instead of bunching immediately underneath.
 const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0.1: { y: 90, xs: [380, 620] }, // Manuela Reben & Essam Ramadan Shaaban — Yousef's top external collaborators, directly above him
   0: { y: 280, xs: [150, 500, 850] },
-  0.5: { y: 500, xs: [720] }, // Khalid
-  0.9: { y: 720, xs: [60] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
-  1: { y: 720, xs: [220, 420] },
-  1.1: { y: 720, xs: [650] }, // Ehab Mahmoud Mohamed — Hany's collaborator, right of Hany
-  1.3: { y: 870, xs: [120] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
-  1.7: { y: 870, xs: [800] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of Hany
-  2: { y: 1160, xs: [200, 500, 800] },
+  0.5: { y: 620, xs: [500] }, // Khalid — directly under Yousef, pushed well down for clearer connections
+  0.9: { y: 900, xs: [60] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
+  1: { y: 900, xs: [220, 880] }, // Dahshan stays left; Hany pushed out to the far right
+  1.1: { y: 1050, xs: [820] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
+  1.3: { y: 1050, xs: [120] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
+  1.7: { y: 1050, xs: [950] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
+  2: { y: 1340, xs: [200, 500, 800] },
 };
 
 function layout(nodes: CollaborationNode[]): Map<string, { x: number; y: number }> {
@@ -71,6 +71,130 @@ function hashPair(id: string): number {
   return h;
 }
 
+type Pt = { x: number; y: number };
+
+function quadPoint(a: Pt, c: Pt, b: Pt, t: number): Pt {
+  const u = 1 - t;
+  return {
+    x: u * u * a.x + 2 * u * t * c.x + t * t * b.x,
+    y: u * u * a.y + 2 * u * t * c.y + t * t * b.y,
+  };
+}
+
+function sampleCurve(a: Pt, c: Pt, b: Pt, n = 16): Pt[] {
+  const pts: Pt[] = [];
+  for (let i = 0; i <= n; i++) pts.push(quadPoint(a, c, b, i / n));
+  return pts;
+}
+
+// Standard segment-segment intersection test (cross-product orientation method).
+function segmentsCross(p1: Pt, p2: Pt, p3: Pt, p4: Pt): boolean {
+  const d = (ax: Pt, bx: Pt, cx: Pt) => (bx.x - ax.x) * (cx.y - ax.y) - (bx.y - ax.y) * (cx.x - ax.x);
+  const d1 = d(p3, p4, p1);
+  const d2 = d(p3, p4, p2);
+  const d3 = d(p1, p2, p3);
+  const d4 = d(p1, p2, p4);
+  return ((d1 > 0 && d2 < 0) || (d1 < 0 && d2 > 0)) && ((d3 > 0 && d4 < 0) || (d3 < 0 && d4 > 0));
+}
+
+function polylineCrossings(a: Pt[], b: Pt[]): number {
+  let count = 0;
+  for (let i = 0; i < a.length - 1; i++) {
+    for (let j = 0; j < b.length - 1; j++) {
+      if (segmentsCross(a[i], a[i + 1], b[j], b[j + 1])) count++;
+    }
+  }
+  return count;
+}
+
+interface RoutedEdge {
+  key: string;
+  count: number;
+  color: string;
+  path: string;
+  labelX: number;
+  labelY: number;
+  lineOpacity: number;
+  labelOpacity: number;
+}
+
+// Greedy edge routing: process the strongest (most-cited) connections first so
+// they get the straightest, cleanest paths, then route each remaining edge by
+// trying several bow directions/depths and picking whichever crosses the fewest
+// already-placed edges — a practical crossing-minimization heuristic rather
+// than pure per-edge randomization.
+function routeEdges(edges: CollaborationEdge[], nodes: CollaborationNode[], pos: Map<string, Pt>): RoutedEdge[] {
+  const real = edges.filter((e) => e.count > 0).sort((a, b) => b.count - a.count);
+  const placed: Pt[][] = [];
+  const routed: RoutedEdge[] = [];
+
+  for (const e of real) {
+    const a = pos.get(e.fromId);
+    const b = pos.get(e.toId);
+    if (!a || !b) continue;
+    const key = `${e.fromId}-${e.toId}`;
+    const h = hashPair(key);
+    const color = EDGE_COLORS[h % EDGE_COLORS.length];
+    const lineOpacity = e.count >= 10 ? 0.8 : 0.15 + ((e.count - 1) / 8) * 0.55;
+    const labelOpacity = e.count >= 10 ? 1 : 0.45 + ((e.count - 1) / 8) * 0.55;
+
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const len = Math.sqrt(dx * dx + dy * dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
+    const mx = (a.x + b.x) / 2;
+    const my = (a.y + b.y) / 2;
+
+    const blockedByNode = nodes.some((n) => {
+      if (n.id === e.fromId || n.id === e.toId) return false;
+      const p = pos.get(n.id);
+      if (!p) return false;
+      return Math.hypot(p.x - mx, p.y - my) < NODE_R + 70;
+    });
+    const minDepth = blockedByNode ? 240 : 60;
+
+    // Candidate bows: both directions, a spread of depths. Filter out any that
+    // still clip a third node's circle, then keep whichever candidate crosses
+    // the fewest already-routed edges.
+    const depths = [minDepth, minDepth + 60, minDepth + 130, minDepth + 220];
+    let best: { control: Pt; curve: Pt[]; crossings: number } | null = null;
+    for (const sign of [1, -1]) {
+      for (const depth of depths) {
+        const control = { x: mx + nx * depth * sign, y: my + ny * depth * sign };
+        const curve = sampleCurve(a, control, b);
+        const clipsThirdNode = nodes.some((n) => {
+          if (n.id === e.fromId || n.id === e.toId) return false;
+          const p = pos.get(n.id);
+          if (!p) return false;
+          return curve.some((pt) => Math.hypot(pt.x - p.x, pt.y - p.y) < NODE_R + 6);
+        });
+        if (clipsThirdNode) continue;
+        const crossings = placed.reduce((sum, other) => sum + polylineCrossings(curve, other), 0);
+        if (!best || crossings < best.crossings || (crossings === best.crossings && depth < Math.hypot(best.control.x - mx, best.control.y - my))) {
+          best = { control, curve, crossings };
+        }
+      }
+    }
+    // Every candidate clipped a node (rare, dense layouts only) — fall back to
+    // the deepest bow, which is the least likely to still clip anything.
+    if (!best) {
+      const depth = minDepth + 220;
+      const control = { x: mx + nx * depth, y: my + ny * depth };
+      best = { control, curve: sampleCurve(a, control, b), crossings: 0 };
+    }
+
+    placed.push(best.curve);
+    const { control } = best;
+    const path = `M ${a.x} ${a.y} Q ${control.x} ${control.y}, ${b.x} ${b.y}`;
+    const labelX = 0.25 * a.x + 0.5 * control.x + 0.25 * b.x;
+    const labelY = 0.25 * a.y + 0.5 * control.y + 0.25 * b.y;
+    routed.push({ key, count: e.count, color, path, labelX, labelY, lineOpacity, labelOpacity });
+  }
+
+  return routed;
+}
+
 export function CollaborationNetwork({
   nodes,
   edges,
@@ -81,7 +205,7 @@ export function CollaborationNetwork({
   dict: CollaborationNetworkDict;
 }) {
   const pos = layout(nodes);
-  const byId = new Map(nodes.map((n) => [n.id, n]));
+  const routedEdges = routeEdges(edges, nodes, pos);
 
   return (
     <div className="w-full overflow-x-auto">
@@ -92,64 +216,20 @@ export function CollaborationNetwork({
         aria-label={dict.director + ", " + dict.researchTeam + ", " + dict.students}
       >
         {/* Edges — only real connections are drawn (zero-count pairs add pure
-            clutter with no information). Every edge bows out perpendicular to
-            its own line direction, by a hash-varied depth alternating sides —
-            not just same-row edges — so no line or its value-label ever sits
-            hidden directly under a node or another edge's label. */}
-        {edges
-          .filter((e) => e.count > 0)
-          .map((e) => {
-            const a = pos.get(e.fromId);
-            const b = pos.get(e.toId);
-            if (!a || !b) return null;
-            const key = `${e.fromId}-${e.toId}`;
-            const h = hashPair(key);
-            const color = EDGE_COLORS[h % EDGE_COLORS.length];
-
-            const dx = b.x - a.x;
-            const dy = b.y - a.y;
-            const len = Math.sqrt(dx * dx + dy * dy) || 1;
-            const nx = -dy / len;
-            const ny = dx / len;
-            const sign = h % 2 === 0 ? 1 : -1;
-            const mx = (a.x + b.x) / 2;
-            const my = (a.y + b.y) / 2;
-            // A third node sitting near the straight-line midpoint (e.g. the
-            // Director centered between two flanking collaborators) needs a much
-            // deeper bow, or the curve's own midpoint still lands inside that
-            // node's circle and its value-label ends up hidden underneath it.
-            const blockedByNode = nodes.some((n) => {
-              if (n.id === e.fromId || n.id === e.toId) return false;
-              const p = pos.get(n.id);
-              if (!p) return false;
-              return Math.hypot(p.x - mx, p.y - my) < NODE_R + 70;
-            });
-            const depth = (blockedByNode ? 260 : 75) + (h % 4) * 35;
-            const cx = mx + nx * depth * sign;
-            const cyy = my + ny * depth * sign;
-            const path = `M ${a.x} ${a.y} Q ${cx} ${cyy}, ${b.x} ${b.y}`;
-            // True midpoint of the quadratic bezier (t=0.5), so the label sits on the curve itself.
-            const labelX = 0.25 * a.x + 0.5 * cx + 0.25 * b.x;
-            const labelY = 0.25 * a.y + 0.5 * cyy + 0.25 * b.y;
-
-            return (
-              <g key={key}>
-                <path
-                  d={path}
-                  fill="none"
-                  stroke={color}
-                  strokeOpacity={0.8}
-                  strokeWidth={2 + Math.min(e.count, 30) / 6}
-                />
-                <g transform={`translate(${labelX}, ${labelY})`}>
-                  <circle r={16} fill={color} />
-                  <text textAnchor="middle" dominantBaseline="central" className="fill-white text-[15px] font-bold">
-                    {e.count}
-                  </text>
-                </g>
-              </g>
-            );
-          })}
+            clutter with no information). Routed by routeEdges(): strongest
+            connections first with the straightest paths, each remaining edge
+            greedily bowed to cross as few already-placed edges as possible. */}
+        {routedEdges.map((e) => (
+          <g key={e.key}>
+            <path d={e.path} fill="none" stroke={e.color} strokeOpacity={e.lineOpacity} strokeWidth={2 + Math.min(e.count, 30) / 6} />
+            <g transform={`translate(${e.labelX}, ${e.labelY})`} opacity={e.labelOpacity}>
+              <circle r={16} fill={e.color} />
+              <text textAnchor="middle" dominantBaseline="central" className="fill-white text-[15px] font-bold">
+                {e.count}
+              </text>
+            </g>
+          </g>
+        ))}
 
         {/* Nodes */}
         {nodes.map((n) => {
