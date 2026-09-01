@@ -93,7 +93,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: null,
     researchGateUrl: "https://www.researchgate.net/profile/Heba-Zahran-2",
     tier: 0.003,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   // International co-authors, verified via OpenAlex on their actual shared
   // papers (DOI 10.3390/ma15196518, 10.1088/1748-0221/16/07/t07004) — the
@@ -108,7 +108,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: "https://scholar.google.com/citations?user=pc2F-UUAAAAJ&hl=fr",
     researchGateUrl: null,
     tier: 0.0025,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-grelowska",
@@ -121,7 +121,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: null,
     researchGateUrl: null,
     tier: 0.0035,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   // Verified on the same paper — a frequent Fawaz Alqahtani co-author from
   // his own department (Radiological Sciences) not already in the diagram.
@@ -136,7 +136,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: null,
     researchGateUrl: null,
     tier: 0.004,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-reben",
@@ -199,7 +199,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: "https://scholar.google.com/citations?user=CUJhhWMAAAAJ&hl=en",
     researchGateUrl: null,
     tier: 0.9,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-mehta",
@@ -210,7 +210,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: "https://scholar.google.com/citations?user=2yXZa5MAAAAJ&hl=en",
     researchGateUrl: "https://www.researchgate.net/profile/Neeraj-Mehta-2",
     tier: 1.3,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-mohamed",
@@ -221,7 +221,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: "https://scholar.google.com/citations?user=6Do0A98AAAAJ&hl=en",
     researchGateUrl: "https://www.researchgate.net/profile/Ehab-Mohamed-2",
     tier: 1.1,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-ismeil",
@@ -232,7 +232,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: "https://scholar.google.com/citations?user=CaQNGjcAAAAJ&hl=en",
     researchGateUrl: null,
     tier: 1.7,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   // Both verified via Abdulaziz Ahmed Hadi Asiri's only paper on file (DOI
   // 10.69626/sag.2025.0207, confirmed via OpenAlex — all three at King
@@ -247,7 +247,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: null,
     researchGateUrl: "https://www.researchgate.net/profile/Akram-Ibrahim-17",
     tier: 1.95,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
   {
     id: "external-ali-alshehri",
@@ -258,7 +258,7 @@ const EXTERNAL_COLLABORATORS: {
     scholarUrl: null,
     researchGateUrl: "https://www.researchgate.net/profile/Ali-Alshehri-13",
     tier: 2.05,
-    includeInTierDiagram: true,
+    includeInTierDiagram: false,
   },
 ];
 

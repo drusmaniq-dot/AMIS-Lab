@@ -62,17 +62,17 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0.008: { y: 110, xs: [530] }, // Rongping Wang
   0.009: { y: 190, xs: [790] }, // Essam Ramadan Shaaban — placeholder, adjust freely
   0.5: { y: 790, xs: [460] }, // Khalid — directly under Yousef, pushed well down for clearer connections
-  0.55: { y: 900, xs: [980] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
+  0.55: { y: 800, xs: [950] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
   0.6: { y: 920, xs: [250] }, // Dahshan — raised to Khalid's level
   0.9: { y: 1250, xs: [200] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
-  1: { y: 950, xs: [680] }, // Hany — pulled back in toward the center
+  1: { y: 950, xs: [720] }, // Hany — pulled back in toward the center
   1.1: { y: 1210, xs: [725] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
   1.3: { y: 1120, xs: [490] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
   1.7: { y: 1150, xs: [950] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
-  1.9: { y: 800, xs: [150] }, // Elham Fahad Alkhammash — directly under Reem
+  1.9: { y: 780, xs: [120] }, // Elham Fahad Alkhammash — directly under Reem
   // Both verified via Asiri's only paper on file (DOI 10.69626/sag.2025.0207).
   1.95: { y: 1450, xs: [280] }, // Akram Ibrahim — flanking Asiri, left
-  2: { y: 1320, xs: [550] }, // Remaining student (Asiri)
+  2: { y: 1020, xs: [510] }, // Remaining student (Asiri)
   2.05: { y: 1050, xs: [50] }, // Ali M. Alshehri — flanking Asiri, right
 };
 
