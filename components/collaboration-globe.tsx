@@ -129,12 +129,32 @@ export function CollaborationGlobe({ nodes, edges }: { nodes: GlobeNode[]; edges
     })
     .filter((a): a is NonNullable<typeof a> => a !== null);
 
+  // Runs once `width` is set — that's the render right after <Globe> actually
+  // mounts and globeRef gets populated. The old empty-deps version fired on
+  // the wrapper's first mount, before width/Globe existed, so globeRef.current
+  // was always undefined and pointOfView() silently no-op'd via `?.`.
+  // `Globe` is a separate async chunk (next/dynamic) — it can still be
+  // unresolved for a moment after `width` becomes truthy, so globeRef.current
+  // may not exist yet on the very next tick. A single timeout can fire before
+  // that chunk finishes loading and silently no-op forever (no dependency
+  // change ever re-triggers it). Poll instead, so this fires the instant the
+  // ref is actually populated, however long that takes.
   useEffect(() => {
-    const id = setTimeout(() => {
-      globeRef.current?.pointOfView({ lat: 24, lng: 40, altitude: 2.6 }, 0);
-    }, 50);
-    return () => clearTimeout(id);
-  }, []);
+    if (!width) return;
+    let cancelled = false;
+    const trySetView = () => {
+      if (cancelled) return;
+      if (globeRef.current) {
+        globeRef.current.pointOfView({ lat: 32, lng: 50, altitude: 1.9 }, 0);
+      } else {
+        setTimeout(trySetView, 100);
+      }
+    };
+    trySetView();
+    return () => {
+      cancelled = true;
+    };
+  }, [width]);
 
   return (
     <div ref={containerRef} className="h-[600px] w-full overflow-hidden rounded-xl border bg-[#000814]">

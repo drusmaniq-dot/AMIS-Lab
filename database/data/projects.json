@@ -283,7 +283,8 @@
     "imageUrls": [],
     "externalUrl": null,
     "tags": [
-      "materials-science"
+      "materials-science",
+      "sustainability"
     ],
     "state": "PUBLISHED",
     "submittedById": null,
@@ -380,7 +381,7 @@
     "summaryAr": null,
     "description": "Study of magnetic bioglass-ceramics for hyperthermia application.",
     "descriptionAr": null,
-    "phase": "ONGOING",
+    "phase": "COMPLETED",
     "projectNumber": "RGP.2/586/44",
     "investigator": "Principal Investigator: Prof. Dr. El Sayed Yousef",
     "coverImageUrl": null,
@@ -413,7 +414,7 @@
     "imageUrls": [],
     "externalUrl": null,
     "tags": [
-      "optic-glasses"
+      "sustainability"
     ],
     "state": "PUBLISHED",
     "submittedById": null,

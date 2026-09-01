@@ -98,6 +98,7 @@ const en = {
     visitLink: "Visit project link",
     projectNumber: "Project No.",
     investigator: "Investigator",
+    otherDomain: "General Materials Research",
   },
   publications: {
     heading: "Publications",
@@ -411,6 +412,7 @@ const ar: Dictionary = {
     visitLink: "زيارة رابط المشروع",
     projectNumber: "رقم المشروع",
     investigator: "الباحث",
+    otherDomain: "أبحاث المواد العامة",
   },
   publications: {
     heading: "المنشورات",
