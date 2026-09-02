@@ -67,12 +67,21 @@ function markerEl(n: GlobeNode): HTMLElement {
   return el;
 }
 
-// Small deterministic offset so nodes sharing one city (most of the lab is at
-// KKU, Abha) fan out into a visible cluster instead of stacking on one point.
-function hashOffset(id: string, scale: number): number {
-  let h = 0;
-  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
-  return ((h % 1000) / 1000 - 0.5) * scale;
+// Nodes sharing one city (most of the lab is at KKU, Abha — currently 9
+// people) fan out into an evenly spaced ring around the real point instead of
+// stacking on it. A pure random jitter doesn't guarantee any minimum spacing
+// between two people, so with enough of them sharing one point some pairs
+// would still land close enough to overlap — a ring, sized to the cluster,
+// guarantees every face stays fully visible regardless of how many share it.
+function ringOffset(index: number, total: number): { dLat: number; dLng: number } {
+  if (total <= 1) return { dLat: 0, dLng: 0 };
+  // The default camera view spans a huge stretch of the globe (UK to China),
+  // so markers — a fixed 56px on screen regardless of zoom — need a wide
+  // geographic ring to read as separated faces rather than a solid blob at
+  // that zoom level, not just when a viewer scrolls in close.
+  const radiusDeg = 3.5 + total * 0.85;
+  const angle = (index / total) * 2 * Math.PI;
+  return { dLat: Math.sin(angle) * radiusDeg, dLng: Math.cos(angle) * radiusDeg };
 }
 
 const GLOBE_HEIGHT = 600;
@@ -101,14 +110,20 @@ export function CollaborationGlobe({ nodes, edges }: { nodes: GlobeNode[]; edges
     if (!byCity.has(key)) byCity.set(key, []);
     byCity.get(key)!.push(n);
   }
+  // Sort each cluster deterministically (by id) so the ring arrangement is
+  // stable across reloads instead of shuffling every render.
+  for (const list of byCity.values()) list.sort((a, b) => a.id.localeCompare(b.id));
 
   const points = nodes.map((n) => {
     const clusterMates = byCity.get(`${n.location.lat},${n.location.lng}`)!;
-    const spread = clusterMates.length > 1 ? 1.3 : 0;
+    const { dLat, dLng } = ringOffset(
+      clusterMates.findIndex((m) => m.id === n.id),
+      clusterMates.length
+    );
     return {
       ...n,
-      lat: n.location.lat + hashOffset(n.id, spread),
-      lng: n.location.lng + hashOffset(n.id + "lng", spread),
+      lat: n.location.lat + dLat,
+      lng: n.location.lng + dLng,
     };
   });
   const posById = new Map(points.map((p) => [p.id, p]));

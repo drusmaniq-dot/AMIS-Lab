@@ -146,11 +146,11 @@ export default async function HomePage() {
               <Image
                 src="/branding/hero-lockup.png"
                 alt="AMIS Lab — Advanced Materials, Innovation & Sustainability"
-                width={1132}
-                height={506}
+                width={1099}
+                height={1431}
                 unoptimized
                 priority
-                className="mx-auto h-24 w-auto sm:h-32"
+                className="mx-auto h-72 w-auto sm:h-96"
                 aria-hidden="true"
               />
             </h1>

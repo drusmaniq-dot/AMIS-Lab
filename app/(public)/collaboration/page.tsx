@@ -384,15 +384,18 @@ export default async function CollaborationPage() {
   const asiriEntity = allEntities.find((e) => e.fullName.includes("Asiri"));
   const forceVisibleKeys = asiriEntity ? new Set([`${asiriEntity.id}-external-akram-ibrahim`]) : undefined;
 
-  // --- Globe: everyone, placed at their real institutional location ---
+  // --- Globe: same people as the 2D tier diagram (tierIds), placed at their
+  // real institutional location — kept in sync so both views agree on who's
+  // shown rather than the globe including externals hidden from the diagram.
   const globeNodes: GlobeNode[] = allEntities
+    .filter((e) => tierIds.has(e.id))
     .map((e) => {
       const location = COLLABORATOR_LOCATIONS[e.fullName];
       if (!location) return null;
       return { id: e.id, name: e.name, title: e.title, photoUrl: e.photoUrl, location };
     })
     .filter((n): n is GlobeNode => n !== null);
-  const globeEdges: GlobeEdge[] = allEdges;
+  const globeEdges: GlobeEdge[] = tierEdges;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16">
