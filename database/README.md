@@ -44,3 +44,27 @@ intact.
 If the live database changes and you want to refresh this export, write a
 one-off script that queries each Prisma model and writes
 `database/data/<table>.json` — that's exactly how these files were produced.
+
+## Correcting a database that's already seeded
+
+`database/seed.ts`'s `skipDuplicates: true` inserts are safe to re-run, but
+they only insert rows that don't exist yet — they never update a row that's
+already there. So if a data mistake gets fixed here (in `data/*.json`, and
+in whichever local database this was developed against) *after* another
+database (e.g. Replit's) was already seeded from an older snapshot, pushing
+the corrected code and JSON to git does **not** fix that other database —
+Postgres content isn't part of a git push at all, only the code and this
+JSON export are. Re-running `database/seed.ts` there won't help either, for
+the reason above.
+
+The fix is a small one-off script that does a targeted `update`/`updateMany`
+by a stable field (title, email, etc. — not necessarily `id`, in case the two
+databases' ids ever diverge), committed alongside the code/JSON fix so it
+ships to every environment and can be run wherever the stale data lives:
+
+```bash
+npx tsx database/fix-project-phase-data.ts
+```
+
+That specific script corrects three `Project` rows (their `phase`/`tags`)
+that were wrong in the original bulk import. Safe to run more than once.
