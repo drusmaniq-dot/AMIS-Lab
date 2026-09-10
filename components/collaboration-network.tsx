@@ -59,6 +59,7 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0: { y: 430, xs: [500] }, // El Sayed Yousef — now the only one left on this tier
   0.002: { y: 400, xs: [850] }, // Fawaz Alqahtani — split out from tier 0, same spot as before
   0.007: { y: 180, xs: [250] }, // Manuela Reben
+  0.0075: { y: 300, xs: [400] }, // Kinga Kowalska — same institution as Reben, placed further below/beside her to clear both her photo and her multi-line title text
   0.008: { y: 110, xs: [530] }, // Rongping Wang
   0.009: { y: 190, xs: [790] }, // Essam Ramadan Shaaban — placeholder, adjust freely
   0.5: { y: 790, xs: [460] }, // Khalid — directly under Yousef, pushed well down for clearer connections

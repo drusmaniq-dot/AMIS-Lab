@@ -19946,5 +19946,35 @@
     "rejectionReason": null,
     "createdAt": "2026-08-30T03:57:02.778Z",
     "updatedAt": "2026-08-30T03:57:02.778Z"
+  },
+  {
+    "id": "cmtv3njwu0000dwuz7xsewisi",
+    "title": "Development and characterization of bioceramic bone cements modified with gold-doped phosphate bioglass",
+    "titleAr": null,
+    "authors": [
+      "KJ Kowalska",
+      "JP Czechowska",
+      "E. S. Yousef",
+      "A Zima"
+    ],
+    "venue": "Journal of Materials Science",
+    "year": 2025,
+    "type": "JOURNAL",
+    "doiOrLink": "https://doi.org/10.1007/s10853-025-11577-z",
+    "abstract": null,
+    "abstractAr": null,
+    "keywords": [
+      "Bioactive glass",
+      "Phosphate glass",
+      "Bone cement",
+      "Biomaterials"
+    ],
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-09-10T05:41:27.055Z",
+    "updatedAt": "2026-09-10T05:41:27.055Z"
   }
 ]

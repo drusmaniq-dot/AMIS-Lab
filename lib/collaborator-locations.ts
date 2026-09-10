@@ -39,6 +39,7 @@ export const COLLABORATOR_LOCATIONS: Record<string, CollaboratorLocation> = {
   // Poland
   "Manuela Reben": { city: "Kraków", country: "Poland", countryCode: "PL", flag: "🇵🇱", lat: 50.0647, lng: 19.945 },
   "I. Grelowska": { city: "Kraków", country: "Poland", countryCode: "PL", flag: "🇵🇱", lat: 50.0647, lng: 19.945 },
+  "Kinga Kowalska": { city: "Kraków", country: "Poland", countryCode: "PL", flag: "🇵🇱", lat: 50.0647, lng: 19.945 },
 
   // Tunisia
   "Bilel Charfi": { city: "Sfax", country: "Tunisia", countryCode: "TN", flag: "🇹🇳", lat: 34.7406, lng: 10.7603 },

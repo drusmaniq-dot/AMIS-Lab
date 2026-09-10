@@ -9,4 +9,5 @@ export const AUTHOR_ALIASES: Record<string, string> = {
   "Abdulaziz Ahmed Hadi Asiri": "Abdulaziz A. Asiri",
   "Reem Dhafer Alshehri": "RD Alshehri",
   "Elham Fahad Alkhammash": "E. Alkhammash",
+  "Kinga Kowalska": "KJ Kowalska",
 };

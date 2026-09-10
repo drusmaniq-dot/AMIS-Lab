@@ -118,5 +118,13 @@
     "url": "https://scholar.google.com/citations?user=Vdctn1kAAAAJ&hl=en",
     "icon": null,
     "sortOrder": 2
+  },
+  {
+    "id": "cmtv3njxt0002dwuzcn1mk2zj",
+    "personId": "cmtv3njxj0001dwuznnuxn0ba",
+    "label": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/Kinga-Kowalska-2",
+    "icon": "researchgate",
+    "sortOrder": 0
   }
 ]

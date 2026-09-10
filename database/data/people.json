@@ -477,5 +477,59 @@
     "rejectionReason": null,
     "createdAt": "2026-08-23T11:06:26.439Z",
     "updatedAt": "2026-08-25T07:30:27.061Z"
+  },
+  {
+    "id": "cmtv3njxj0001dwuznnuxn0ba",
+    "userId": null,
+    "fullName": "Kinga Kowalska",
+    "titleOrRole": "PhD Student, AGH University of Krakow, Poland",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/Kinga.jpeg",
+    "bio": "Collaboration Supervisor: Prof. Dr. El Sayed Yousef\n\nThis scientific collaboration focuses on the exploration of phosphate-based bioactive glasses and their potential applications in biomaterials for bone regeneration. The research investigates the relationships between glass composition, structure, crystallization behaviour, bioactivity and ion release, as well as the incorporation of phosphate bioactive glasses into calcium phosphate-based biomaterials. Particular attention is given to understanding how compositional modifications influence the physicochemical properties and biological performance of these materials and to exploring their potential in advanced bone substitutes and 3D-printed composite scaffolds.",
+    "bioAr": null,
+    "category": "STUDENT",
+    "sortOrder": 4,
+    "cvUrl": null,
+    "academicDegree": "PhD Candidate",
+    "academicDegreeAr": null,
+    "email": null,
+    "phone": null,
+    "address": "AGH University of Krakow, Poland",
+    "addressAr": null,
+    "discipline": "Materials Science",
+    "disciplineAr": null,
+    "subdiscipline": "Bioactive Glasses & Biomaterials",
+    "subdisciplineAr": null,
+    "researchInterests": [
+      "Phosphate-based bioactive glasses",
+      "Bone regeneration biomaterials",
+      "Glass composition–structure–bioactivity relationships",
+      "Calcium phosphate-based biomaterials",
+      "3D-printed composite scaffolds"
+    ],
+    "researchInterestsAr": null,
+    "researchProjects": [
+      "Collaboration with AMIS Lab (Supervisor: Prof. Dr. El Sayed Yousef) — phosphate-based bioactive glasses for bone regeneration biomaterials"
+    ],
+    "researchProjectsAr": null,
+    "publications": [
+      {
+        "url": "https://doi.org/10.1007/s10853-025-11577-z",
+        "citation": "Kowalska, K.J., Czechowska, J.P., El Sayed, Y., Zima, A. (2025). Development and characterization of bioceramic bone cements modified with gold-doped phosphate bioglass. Journal of Materials Science."
+      },
+      {
+        "url": "https://doi.org/10.3390/fib12110100",
+        "citation": "Burtan-Gwizdała, B., Cisowski, J., Lisiecki, R., Kowalska, K.J., Jarząbek, B., Ibrahim, K.I.H., Yousef, E.S. (2024). Thermal, Optical, and Emission Traits of SM3+-Ion-Doped Fluoride/Chloride/Oxide Glass for Red/Orange Laser Fiber Applications. Fibers, 12(11), 100."
+      }
+    ],
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-09-10T05:41:27.079Z",
+    "updatedAt": "2026-09-10T05:41:27.079Z"
   }
 ]

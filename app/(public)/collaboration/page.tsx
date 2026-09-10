@@ -25,6 +25,7 @@ const TIER_OVERRIDES: Record<string, number> = {
   "Mohammed S. Alqahtani": 0.001,
   "Fawaz Alqahtani": 0.002,
   "Manuela Reben": 0.007,
+  "Kinga Kowalska": 0.0075,
   "Rongping Wang": 0.008,
   "Essam Ramadan Shaaban": 0.009,
   "Dr. Khalid Ibrahim Hussein Ibrahim": 0.5,
@@ -379,10 +380,26 @@ export default async function CollaborationPage() {
   tierEdges.push(...MANUAL_EDGES);
   const hideCountKeys = new Set(MANUAL_EDGES.map((e) => `${e.fromId}-${e.toId}`));
 
-  // Asiri↔Akram Ibrahim is real but weak (1 shared paper) — the fade-by-count
-  // system would otherwise render it almost invisibly, so it's exempted.
+  // Asiri↔Akram Ibrahim and Kowalska↔{Yousef, Khalid Ibrahim} are real but
+  // weak (1–2 shared papers) — the fade-by-count system would otherwise
+  // render them almost invisibly, so they're exempted.
   const asiriEntity = allEntities.find((e) => e.fullName.includes("Asiri"));
-  const forceVisibleKeys = asiriEntity ? new Set([`${asiriEntity.id}-external-akram-ibrahim`]) : undefined;
+  const kowalskaEntity = allEntities.find((e) => e.fullName.includes("Kowalska"));
+  const khalidEntity = allEntities.find((e) => e.fullName.includes("Khalid Ibrahim"));
+  const forceVisibleKeys = new Set<string>();
+  if (asiriEntity) forceVisibleKeys.add(`${asiriEntity.id}-external-akram-ibrahim`);
+  if (kowalskaEntity && yousefEntity) {
+    const key = tierEdges.find(
+      (e) => (e.fromId === kowalskaEntity.id && e.toId === yousefEntity.id) || (e.fromId === yousefEntity.id && e.toId === kowalskaEntity.id)
+    );
+    if (key) forceVisibleKeys.add(`${key.fromId}-${key.toId}`);
+  }
+  if (kowalskaEntity && khalidEntity) {
+    const key = tierEdges.find(
+      (e) => (e.fromId === kowalskaEntity.id && e.toId === khalidEntity.id) || (e.fromId === khalidEntity.id && e.toId === kowalskaEntity.id)
+    );
+    if (key) forceVisibleKeys.add(`${key.fromId}-${key.toId}`);
+  }
 
   // --- Globe: same people as the 2D tier diagram (tierIds), placed at their
   // real institutional location — kept in sync so both views agree on who's
