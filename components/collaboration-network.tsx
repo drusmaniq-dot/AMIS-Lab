@@ -50,7 +50,7 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0.003: { y: 430, xs: [-80] }, // Heba Y. Zahran — left of MS Alqahtani, his top collaborator
   0.0035: { y: 630, xs: [-30] }, // I. Grelowska — international, below Zahran in the same left column
   0.004: { y: 610, xs: [1020] }, // Khloud J. Alzahrani — right of Fawaz, his top collaborator
-  0.08: { y: 730, xs: [740] }, // Ganapathy Senthil Murugan — between Essam (above) and Fawaz (below)
+  0.08: { y: 700, xs: [770] }, // Ganapathy Senthil Murugan — between Essam (above) and Fawaz (below)
   0.1: { y: 90, xs: [130, 500, 870] }, // Manuela Reben, Rongping Wang, Essam Ramadan Shaaban — Yousef's top external collaborators, directly above him
   // MS Alqahtani and Fawaz used to share tier 0 with Yousef (a 3-way director-
   // centering split in page.tsx). They now each have their own tier so they
@@ -59,18 +59,18 @@ const TIER_POSITIONS: Record<number, { y: number; xs: number[] }> = {
   0: { y: 430, xs: [500] }, // El Sayed Yousef — now the only one left on this tier
   0.002: { y: 400, xs: [850] }, // Fawaz Alqahtani — split out from tier 0, same spot as before
   0.007: { y: 180, xs: [250] }, // Manuela Reben
-  0.0075: { y: 720, xs: [230] }, // Kinga Kowalska — open space between Elham and Khalid, per user's marked-up screenshot; clear of Khalid's label
+  0.0075: { y: 690, xs: [210] }, // Kinga Kowalska — open space between Elham and Khalid, per user's marked-up screenshot; clear of Khalid's label
   0.008: { y: 110, xs: [530] }, // Rongping Wang
   0.009: { y: 190, xs: [790] }, // Essam Ramadan Shaaban — placeholder, adjust freely
-  0.5: { y: 790, xs: [460] }, // Khalid — directly under Yousef, pushed well down for clearer connections
-  0.55: { y: 800, xs: [950] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
-  0.6: { y: 920, xs: [250] }, // Dahshan — raised to Khalid's level
+  0.5: { y: 790, xs: [490] }, // Khalid — directly under Yousef, pushed well down for clearer connections
+  0.55: { y: 840, xs: [920] }, // Reem Dhafer Alshehri — pushed out to the far right, level with Hany
+  0.6: { y: 940, xs: [250] }, // Dahshan — raised to Khalid's level
   0.9: { y: 1250, xs: [200] }, // Kamal A. Aly — Dahshan's top collaborator, left of Dahshan
   1: { y: 950, xs: [720] }, // Hany — pulled back in toward the center
   1.1: { y: 1210, xs: [725] }, // Ehab Mahmoud Mohamed — Hany's collaborator, below him
   1.3: { y: 1120, xs: [490] }, // Neeraj Mehta — Dahshan's #2, below-left of Dahshan
   1.7: { y: 1150, xs: [950] }, // Mohamed A. Ismeil — Hany's collaborator, below-right of him
-  1.9: { y: 780, xs: [120] }, // Elham Fahad Alkhammash — directly under Reem
+  1.9: { y: 840, xs: [110] }, // Elham Fahad Alkhammash — directly under Reem
   // Both verified via Asiri's only paper on file (DOI 10.69626/sag.2025.0207).
   1.95: { y: 1450, xs: [280] }, // Akram Ibrahim — flanking Asiri, left
   2: { y: 1020, xs: [510] }, // Remaining student (Asiri)
