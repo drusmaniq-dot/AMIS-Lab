@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest>=8.0,<9
+# Optional: real-browser click-through checks (uses your installed Chrome via
+# channel="chrome", no extra browser download needed). See README's Local
+# development section.
+playwright>=1.45,<2

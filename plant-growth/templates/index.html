@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plant Sensitivity Response GUI</title>
+  <meta name="description" content="Analytical simulator for evaluating how artificial light spectra interact with plant photoreceptors and photobiological sensitivity curves.">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="brand-strip"></div>
+  <header class="app-header">
+    <div class="header-inner">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AMIS Lab logo" class="header-logo">
+      <div class="header-text">
+        <span class="eyebrow">AMIS Lab &mdash; Advanced Materials, Innovation &amp; Sustainability</span>
+        <h1>Plant Sensitivity Response GUI</h1>
+        <p class="subtitle">
+          A specialized analytical simulator for photobiologists, agricultural engineers, and
+          lighting-system designers &mdash; including vertical-farming LED engineers. It evaluates
+          how a given artificial light spectrum interacts with plant photoreceptors and
+          photobiological sensitivity curves, computing cross-correlation, quantum-efficiency, and
+          metabolic-yield metrics to predict plant physiological performance under diverse lighting
+          environments, without requiring immediate physical experimentation.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="step-head">
+        <span class="step-num">1</span>
+        <div class="step-text">
+          <h2>Select the Plant</h2>
+          <p class="hint">Choose the photobiological sensitivity curve to correlate the
+            combined spectrum against.</p>
+        </div>
+      </div>
+
+      <label for="curve-select">Curve</label>
+      <select id="curve-select"></select>
+
+      <div id="custom-curve-upload" hidden>
+        <label for="custom-curve-file">Upload sensitivity curve (.txt, 2 columns:
+          wavelength, value)</label>
+        <input type="file" id="custom-curve-file" accept=".txt,.csv">
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="step-head">
+        <span class="step-num">2</span>
+        <div class="step-text">
+          <h2>Select the Target Material for Emission</h2>
+        </div>
+      </div>
+
+      <select id="light-source-select" aria-label="Light source material"></select>
+    </section>
+
+    <section class="card">
+      <div class="step-head">
+        <span class="step-num">3</span>
+        <div class="step-text">
+          <h2>Select Spectrum</h2>
+          <p class="hint">Select one or more emission spectra to combine, up to a
+            maximum of 4.</p>
+        </div>
+      </div>
+
+      <div id="emission-slots"></div>
+      <button type="button" id="add-slot-btn" class="btn-secondary">+ Add another spectrum</button>
+    </section>
+
+    <section class="card">
+      <div class="step-head">
+        <span class="step-num">4</span>
+        <div class="step-text">
+          <h2>Growth Parameters</h2>
+          <p class="hint">Defaults match the original tool's reference case
+            (500 &micro;mol/m&sup2;/s, 16 h photoperiod).</p>
+        </div>
+      </div>
+
+      <div class="param-grid">
+        <div>
+          <label for="ppfd-input">PPFD (&micro;mol/m&sup2;/s)</label>
+          <input type="number" id="ppfd-input" step="1" value="{{ defaults.ppfd }}">
+        </div>
+        <div>
+          <label for="photoperiod-input">Photoperiod (hours)</label>
+          <input type="number" id="photoperiod-input" step="0.1" value="{{ defaults.photoperiod_hours }}">
+        </div>
+        <div>
+          <label for="alpha-input">Alpha (crop conversion coefficient)</label>
+          <input type="number" id="alpha-input" step="1" value="{{ defaults.alpha }}">
+        </div>
+      </div>
+    </section>
+
+    <div class="calculate-row">
+      <button type="button" id="calculate-btn" class="btn-primary btn-large">Calculate</button>
+      <div id="analyze-error" class="error" hidden></div>
+    </div>
+
+    <section class="card card-results" id="results-card" hidden>
+      <div class="step-head">
+        <span class="step-num step-num-done">&#10003;</span>
+        <div class="step-text">
+          <h2>Results</h2>
+          <p class="hint">Photosynthetic overlap, growth efficiency, and predicted yield for
+            this light spectrum / plant-curve pairing.</p>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="results-chart" height="220"></canvas>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-tile">
+          <span class="metric-label">Photosynthetic Overlap Score</span>
+          <span class="metric-value" id="metric-overlap">&mdash;</span>
+        </div>
+        <div class="metric-tile">
+          <span class="metric-label">Net Plant Growth Efficiency</span>
+          <span class="metric-value" id="metric-efficiency">&mdash;</span>
+        </div>
+        <div class="metric-tile">
+          <span class="metric-label">Daily Light Integral (DLI)</span>
+          <span class="metric-value" id="metric-dli">&mdash;</span>
+        </div>
+        <div class="metric-tile">
+          <span class="metric-label">Predicted Daily Biomass Yield</span>
+          <span class="metric-value" id="metric-yield">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="report-row">
+        <label for="plant-name-input">Report label</label>
+        <input type="text" id="plant-name-input" value="Plant">
+        <button type="button" id="download-pdf-btn" class="btn-secondary">Download PDF report</button>
+        <button type="button" id="download-png-btn" class="btn-secondary">Download PNG report</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AMIS Lab logo" class="footer-logo">
+    <p>Ported from the original MATLAB GUI (PlantSensitivityResponse3.m). See
+      <code>legacy-matlab/</code> and <code>README.md</code> in the repo for details.</p>
+  </footer>
+
+  <script id="bootstrap-data" type="application/json">
+    {{ {
+      "emissionLibrary": emission_library,
+      "curveOptions": curve_options,
+      "lightSources": light_sources,
+      "defaults": defaults,
+      "basePath": request.script_root
+    } | tojson }}
+  </script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

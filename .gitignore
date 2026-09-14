@@ -46,3 +46,9 @@ next-env.d.ts
 
 
 /lib/generated/prisma
+
+# plant-growth (Python/Flask sub-app)
+/plant-growth/.venv
+/plant-growth/**/__pycache__
+/plant-growth/**/*.pyc
+/plant-growth/.pytest_cache

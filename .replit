@@ -1,0 +1,14 @@
+run = "npm run dev:full"
+modules = ["nodejs-20", "python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 3002
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["sh", "-c", "npm install && npx prisma generate && pip install -r plant-growth/requirements.txt"]
+run = ["npm", "run", "start:full"]
