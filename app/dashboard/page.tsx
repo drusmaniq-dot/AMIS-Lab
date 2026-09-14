@@ -13,13 +13,22 @@ export default async function DashboardOverviewPage() {
   const contentEnabled =
     session.user.role === "ADMIN" || session.user.role === "TEAM" || MEMBER_CONTENT_SUBMISSIONS_ENABLED;
 
-  const [person, projects, publications, allowedServicesCount, { locale, dict }] = await Promise.all([
+  // Team/Admin get every service automatically (see app/dashboard/services/page.tsx) —
+  // count total services for them instead of explicit allowedMembers grants, which
+  // they never need and would otherwise make this card wrongly say "none granted".
+  const hasBlanketServiceAccess = session.user.role === "ADMIN" || session.user.role === "TEAM";
+
+  const [person, projects, publications, servicesCount, { locale, dict }] = await Promise.all([
     prisma.person.findUnique({ where: { userId } }),
-    contentEnabled ? prisma.project.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }) : Promise.resolve([]),
     contentEnabled
-      ? prisma.publication.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } })
+      ? prisma.project.findMany({ where: { owners: { some: { id: userId } } }, orderBy: { createdAt: "desc" } })
       : Promise.resolve([]),
-    prisma.service.count({ where: { allowedMembers: { some: { id: userId } } } }),
+    contentEnabled
+      ? prisma.publication.findMany({ where: { owners: { some: { id: userId } } }, orderBy: { createdAt: "desc" } })
+      : Promise.resolve([]),
+    hasBlanketServiceAccess
+      ? prisma.service.count()
+      : prisma.service.count({ where: { allowedMembers: { some: { id: userId } } } }),
     getDictionary(),
   ]);
 
@@ -71,7 +80,7 @@ export default async function DashboardOverviewPage() {
         </CardHeader>
         <CardContent>
           <p className="text-sm text-muted-foreground">
-            {allowedServicesCount > 0 ? `${allowedServicesCount} ${dict.dashboard.granted.toLowerCase()}` : dict.dashboard.noServicesGranted}
+            {servicesCount > 0 ? `${servicesCount} ${dict.dashboard.granted.toLowerCase()}` : dict.dashboard.noServicesGranted}
           </p>
           <Link href="/dashboard/services" className="mt-2 inline-block text-sm text-accent underline-offset-4 hover:underline">
             {dict.dashboard.manage} {locale === "ar" ? "←" : "→"}

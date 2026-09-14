@@ -101,6 +101,9 @@ model User {
   reviewedProjects      Project[]     @relation("ProjectReviewedBy")
   submittedPublications Publication[] @relation("PublicationSubmittedBy")
   reviewedPublications  Publication[] @relation("PublicationReviewedBy")
+
+  ownedProjects     Project[]     @relation("ProjectOwners")
+  ownedPublications Publication[] @relation("PublicationOwners")
 }
 
 model Account {
@@ -231,6 +234,11 @@ model Project {
   submittedBy User? @relation("ProjectSubmittedBy", fields: [submittedById], references: [id], onDelete: SetNull)
   reviewedBy  User? @relation("ProjectReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
 
+  // Team members who can manage this on their own dashboard (e.g. every
+  // co-investigator with an account) — distinct from submittedById, which
+  // stays a fixed audit-trail record of who first submitted it.
+  owners User[] @relation("ProjectOwners")
+
   @@index([state])
 }
 
@@ -258,6 +266,12 @@ model Publication {
 
   submittedBy User? @relation("PublicationSubmittedBy", fields: [submittedById], references: [id], onDelete: SetNull)
   reviewedBy  User? @relation("PublicationReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  // Team members who can manage this on their own dashboard (e.g. every
+  // co-author with an account) — distinct from submittedById, which stays a
+  // fixed audit-trail record of who first submitted it. Multiple co-authors
+  // can each be an owner of the same row; it's never duplicated.
+  owners User[] @relation("PublicationOwners")
 
   @@index([state])
 }

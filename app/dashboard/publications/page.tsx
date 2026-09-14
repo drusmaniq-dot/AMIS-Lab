@@ -19,7 +19,7 @@ export default async function DashboardPublicationsPage() {
     return <ComingSoon section={dict.dashboard.myPublications} heading={dict.dashboard.comingSoon} body={dict.dashboard.comingSoonBody} />;
   }
   const publications = await prisma.publication.findMany({
-    where: { submittedById: session.user.id },
+    where: { owners: { some: { id: session.user.id } } },
     orderBy: { createdAt: "desc" },
   });
 

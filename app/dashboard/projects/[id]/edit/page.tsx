@@ -16,9 +16,12 @@ export default async function EditProjectPage({ params }: { params: Promise<{ id
   }
 
   const { id } = await params;
-  const project = await prisma.project.findUnique({ where: { id } });
+  const project = await prisma.project.findUnique({
+    where: { id },
+    include: { owners: { select: { id: true } } },
+  });
   if (!project) notFound();
-  await requireOwnerOrAdmin(project.submittedById);
+  await requireOwnerOrAdmin(project.owners.map((o) => o.id));
 
   return (
     <div>

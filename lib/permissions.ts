@@ -38,10 +38,15 @@ export async function requireAdmin(): Promise<Session> {
   return session;
 }
 
-/** Throws unless the signed-in user is an Admin, or owns the given resource. */
-export async function requireOwnerOrAdmin(ownerId: string | null | undefined): Promise<Session> {
+/** Throws unless the signed-in user is an Admin, or is one of the resource's owners
+ * (a single id for single-owner resources like Person, or a list for resources with
+ * multiple co-owners like Project/Publication). */
+export async function requireOwnerOrAdmin(
+  ownerIds: string | null | undefined | (string | null | undefined)[]
+): Promise<Session> {
   const session = await requireAuth();
   if (session.user.role === "ADMIN") return session;
-  if (ownerId && session.user.id === ownerId) return session;
+  const ids = Array.isArray(ownerIds) ? ownerIds : [ownerIds];
+  if (ids.some((id) => id && session.user.id === id)) return session;
   throw new ForbiddenError("You can only manage your own content.");
 }

@@ -43,6 +43,7 @@ export async function createPublication(
       abstractAr: abstract.ar,
       state: "PENDING",
       submittedById: session.user.id,
+      owners: { connect: { id: session.user.id } },
     },
   });
 
@@ -56,9 +57,12 @@ export async function updatePublication(
   _prevState: PublicationFormState,
   formData: FormData
 ): Promise<PublicationFormState> {
-  const existing = await prisma.publication.findUnique({ where: { id } });
+  const existing = await prisma.publication.findUnique({
+    where: { id },
+    include: { owners: { select: { id: true } } },
+  });
   if (!existing) return { error: "Publication not found." };
-  const session = await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.owners.map((o) => o.id));
   requireContentSubmissionsEnabled(session.user.role);
 
   const parsed = parsePublicationForm(formData);
@@ -95,9 +99,12 @@ export async function updatePublication(
 }
 
 export async function deleteOwnPublication(id: string) {
-  const existing = await prisma.publication.findUnique({ where: { id } });
+  const existing = await prisma.publication.findUnique({
+    where: { id },
+    include: { owners: { select: { id: true } } },
+  });
   if (!existing) return;
-  const session = await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.owners.map((o) => o.id));
   requireContentSubmissionsEnabled(session.user.role);
   await prisma.publication.delete({ where: { id } });
   revalidatePath("/dashboard/publications");

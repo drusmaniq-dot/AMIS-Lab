@@ -57,6 +57,7 @@ export async function createProject(_prevState: ProjectFormState, formData: Form
       tags: tags ? tags.split(",").map((t) => t.trim()).filter(Boolean) : [],
       state: "PENDING",
       submittedById: session.user.id,
+      owners: { connect: { id: session.user.id } },
     },
   });
 
@@ -70,9 +71,9 @@ export async function updateProject(
   _prevState: ProjectFormState,
   formData: FormData
 ): Promise<ProjectFormState> {
-  const existing = await prisma.project.findUnique({ where: { id } });
+  const existing = await prisma.project.findUnique({ where: { id }, include: { owners: { select: { id: true } } } });
   if (!existing) return { error: "Project not found." };
-  const session = await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.owners.map((o) => o.id));
   requireContentSubmissionsEnabled(session.user.role);
 
   const parsed = parseProjectForm(formData);
@@ -125,9 +126,9 @@ export async function updateProject(
 }
 
 export async function deleteOwnProject(id: string) {
-  const existing = await prisma.project.findUnique({ where: { id } });
+  const existing = await prisma.project.findUnique({ where: { id }, include: { owners: { select: { id: true } } } });
   if (!existing) return;
-  const session = await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.owners.map((o) => o.id));
   requireContentSubmissionsEnabled(session.user.role);
   await prisma.project.delete({ where: { id } });
   revalidatePath("/dashboard/projects");

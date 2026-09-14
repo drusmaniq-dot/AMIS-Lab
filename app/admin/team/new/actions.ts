@@ -72,37 +72,47 @@ export async function confirmReassignments(userId: string, formData: FormData) {
   const publicationIds = formData.getAll("publicationId").map(String);
   const projectIds = formData.getAll("projectId").map(String);
 
-  if (publicationIds.length > 0) {
-    await prisma.publication.updateMany({
-      where: { id: { in: publicationIds }, submittedById: null },
-      data: { submittedById: userId },
-    });
-  }
-  if (projectIds.length > 0) {
-    await prisma.project.updateMany({
-      where: { id: { in: projectIds }, submittedById: null },
-      data: { submittedById: userId },
+  // Adds this person as an extra owner of each item — never replaces the
+  // existing owner(s), so a shared paper/project can end up managed by every
+  // co-author who has an account, and the row itself is never duplicated.
+  await prisma.$transaction([
+    ...publicationIds.map((id) =>
+      prisma.publication.update({ where: { id }, data: { owners: { connect: { id: userId } } } })
+    ),
+    ...projectIds.map((id) =>
+      prisma.project.update({ where: { id }, data: { owners: { connect: { id: userId } } } })
+    ),
+  ]);
+
+  if (publicationIds.length > 0 || projectIds.length > 0) {
+    const user = await prisma.user.findUnique({ where: { id: userId }, select: { email: true, name: true } });
+    await notify("member.content_co_ownership_added", {
+      userEmail: user?.email,
+      userName: user?.name,
+      publicationCount: publicationIds.length,
+      projectCount: projectIds.length,
     });
   }
 
   redirect("/admin/users");
 }
 
-export async function findCandidateReassignments(personFullName: string) {
+export async function findCandidateReassignments(personFullName: string, userId: string) {
   await requireAdmin();
 
   const alias = AUTHOR_ALIASES[personFullName];
   const authorCandidates = [personFullName, alias].filter((v): v is string => Boolean(v));
+  const notAlreadyOwner = { owners: { none: { id: userId } } };
 
   const [publications, projects] = await Promise.all([
     prisma.publication.findMany({
-      where: { submittedById: null, authors: { hasSome: authorCandidates } },
+      where: { ...notAlreadyOwner, authors: { hasSome: authorCandidates } },
       select: { id: true, title: true, year: true, authors: true },
       orderBy: { year: "desc" },
     }),
     prisma.project.findMany({
       where: {
-        submittedById: null,
+        ...notAlreadyOwner,
         investigator: { contains: personFullName, mode: "insensitive" },
       },
       select: { id: true, title: true, investigator: true },

@@ -20,7 +20,7 @@ export default async function DashboardProjectsPage() {
   }
 
   const projects = await prisma.project.findMany({
-    where: { submittedById: session.user.id },
+    where: { owners: { some: { id: session.user.id } } },
     orderBy: { createdAt: "desc" },
   });
 

@@ -16,9 +16,12 @@ export default async function EditPublicationPage({ params }: { params: Promise<
   }
 
   const { id } = await params;
-  const publication = await prisma.publication.findUnique({ where: { id } });
+  const publication = await prisma.publication.findUnique({
+    where: { id },
+    include: { owners: { select: { id: true } } },
+  });
   if (!publication) notFound();
-  await requireOwnerOrAdmin(publication.submittedById);
+  await requireOwnerOrAdmin(publication.owners.map((o) => o.id));
 
   return (
     <div>

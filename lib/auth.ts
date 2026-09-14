@@ -113,12 +113,15 @@ export const authOptions: NextAuthOptions = {
       if (trigger === "update") {
         const fresh = await prisma.user.findUnique({
           where: { id: token.id },
-          select: { role: true, status: true, profileComplete: true },
+          select: { role: true, status: true, profileComplete: true, email: true, name: true, image: true },
         });
         if (fresh) {
           token.role = fresh.role;
           token.status = fresh.status;
           token.profileComplete = fresh.profileComplete;
+          token.email = fresh.email;
+          token.name = fresh.name;
+          token.picture = fresh.image;
         }
       }
       return token;

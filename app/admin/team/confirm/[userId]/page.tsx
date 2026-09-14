@@ -19,7 +19,7 @@ export default async function ConfirmReassignmentsPage({
   });
   if (!user) notFound();
 
-  const { publications, projects } = await findCandidateReassignments(user.person?.fullName ?? user.name);
+  const { publications, projects } = await findCandidateReassignments(user.person?.fullName ?? user.name, userId);
   const applyReassignments = confirmReassignments.bind(null, userId);
 
   return (
@@ -33,11 +33,15 @@ export default async function ConfirmReassignmentsPage({
       <Card className="mt-6">
         <CardHeader>
           <CardTitle className="text-base">Existing content that looks like theirs</CardTitle>
+          <p className="text-sm text-muted-foreground">
+            Adds them as a co-owner alongside anyone else already managing it — nothing is moved or
+            duplicated, and they&rsquo;ll be notified once added.
+          </p>
         </CardHeader>
         <CardContent>
           {publications.length === 0 && projects.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              No unattributed Projects or Publications matched their name.
+              No Projects or Publications matched their name that they aren&rsquo;t already an owner of.
             </p>
           ) : (
             <form action={applyReassignments} className="space-y-4">
@@ -69,7 +73,7 @@ export default async function ConfirmReassignmentsPage({
                   </div>
                 </div>
               )}
-              <Button type="submit">Reassign selected to {user.name}</Button>
+              <Button type="submit">Add selected as {user.name}&rsquo;s content</Button>
             </form>
           )}
         </CardContent>
