@@ -10,7 +10,7 @@ import { updatePublication } from "../../actions";
 export default async function EditPublicationPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await requireAuth();
 
-  if (session.user.role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+  if (session.user.role !== "ADMIN" && session.user.role !== "TEAM" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
     const { dict } = await getDictionary();
     return <ComingSoon section={dict.dashboard.myPublications} heading={dict.dashboard.comingSoon} body={dict.dashboard.comingSoonBody} />;
   }

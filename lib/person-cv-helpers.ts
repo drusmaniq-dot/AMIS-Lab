@@ -29,6 +29,24 @@ export async function resolveStringList(
   return { en: enList.length > 0 ? enList : null, ar: arList.length > 0 ? arList : null };
 }
 
+export interface ProfileLinkFormValue {
+  label: string;
+  url: string;
+  visible: boolean;
+}
+
+export function parseProfileLinks(formData: FormData): ProfileLinkFormValue[] {
+  const labels = formData.getAll("profileLinkLabel").map(String);
+  const urls = formData.getAll("profileLinkUrl").map(String);
+  return labels
+    .map((label, i) => ({
+      label: label.trim(),
+      url: urls[i]?.trim() ?? "",
+      visible: formData.get(`profileLinkVisible-${i}`) === "on",
+    }))
+    .filter((l) => l.label && l.url);
+}
+
 export interface PublicationValue {
   citation: string;
   url?: string;

@@ -10,7 +10,7 @@ import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
 export type PublicationFormState = { error?: string } | undefined;
 
 function requireContentSubmissionsEnabled(role: string) {
-  if (role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+  if (role !== "ADMIN" && role !== "TEAM" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
     throw new Error("This feature isn't available to members yet.");
   }
 }

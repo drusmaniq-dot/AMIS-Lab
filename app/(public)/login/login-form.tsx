@@ -56,10 +56,10 @@ function LoginFormInner() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">{dict.common.email}</Label>
+        <Label htmlFor="email">{dict.auth.emailOrUsername}</Label>
         <Input
           id="email"
-          type="email"
+          type="text"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}

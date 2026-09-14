@@ -23,6 +23,9 @@ export async function proxy(request: NextRequest) {
     if (!token) {
       return NextResponse.redirect(new URL(`/login?callbackUrl=${pathname}`, request.url));
     }
+    if (token.profileComplete === false) {
+      return NextResponse.redirect(new URL("/onboarding", request.url));
+    }
   }
 
   return NextResponse.next();

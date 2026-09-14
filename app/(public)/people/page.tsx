@@ -67,7 +67,7 @@ export default async function PeoplePage() {
   const [people, { locale, dict }, session] = await Promise.all([
     prisma.person.findMany({
       where: { state: "PUBLISHED" },
-      include: { profileLinks: { orderBy: { sortOrder: "asc" } } },
+      include: { profileLinks: { where: { visible: true }, orderBy: { sortOrder: "asc" } } },
       orderBy: [{ sortOrder: "asc" }, { fullName: "asc" }],
     }),
     getDictionary(),

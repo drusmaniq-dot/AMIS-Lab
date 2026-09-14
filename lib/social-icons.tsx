@@ -12,6 +12,7 @@ import {
   FaGlobe,
   FaLink,
 } from "react-icons/fa6";
+import { SiScopus } from "react-icons/si";
 
 const ICONS: Record<string, IconType> = {
   linkedin: FaLinkedin,
@@ -25,6 +26,7 @@ const ICONS: Record<string, IconType> = {
   orcid: FaOrcid,
   scholar: FaGoogleScholar,
   googlescholar: FaGoogleScholar,
+  scopus: SiScopus,
   website: FaGlobe,
   ieee: FaGlobe,
 };
@@ -51,6 +53,7 @@ const BRAND_COLORS: Record<string, string> = {
   orcid: "#A6CE39",
   scholar: "#4285F4",
   googlescholar: "#4285F4",
+  scopus: "#E9711C",
   ieee: "#00629B",
   doi: "#FAAB18",
 };

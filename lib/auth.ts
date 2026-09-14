@@ -34,7 +34,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email" },
+        email: { label: "Email or Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
@@ -45,9 +45,12 @@ export const authOptions: NextAuthOptions = {
           throw new Error(t.credentialsRequired);
         }
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email.toLowerCase().trim() },
-        });
+        // Team accounts log in with an admin-issued username until they
+        // complete onboarding and set a real email (see profileComplete).
+        const identifier = credentials.email.toLowerCase().trim();
+        const user = identifier.includes("@")
+          ? await prisma.user.findUnique({ where: { email: identifier } })
+          : await prisma.user.findUnique({ where: { username: identifier } });
 
         if (!user) {
           throw new Error(t.incorrect);
@@ -79,6 +82,7 @@ export const authOptions: NextAuthOptions = {
           image: user.image,
           role: user.role,
           status: user.status,
+          profileComplete: user.profileComplete,
         };
       },
     }),
@@ -95,11 +99,27 @@ export const authOptions: NextAuthOptions = {
       }
       return true;
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger }) {
       if (user) {
         token.id = user.id;
         token.role = user.role;
         token.status = user.status;
+        token.profileComplete = user.profileComplete;
+      }
+      // Lets the client force a fresh token right after onboarding completes
+      // (via useSession().update()) instead of waiting for the next full
+      // login — otherwise the JWT would keep saying profileComplete: false
+      // and proxy.ts would bounce the user straight back to /onboarding.
+      if (trigger === "update") {
+        const fresh = await prisma.user.findUnique({
+          where: { id: token.id },
+          select: { role: true, status: true, profileComplete: true },
+        });
+        if (fresh) {
+          token.role = fresh.role;
+          token.status = fresh.status;
+          token.profileComplete = fresh.profileComplete;
+        }
       }
       return token;
     },
@@ -108,6 +128,7 @@ export const authOptions: NextAuthOptions = {
         session.user.id = token.id;
         session.user.role = token.role;
         session.user.status = token.status;
+        session.user.profileComplete = token.profileComplete;
       }
       return session;
     },

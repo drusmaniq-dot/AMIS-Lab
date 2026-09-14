@@ -11,6 +11,7 @@ datasource db {
 
 enum Role {
   MEMBER
+  TEAM
   ADMIN
 }
 
@@ -69,6 +70,16 @@ model User {
   status        UserStatus @default(PENDING)
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
+
+  // Pre-onboarding login identifier for an admin-provisioned Team account
+  // (email is a synthetic placeholder until they complete onboarding — see
+  // profileComplete below). Never used for self-registered accounts.
+  username String? @unique
+
+  // False only for a freshly admin-created Team account, until the member
+  // sets their real email + password at /onboarding. Everyone else
+  // (self-registered, Google sign-in, admin-created) starts true.
+  profileComplete Boolean @default(true)
 
   accounts Account[]
   sessions Session[]
@@ -186,6 +197,7 @@ model ProfileLink {
   url       String
   icon      String?
   sortOrder Int     @default(0)
+  visible   Boolean @default(true) // shown on /people, /publications, /collaboration when true
 
   person Person @relation(fields: [personId], references: [id], onDelete: Cascade)
 }

@@ -10,7 +10,8 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 export default async function DashboardOverviewPage() {
   const session = await requireAuth();
   const userId = session.user.id;
-  const contentEnabled = session.user.role === "ADMIN" || MEMBER_CONTENT_SUBMISSIONS_ENABLED;
+  const contentEnabled =
+    session.user.role === "ADMIN" || session.user.role === "TEAM" || MEMBER_CONTENT_SUBMISSIONS_ENABLED;
 
   const [person, projects, publications, allowedServicesCount, { locale, dict }] = await Promise.all([
     prisma.person.findUnique({ where: { userId } }),
@@ -33,7 +34,15 @@ export default async function DashboardOverviewPage() {
           <CardTitle>{dict.dashboard.myProfile}</CardTitle>
         </CardHeader>
         <CardContent>
-          {person ? (
+          {session.user.role !== "ADMIN" && session.user.role !== "TEAM" ? (
+            <p className="text-sm text-muted-foreground">
+              {dict.dashboard.accountOnly}{" "}
+              <Link href="/dashboard/profile" className="text-accent underline-offset-4 hover:underline">
+                {dict.dashboard.manage}
+              </Link>
+              .
+            </p>
+          ) : person ? (
             <div className="flex items-center gap-3">
               <ContentStateBadge state={person.state} />
               <span className="text-sm text-muted-foreground">

@@ -7,6 +7,7 @@ declare module "next-auth" {
       id: string;
       role: Role;
       status: UserStatus;
+      profileComplete: boolean;
     } & DefaultSession["user"];
   }
 
@@ -14,6 +15,7 @@ declare module "next-auth" {
     id: string;
     role: Role;
     status: UserStatus;
+    profileComplete: boolean;
   }
 }
 
@@ -22,5 +24,6 @@ declare module "next-auth/jwt" {
     id: string;
     role: Role;
     status: UserStatus;
+    profileComplete: boolean;
   }
 }

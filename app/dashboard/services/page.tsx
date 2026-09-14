@@ -25,6 +25,10 @@ export default async function DashboardServicesPage() {
 
   const allowedIds = new Set(me?.allowedServices.map((s) => s.id));
   const requestedIds = new Set(me?.requestedServices.map((s) => s.id));
+  // AMIS Lab Team members get every service automatically, current and
+  // future — no per-service grant needed (unlike a Subscriber, who requests
+  // and waits for admin approval).
+  const hasBlanketAccess = session.user.role === "ADMIN" || session.user.role === "TEAM";
 
   return (
     <div>
@@ -39,8 +43,8 @@ export default async function DashboardServicesPage() {
             const description = pickLocalized(locale, service.description, service.descriptionAr);
             const ctaLabel = pickLocalized(locale, service.ctaLabel, service.ctaLabelAr) || dict.dashboard.useService;
             const isInternalLink = service.ctaUrl?.startsWith("/");
-            const granted = allowedIds.has(service.id);
-            const requested = requestedIds.has(service.id);
+            const granted = hasBlanketAccess || allowedIds.has(service.id);
+            const requested = !hasBlanketAccess && requestedIds.has(service.id);
 
             return (
               <Card key={service.id}>

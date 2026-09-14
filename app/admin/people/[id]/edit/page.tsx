@@ -27,7 +27,7 @@ export default async function EditPersonPage({ params }: { params: Promise<{ id:
             bioAr: person.bioAr,
             category: person.category,
             photoUrl: person.photoUrl,
-            profileLinks: person.profileLinks.map((l) => ({ label: l.label, url: l.url })),
+            profileLinks: person.profileLinks.map((l) => ({ label: l.label, url: l.url, visible: l.visible })),
             cvUrl: person.cvUrl,
             academicDegree: person.academicDegree,
             academicDegreeAr: person.academicDegreeAr,

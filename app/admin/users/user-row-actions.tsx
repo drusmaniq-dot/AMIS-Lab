@@ -50,7 +50,8 @@ export function UserRowActions({
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="MEMBER">Member</SelectItem>
+          <SelectItem value="MEMBER">Subscriber</SelectItem>
+          <SelectItem value="TEAM">Team</SelectItem>
           <SelectItem value="ADMIN">Admin</SelectItem>
         </SelectContent>
       </Select>

@@ -28,7 +28,10 @@ async function handle(request: Request, { params }: { params: Promise<{ path?: s
     select: { id: true, allowedMembers: { where: { id: session.user.id }, select: { id: true } } },
   });
 
-  const granted = session.user.role === "ADMIN" || (service?.allowedMembers.length ?? 0) > 0;
+  const granted =
+    session.user.role === "ADMIN" ||
+    session.user.role === "TEAM" ||
+    (service?.allowedMembers.length ?? 0) > 0;
   if (!service || !granted) {
     return forbiddenPage(
       "Access not granted. Ask the lab admin to grant you access to Plant-Growth in My Services.",

@@ -277,7 +277,7 @@ export default async function CollaborationPage() {
   // their existing ProfileLink rows (People page data) rather than
   // duplicating them in code here — this is the single source of truth.
   const profileLinks = await prisma.profileLink.findMany({
-    where: { personId: { in: people.map((p) => p.id) } },
+    where: { personId: { in: people.map((p) => p.id) }, visible: true },
   });
   const scholarByPersonId = new Map<string, string>();
   const researchGateByPersonId = new Map<string, string>();

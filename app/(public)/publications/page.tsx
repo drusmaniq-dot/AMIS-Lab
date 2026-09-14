@@ -16,7 +16,7 @@ export default async function PublicationsPage() {
     }),
     prisma.person.findMany({
       where: { state: "PUBLISHED" },
-      include: { profileLinks: true },
+      include: { profileLinks: { where: { visible: true } } },
       orderBy: [{ sortOrder: "asc" }, { fullName: "asc" }],
     }),
     getDictionary(),

@@ -13,6 +13,33 @@ export const registerSchema = z.object({
 export const profileLinkSchema = z.object({
   label: z.string().min(1, { error: "Label is required." }).trim(),
   url: z.url({ error: "Enter a valid URL." }).trim(),
+  visible: z.boolean().default(true),
+});
+
+// Completing a Team account's onboarding (setting a real login after the
+// admin-issued username + temp password).
+export const onboardingSchema = z.object({
+  email: z.email({ error: "Enter a valid email address." }).trim(),
+  password: z
+    .string()
+    .min(8, { error: "Password must be at least 8 characters." })
+    .regex(/[a-zA-Z]/, { error: "Password must contain at least one letter." })
+    .regex(/[0-9]/, { error: "Password must contain at least one number." }),
+});
+
+// Admin-initiated Team account creation.
+export const teamAccountSchema = z.object({
+  personId: z.string().min(1, { error: "Select a person." }),
+  username: z
+    .string()
+    .min(3, { error: "Username must be at least 3 characters." })
+    .regex(/^[a-zA-Z0-9._-]+$/, { error: "Username can only contain letters, numbers, dots, underscores, and hyphens." })
+    .trim(),
+  temporaryPassword: z
+    .string()
+    .min(8, { error: "Password must be at least 8 characters." })
+    .regex(/[a-zA-Z]/, { error: "Password must contain at least one letter." })
+    .regex(/[0-9]/, { error: "Password must contain at least one number." }),
 });
 
 // Bilingual text fields are intentionally optional here — at least one of
