@@ -64,7 +64,7 @@ model User {
   email         String     @unique
   emailVerified DateTime?
   image         String?
-  passwordHash  String
+  passwordHash  String? // null for accounts created via Google-only sign-in
   role          Role       @default(MEMBER)
   status        UserStatus @default(PENDING)
   createdAt     DateTime   @default(now())
@@ -73,6 +73,11 @@ model User {
   accounts Account[]
   sessions Session[]
   person   Person?
+
+  // Services the admin has approved this member to use (e.g. member-gated
+  // web tools under the Services tab) — distinct from the Service model's
+  // own PUBLISHED/DRAFT state, which controls public visibility instead.
+  allowedServices Service[] @relation("MemberServiceAccess")
 
   submittedPeople       Person[]      @relation("PersonSubmittedBy")
   reviewedPeople        Person[]      @relation("PersonReviewedBy")
@@ -268,6 +273,10 @@ model Service {
   sortOrder     Int          @default(0)
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
+
+  // Members explicitly granted access to this service (only meaningful for
+  // member-gated tools; the admin toggles this per member).
+  allowedMembers User[] @relation("MemberServiceAccess")
 }
 
 model Equipment {

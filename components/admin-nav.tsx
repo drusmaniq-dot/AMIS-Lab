@@ -41,7 +41,10 @@ function sections(dict: Dictionary): { title: string; links: { href: string; lab
     },
     {
       title: dict.admin.sectionUsers,
-      links: [{ href: "/admin/users", label: dict.admin.userManagement }],
+      links: [
+        { href: "/admin/users", label: dict.admin.userManagement },
+        { href: "/admin/service-access", label: dict.admin.serviceAccess },
+      ],
     },
   ];
 }

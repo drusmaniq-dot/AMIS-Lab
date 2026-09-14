@@ -10,10 +10,15 @@ export default async function DashboardOverviewPage() {
   const session = await requireAuth();
   const userId = session.user.id;
 
-  const [person, projects, publications, { locale, dict }] = await Promise.all([
+  const [person, projects, publications, allowedServices, { locale, dict }] = await Promise.all([
     prisma.person.findUnique({ where: { userId } }),
     prisma.project.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }),
     prisma.publication.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }),
+    prisma.service.findMany({
+      where: { allowedMembers: { some: { id: userId } } },
+      select: { id: true, title: true, ctaUrl: true },
+      orderBy: { sortOrder: "asc" },
+    }),
     getDictionary(),
   ]);
 
@@ -55,6 +60,38 @@ export default async function DashboardOverviewPage() {
         <SubmissionSummary title={dict.dashboard.myProjects} href="/dashboard/projects" items={projects} dict={dict} locale={locale} />
         <SubmissionSummary title={dict.dashboard.myPublications} href="/dashboard/publications" items={publications} dict={dict} locale={locale} />
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{dict.dashboard.myServices}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {allowedServices.length === 0 ? (
+            <p className="text-sm text-muted-foreground">{dict.dashboard.noServicesGranted}</p>
+          ) : (
+            <ul className="space-y-2">
+              {allowedServices.map((service) =>
+                service.ctaUrl ? (
+                  <li key={service.id}>
+                    <Link
+                      href={service.ctaUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-sm font-medium text-accent underline-offset-4 hover:underline"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={service.id} className="text-sm font-medium">
+                    {service.title}
+                  </li>
+                )
+              )}
+            </ul>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -34,5 +34,17 @@
     "status": "PENDING",
     "createdAt": "2026-08-20T03:42:39.160Z",
     "updatedAt": "2026-08-20T03:42:39.160Z"
+  },
+  {
+    "id": "cmu0y5kdx0000jouzr4jh9cq5",
+    "name": "Dr. Muhammad Usman Iqbal",
+    "email": "dr.usman.iq@gmail.com",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$SfoIpy4Y8tkRJyL1nQBFBuEsKpDKF8rEdi/2YZOMmbpczoPvh6PJu",
+    "role": "ADMIN",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T07:54:06.839Z",
+    "updatedAt": "2026-09-14T07:54:06.839Z"
   }
 ]
