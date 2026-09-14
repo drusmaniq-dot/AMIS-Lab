@@ -10,7 +10,10 @@ export async function setServiceAccess(userId: string, serviceId: string, grante
     where: { id: userId },
     data: {
       allowedServices: granted ? { connect: { id: serviceId } } : { disconnect: { id: serviceId } },
+      // Granting access resolves any outstanding request for the same service.
+      requestedServices: granted ? { disconnect: { id: serviceId } } : undefined,
     },
   });
   revalidatePath("/admin/service-access");
+  revalidatePath("/dashboard/services");
 }

@@ -8,7 +8,14 @@ export default async function AdminServiceAccessPage() {
   const [members, services] = await Promise.all([
     prisma.user.findMany({
       where: { role: "MEMBER" },
-      select: { id: true, name: true, email: true, status: true, allowedServices: { select: { id: true } } },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        status: true,
+        allowedServices: { select: { id: true } },
+        requestedServices: { select: { id: true } },
+      },
       orderBy: { name: "asc" },
     }),
     prisma.service.findMany({ select: { id: true, title: true }, orderBy: { sortOrder: "asc" } }),
@@ -34,6 +41,7 @@ export default async function AdminServiceAccessPage() {
             email: m.email,
             status: m.status,
             allowedServiceIds: m.allowedServices.map((s) => s.id),
+            requestedServiceIds: m.requestedServices.map((s) => s.id),
           }))}
           services={services}
         />

@@ -6,11 +6,19 @@ import { prisma } from "@/lib/db";
 import { requireAuth, requireOwnerOrAdmin } from "@/lib/permissions";
 import { getStorage } from "@/lib/storage";
 import { uniqueProjectSlug, parseProjectForm, resolveProjectFields } from "@/lib/project-helpers";
+import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
 
 export type ProjectFormState = { error?: string } | undefined;
 
+function requireContentSubmissionsEnabled(role: string) {
+  if (role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+    throw new Error("This feature isn't available to members yet.");
+  }
+}
+
 export async function createProject(_prevState: ProjectFormState, formData: FormData): Promise<ProjectFormState> {
   const session = await requireAuth();
+  requireContentSubmissionsEnabled(session.user.role);
 
   const parsed = parseProjectForm(formData);
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -64,7 +72,8 @@ export async function updateProject(
 ): Promise<ProjectFormState> {
   const existing = await prisma.project.findUnique({ where: { id } });
   if (!existing) return { error: "Project not found." };
-  await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.submittedById);
+  requireContentSubmissionsEnabled(session.user.role);
 
   const parsed = parseProjectForm(formData);
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -118,7 +127,8 @@ export async function updateProject(
 export async function deleteOwnProject(id: string) {
   const existing = await prisma.project.findUnique({ where: { id } });
   if (!existing) return;
-  await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.submittedById);
+  requireContentSubmissionsEnabled(session.user.role);
   await prisma.project.delete({ where: { id } });
   revalidatePath("/dashboard/projects");
   revalidatePath("/projects");

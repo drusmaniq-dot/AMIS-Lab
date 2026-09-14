@@ -3,22 +3,22 @@ import { prisma } from "@/lib/db";
 import { requireAuth } from "@/lib/permissions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContentStateBadge } from "@/components/status-badge";
+import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 export default async function DashboardOverviewPage() {
   const session = await requireAuth();
   const userId = session.user.id;
+  const contentEnabled = session.user.role === "ADMIN" || MEMBER_CONTENT_SUBMISSIONS_ENABLED;
 
-  const [person, projects, publications, allowedServices, { locale, dict }] = await Promise.all([
+  const [person, projects, publications, allowedServicesCount, { locale, dict }] = await Promise.all([
     prisma.person.findUnique({ where: { userId } }),
-    prisma.project.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }),
-    prisma.publication.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }),
-    prisma.service.findMany({
-      where: { allowedMembers: { some: { id: userId } } },
-      select: { id: true, title: true, ctaUrl: true },
-      orderBy: { sortOrder: "asc" },
-    }),
+    contentEnabled ? prisma.project.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } }) : Promise.resolve([]),
+    contentEnabled
+      ? prisma.publication.findMany({ where: { submittedById: userId }, orderBy: { createdAt: "desc" } })
+      : Promise.resolve([]),
+    prisma.service.count({ where: { allowedMembers: { some: { id: userId } } } }),
     getDictionary(),
   ]);
 
@@ -56,42 +56,38 @@ export default async function DashboardOverviewPage() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <SubmissionSummary title={dict.dashboard.myProjects} href="/dashboard/projects" items={projects} dict={dict} locale={locale} />
-        <SubmissionSummary title={dict.dashboard.myPublications} href="/dashboard/publications" items={publications} dict={dict} locale={locale} />
-      </div>
-
       <Card>
         <CardHeader>
           <CardTitle>{dict.dashboard.myServices}</CardTitle>
         </CardHeader>
         <CardContent>
-          {allowedServices.length === 0 ? (
-            <p className="text-sm text-muted-foreground">{dict.dashboard.noServicesGranted}</p>
-          ) : (
-            <ul className="space-y-2">
-              {allowedServices.map((service) =>
-                service.ctaUrl ? (
-                  <li key={service.id}>
-                    <Link
-                      href={service.ctaUrl}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="text-sm font-medium text-accent underline-offset-4 hover:underline"
-                    >
-                      {service.title}
-                    </Link>
-                  </li>
-                ) : (
-                  <li key={service.id} className="text-sm font-medium">
-                    {service.title}
-                  </li>
-                )
-              )}
-            </ul>
-          )}
+          <p className="text-sm text-muted-foreground">
+            {allowedServicesCount > 0 ? `${allowedServicesCount} ${dict.dashboard.granted.toLowerCase()}` : dict.dashboard.noServicesGranted}
+          </p>
+          <Link href="/dashboard/services" className="mt-2 inline-block text-sm text-accent underline-offset-4 hover:underline">
+            {dict.dashboard.manage} {locale === "ar" ? "←" : "→"}
+          </Link>
         </CardContent>
       </Card>
+
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <SubmissionSummary
+          title={dict.dashboard.myProjects}
+          href="/dashboard/projects"
+          items={projects}
+          dict={dict}
+          locale={locale}
+          enabled={contentEnabled}
+        />
+        <SubmissionSummary
+          title={dict.dashboard.myPublications}
+          href="/dashboard/publications"
+          items={publications}
+          dict={dict}
+          locale={locale}
+          enabled={contentEnabled}
+        />
+      </div>
     </div>
   );
 }
@@ -102,13 +98,28 @@ function SubmissionSummary({
   items,
   dict,
   locale,
+  enabled,
 }: {
   title: string;
   href: string;
   items: { id: string; state: "DRAFT" | "PENDING" | "PUBLISHED" | "REJECTED" }[];
   dict: Dictionary;
   locale: string;
+  enabled: boolean;
 }) {
+  if (!enabled) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">{dict.dashboard.comingSoon}</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
   const pending = items.filter((i) => i.state === "PENDING").length;
   const published = items.filter((i) => i.state === "PUBLISHED").length;
 

@@ -79,6 +79,11 @@ model User {
   // own PUBLISHED/DRAFT state, which controls public visibility instead.
   allowedServices Service[] @relation("MemberServiceAccess")
 
+  // Services this member has asked the admin for access to, but hasn't
+  // (yet) been granted. Granting access via allowedServices clears the
+  // matching request automatically.
+  requestedServices Service[] @relation("MemberServiceRequests")
+
   submittedPeople       Person[]      @relation("PersonSubmittedBy")
   reviewedPeople        Person[]      @relation("PersonReviewedBy")
   submittedProjects     Project[]     @relation("ProjectSubmittedBy")
@@ -277,6 +282,7 @@ model Service {
   // Members explicitly granted access to this service (only meaningful for
   // member-gated tools; the admin toggles this per member).
   allowedMembers User[] @relation("MemberServiceAccess")
+  requestedByMembers User[] @relation("MemberServiceRequests")
 }
 
 model Equipment {

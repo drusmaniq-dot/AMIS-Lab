@@ -5,14 +5,22 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { requireAuth, requireOwnerOrAdmin } from "@/lib/permissions";
 import { parsePublicationForm, resolvePublicationFields } from "@/lib/publication-helpers";
+import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
 
 export type PublicationFormState = { error?: string } | undefined;
+
+function requireContentSubmissionsEnabled(role: string) {
+  if (role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+    throw new Error("This feature isn't available to members yet.");
+  }
+}
 
 export async function createPublication(
   _prevState: PublicationFormState,
   formData: FormData
 ): Promise<PublicationFormState> {
   const session = await requireAuth();
+  requireContentSubmissionsEnabled(session.user.role);
   const parsed = parsePublicationForm(formData);
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Invalid input." };
 
@@ -50,7 +58,8 @@ export async function updatePublication(
 ): Promise<PublicationFormState> {
   const existing = await prisma.publication.findUnique({ where: { id } });
   if (!existing) return { error: "Publication not found." };
-  await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.submittedById);
+  requireContentSubmissionsEnabled(session.user.role);
 
   const parsed = parsePublicationForm(formData);
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -88,7 +97,8 @@ export async function updatePublication(
 export async function deleteOwnPublication(id: string) {
   const existing = await prisma.publication.findUnique({ where: { id } });
   if (!existing) return;
-  await requireOwnerOrAdmin(existing.submittedById);
+  const session = await requireOwnerOrAdmin(existing.submittedById);
+  requireContentSubmissionsEnabled(session.user.role);
   await prisma.publication.delete({ where: { id } });
   revalidatePath("/dashboard/publications");
   revalidatePath("/publications");

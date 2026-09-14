@@ -5,11 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ContentStateBadge } from "@/components/status-badge";
 import { DeleteButton } from "@/components/delete-button";
+import { ComingSoon } from "@/components/coming-soon";
+import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
+import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Plus, Pencil } from "lucide-react";
 import { deleteOwnPublication } from "./actions";
 
 export default async function DashboardPublicationsPage() {
   const session = await requireAuth();
+
+  if (session.user.role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+    const { dict } = await getDictionary();
+    return <ComingSoon section={dict.dashboard.myPublications} heading={dict.dashboard.comingSoon} body={dict.dashboard.comingSoonBody} />;
+  }
   const publications = await prisma.publication.findMany({
     where: { submittedById: session.user.id },
     orderBy: { createdAt: "desc" },

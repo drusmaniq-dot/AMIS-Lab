@@ -11,6 +11,7 @@ interface Member {
   email: string;
   status: string;
   allowedServiceIds: string[];
+  requestedServiceIds: string[];
 }
 
 interface Service {
@@ -21,6 +22,9 @@ interface Service {
 export function ServiceAccessMatrix({ members, services }: { members: Member[]; services: Service[] }) {
   const [grants, setGrants] = useState<Record<string, Set<string>>>(() =>
     Object.fromEntries(members.map((m) => [m.id, new Set(m.allowedServiceIds)]))
+  );
+  const [requests, setRequests] = useState<Record<string, Set<string>>>(() =>
+    Object.fromEntries(members.map((m) => [m.id, new Set(m.requestedServiceIds)]))
   );
   const [pendingKey, setPendingKey] = useState<string | null>(null);
   const [, startTransition] = useTransition();
@@ -36,6 +40,13 @@ export function ServiceAccessMatrix({ members, services }: { members: Member[]; 
       else next.delete(serviceId);
       return { ...prev, [userId]: next };
     });
+    if (nextGranted) {
+      setRequests((prev) => {
+        const next = new Set(prev[userId]);
+        next.delete(serviceId);
+        return { ...prev, [userId]: next };
+      });
+    }
     setPendingKey(key);
 
     startTransition(async () => {
@@ -84,16 +95,25 @@ export function ServiceAccessMatrix({ members, services }: { members: Member[]; 
               </TableCell>
               {services.map((service) => {
                 const key = `${member.id}-${service.id}`;
+                const granted = grants[member.id]?.has(service.id) ?? false;
+                const requested = !granted && (requests[member.id]?.has(service.id) ?? false);
                 return (
                   <TableCell key={service.id} className="text-center">
-                    <input
-                      type="checkbox"
-                      className="size-4 accent-primary"
-                      checked={grants[member.id]?.has(service.id) ?? false}
-                      disabled={pendingKey === key}
-                      onChange={() => toggle(member.id, service.id)}
-                      aria-label={`Grant ${member.name} access to ${service.title}`}
-                    />
+                    <div className="flex flex-col items-center gap-1">
+                      <input
+                        type="checkbox"
+                        className="size-4 accent-primary"
+                        checked={granted}
+                        disabled={pendingKey === key}
+                        onChange={() => toggle(member.id, service.id)}
+                        aria-label={`Grant ${member.name} access to ${service.title}`}
+                      />
+                      {requested && (
+                        <Badge variant="outline" className="text-[10px]">
+                          Requested
+                        </Badge>
+                      )}
+                    </div>
                   </TableCell>
                 );
               })}

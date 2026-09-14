@@ -5,11 +5,20 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ContentStateBadge } from "@/components/status-badge";
 import { DeleteButton } from "@/components/delete-button";
+import { ComingSoon } from "@/components/coming-soon";
+import { MEMBER_CONTENT_SUBMISSIONS_ENABLED } from "@/lib/feature-flags";
+import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Plus, Pencil } from "lucide-react";
 import { deleteOwnProject } from "./actions";
 
 export default async function DashboardProjectsPage() {
   const session = await requireAuth();
+
+  if (session.user.role !== "ADMIN" && !MEMBER_CONTENT_SUBMISSIONS_ENABLED) {
+    const { dict } = await getDictionary();
+    return <ComingSoon section={dict.dashboard.myProjects} heading={dict.dashboard.comingSoon} body={dict.dashboard.comingSoonBody} />;
+  }
+
   const projects = await prisma.project.findMany({
     where: { submittedById: session.user.id },
     orderBy: { createdAt: "desc" },
