@@ -9,7 +9,9 @@
     "role": "ADMIN",
     "status": "APPROVED",
     "createdAt": "2026-08-20T03:42:38.646Z",
-    "updatedAt": "2026-08-20T03:42:38.646Z"
+    "updatedAt": "2026-08-20T03:42:38.646Z",
+    "username": null,
+    "profileComplete": true
   },
   {
     "id": "cmt0z5vtw0001b8uzxhuunb33",
@@ -21,7 +23,9 @@
     "role": "MEMBER",
     "status": "APPROVED",
     "createdAt": "2026-08-20T03:42:38.948Z",
-    "updatedAt": "2026-08-20T03:42:38.948Z"
+    "updatedAt": "2026-08-20T03:42:38.948Z",
+    "username": null,
+    "profileComplete": true
   },
   {
     "id": "cmt0z5vzs0002b8uzc0ry58ni",
@@ -33,7 +37,9 @@
     "role": "MEMBER",
     "status": "PENDING",
     "createdAt": "2026-08-20T03:42:39.160Z",
-    "updatedAt": "2026-08-20T03:42:39.160Z"
+    "updatedAt": "2026-08-20T03:42:39.160Z",
+    "username": null,
+    "profileComplete": true
   },
   {
     "id": "cmu0y5kdx0000jouzr4jh9cq5",
@@ -45,6 +51,148 @@
     "role": "ADMIN",
     "status": "APPROVED",
     "createdAt": "2026-09-14T07:54:06.839Z",
-    "updatedAt": "2026-09-14T07:54:06.839Z"
+    "updatedAt": "2026-09-14T07:54:06.839Z",
+    "username": null,
+    "profileComplete": true
+  },
+  {
+    "id": "cmu15399x0000pkuz2zl5jah2",
+    "name": "Prof. Dr. El Sayed Yousef",
+    "email": "eyousef@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$VRSlYBtzO6rM6G5RY64cLONFFjBq/FXzPt0bcp99078wc.LoC1TU2",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:08:16.437Z",
+    "updatedAt": "2026-09-14T19:43:55.865Z",
+    "username": "eyousef",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15lrq30000a8uzsc2hddvz",
+    "name": "Abdulaziz Ahmed Hadi Asiri",
+    "email": "aasiri@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$pjgCZJhovLUTsldRy/4Px.TD.e4/r9nb36J9jiI2tAYOcMKTbdPr2",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:40.157Z",
+    "updatedAt": "2026-09-14T11:22:40.157Z",
+    "username": "aasiri",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15lrw60001a8uzy9vqp8yq",
+    "name": "Dr. Fawaz Alqahtani",
+    "email": "falqahtani@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$LUMGTqwbB5nFHTlyHcUPhO5IUHAkLMWcXs8P4j5TPhOlNXuEzpaO.",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:40.374Z",
+    "updatedAt": "2026-09-14T19:43:56.238Z",
+    "username": "falqahtani",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15ls1d0002a8uzu6ipe2pn",
+    "name": "Dr. Khalid Ibrahim Hussein Ibrahim",
+    "email": "kibrahim@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$SuxTgSo0BM39LxUZel4PWuAk2CVyfgIeSsM8JDQbviOZy8qgQXtju",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:40.561Z",
+    "updatedAt": "2026-09-14T19:43:56.458Z",
+    "username": "kibrahim",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15ls6x0003a8uzvunfibcd",
+    "name": "Elham Fahad Alkhammash",
+    "email": "ealkhammash@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$RyioBG2y157v1m5J6wE.Ye.SeM.rb0cs8U6TuwRn2MbQ6zVbsS4sO",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:40.761Z",
+    "updatedAt": "2026-09-14T11:22:40.761Z",
+    "username": "ealkhammash",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15lscg0004a8uzl0occu11",
+    "name": "Kinga Kowalska",
+    "email": "kkowalska@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$SBwZCWBDAl3kysE3c5SMp.OK/DszGMq0Y1lLQOCUibSyxes9PRAFu",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:40.960Z",
+    "updatedAt": "2026-09-14T19:43:56.866Z",
+    "username": "kkowalska",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15lstx0008a8uz5m933h2c",
+    "name": "Reem Dhafer Alshehri",
+    "email": "ralshehri@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$4qioeUvhlJUyu3lxTvAWL.9RQf8GbM0N.FKAJN5HlIshizX7.aVtO",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:22:41.589Z",
+    "updatedAt": "2026-09-14T11:22:41.589Z",
+    "username": "ralshehri",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15mic400000wuzvnpoqolp",
+    "name": "Prof. Dr. Hany S. Hussein",
+    "email": "hhussein@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$uhwZ97kqR887lRv9S2T16.qVqvVMPlpCS5USQ3dIzPFU.tBdDDpma",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:23:14.644Z",
+    "updatedAt": "2026-09-14T11:23:14.644Z",
+    "username": "hhussein",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15migt00010wuzzf7coudi",
+    "name": "Prof. Dr. Mohammed S. Alqahtani",
+    "email": "malqahtani@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$8Edph8p3UGmWRBp4uveTl.yJg7tqOCVhVg0EJKPrI5NbRgLlyIkqm",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:23:14.813Z",
+    "updatedAt": "2026-09-14T19:43:56.656Z",
+    "username": "malqahtani",
+    "profileComplete": false
+  },
+  {
+    "id": "cmu15mili00020wuzmy5mqbxc",
+    "name": "Prof. Dr. Alaa Dahshan",
+    "email": "adahshan@pending.amislab.local",
+    "emailVerified": null,
+    "image": null,
+    "passwordHash": "$2b$10$ic.BGs2t6QZl/n27t0DSN.F7u7OLOsMks8E5ayYZ4nLYJL85GIJuq",
+    "role": "TEAM",
+    "status": "APPROVED",
+    "createdAt": "2026-09-14T11:23:14.982Z",
+    "updatedAt": "2026-09-14T11:23:14.982Z",
+    "username": "adahshan",
+    "profileComplete": false
   }
 ]

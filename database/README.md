@@ -9,16 +9,31 @@ restored to match the site as it existed here.
 ## What's in `data/`
 
 One JSON file per table: `users`, `people`, `profileLinks`, `projects`,
-`publications` (712 records), `digitalTools`, `services`, `equipment`,
+`publications` (713 records), `digitalTools`, `services`, `equipment`,
 `socialLinks`, `homeMedia`, `siteSettings`. Row shapes match the Prisma models
 in `prisma/schema.prisma` exactly — this is a direct export via Prisma Client,
 not a hand-written seed.
+
+Four more files — `serviceAccess`, `serviceRequests`, `projectOwners`,
+`publicationOwners` — cover the many-to-many relations (per-member service
+grants/requests, and every Project/Publication's co-owners), stored as flat
+`{ userId, serviceId }` / `{ projectId, userId }` / `{ publicationId, userId }`
+pairs since `createMany` can't write relation fields directly. `seed.ts`
+restores them with individual `connect()` calls after the base rows exist.
 
 `users` includes the real admin account (`asmahafzal@gmail.com`) and its
 bcrypt password hash, so the same login keeps working after a restore. Three
 throwaway QA accounts created during development (`verify-test-*@example.com`)
 were deliberately excluded — they're the only rows in the entire database that
 weren't carried over.
+
+`users` also includes the 10 AMIS Lab Team accounts (`role: "TEAM"`) — one per
+person on the public People page. Each is exported in its not-yet-onboarded
+state (`profileComplete: false`, a placeholder `<username>@pending.amislab.local`
+email, and the original admin-issued temporary password), so a restore never
+ships a real person's account with test credentials — whoever restores this
+data relays the username/temp password out of band, same as the admin does
+today via `/admin/team/new`.
 
 ## Restoring onto a new/empty database
 

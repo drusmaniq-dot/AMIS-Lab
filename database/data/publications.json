@@ -19940,12 +19940,12 @@
       "tellurite-glass"
     ],
     "state": "PUBLISHED",
-    "submittedById": null,
+    "submittedById": "cmu15399x0000pkuz2zl5jah2",
     "reviewedById": null,
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-08-30T03:57:02.778Z",
-    "updatedAt": "2026-08-30T03:57:02.778Z"
+    "updatedAt": "2026-09-14T11:14:39.966Z"
   },
   {
     "id": "cmtv3njwu0000dwuz7xsewisi",
@@ -19970,11 +19970,11 @@
       "Biomaterials"
     ],
     "state": "PUBLISHED",
-    "submittedById": null,
+    "submittedById": "cmu15399x0000pkuz2zl5jah2",
     "reviewedById": null,
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-09-10T05:41:27.055Z",
-    "updatedAt": "2026-09-10T05:41:27.055Z"
+    "updatedAt": "2026-09-14T11:14:39.966Z"
   }
 ]

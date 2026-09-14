@@ -51,6 +51,10 @@ async function main() {
   const socialLinks = reviveDates(load<any>("socialLinks"));
   const homeMedia = reviveDates(load<any>("homeMedia"));
   const siteSettings = reviveDates(load<any>("siteSettings"));
+  const serviceAccess = load<{ userId: string; serviceId: string }>("serviceAccess");
+  const serviceRequests = load<{ userId: string; serviceId: string }>("serviceRequests");
+  const projectOwners = load<{ projectId: string; userId: string }>("projectOwners");
+  const publicationOwners = load<{ publicationId: string; userId: string }>("publicationOwners");
 
   // Insertion order respects foreign keys: Users before Person/Project/Publication
   // (submittedBy/reviewedBy), Person before ProfileLink (personId).
@@ -98,6 +102,29 @@ async function main() {
     await prisma.siteSettings.upsert({ where: { id: settings.id }, update: settings, create: settings });
   }
   if (siteSettings.length) console.log(`Site settings: ${siteSettings.length}`);
+
+  // Many-to-many relations aren't covered by createMany, so they're restored
+  // as individual connect() calls — idempotent (re-running just reconnects
+  // the same pairs), safe to re-run like everything else here.
+  for (const { userId, serviceId } of serviceAccess) {
+    await prisma.user.update({ where: { id: userId }, data: { allowedServices: { connect: { id: serviceId } } } });
+  }
+  if (serviceAccess.length) console.log(`Service access grants: ${serviceAccess.length}`);
+
+  for (const { userId, serviceId } of serviceRequests) {
+    await prisma.user.update({ where: { id: userId }, data: { requestedServices: { connect: { id: serviceId } } } });
+  }
+  if (serviceRequests.length) console.log(`Service access requests: ${serviceRequests.length}`);
+
+  for (const { projectId, userId } of projectOwners) {
+    await prisma.project.update({ where: { id: projectId }, data: { owners: { connect: { id: userId } } } });
+  }
+  if (projectOwners.length) console.log(`Project owners: ${projectOwners.length}`);
+
+  for (const { publicationId, userId } of publicationOwners) {
+    await prisma.publication.update({ where: { id: publicationId }, data: { owners: { connect: { id: userId } } } });
+  }
+  if (publicationOwners.length) console.log(`Publication owners: ${publicationOwners.length}`);
 
   await prisma.$disconnect();
 }

@@ -1,7 +1,7 @@
 [
   {
     "id": "cmt0z5w220008b8uzmu1sapi5",
-    "userId": null,
+    "userId": "cmu15399x0000pkuz2zl5jah2",
     "fullName": "Prof. Dr. El Sayed Yousef",
     "titleOrRole": "Professor of Physics, King Khalid University",
     "titleOrRoleAr": "أستاذ الفيزياء، جامعة الملك خالد",
@@ -12,15 +12,15 @@
     "sortOrder": 0,
     "cvUrl": "/uploads/people-cv/el-sayed-yousef-cv.pdf",
     "academicDegree": "Professor",
-    "academicDegreeAr": null,
+    "academicDegreeAr": "أستاذ جامعي",
     "email": "ayousf@kku.edu.sa",
     "phone": "+966-0594885905",
     "address": "Physics Department, Faculty of Science, King Khalid University, AlQura'a, Abha P.O. Box 906, Saudi Arabia. Office Tel: +966-017-2418217",
-    "addressAr": null,
+    "addressAr": "قسم الفيزياء، كلية العلوم، جامعة الملك خالد، القرى، أبها، ص .ب 906، المملكة العربية السعودية. هاتف المكتب: 2418217-017-966 +",
     "discipline": "Materials Science and their application",
-    "disciplineAr": null,
+    "disciplineAr": "علوم المواد وتطبيقاتها",
     "subdiscipline": "Characterization and development of glass and glass ceramics for a wide variety of applications, indicating present and future research directions in glass and glass ceramics.",
-    "subdisciplineAr": null,
+    "subdisciplineAr": "توصيف وتطوير الزجاج والسيراميك الزجاجي لمجموعة واسعة من التطبيقات، مع الإشارة إلى اتجاهات البحث الحالية والمستقبلية في الزجاج والسيراميك الزجاجي.",
     "researchInterests": [
       "Theory, design, device technology, and applications of glass and glass ceramic.",
       "Innovative processing and synthesis of glass ceramics and glass.",
@@ -32,7 +32,17 @@
       "Fiber-optic sensors.",
       "Medical application of glass and glass ceramics."
     ],
-    "researchInterestsAr": null,
+    "researchInterestsAr": [
+      "النظرية والتصميم وتقنية الأجهزة وتطبيقات الزجاج والسيراميك الزجاجي.",
+      "معالجة وتوليف مبتكر للسيراميك والزجاج.",
+      "نمذجة السيراميك والنظارات (من المقاييس الذرية إلى المقاييس الجزئية والكبيرة).",
+      "التبلور والسيراميك والزجاج.",
+      "آفاق الزجاج والسيراميك المتقدم.",
+      "التكنولوجيا البصرية والضوئيات والليزر.",
+      "الاستشعار والبصريات البيئية.",
+      "مستشعرات الألياف الضوئية.",
+      "التطبيق الطبي للزجاج والسيراميك الزجاجي."
+    ],
     "researchProjects": [
       "Principal Investigator, Project (G.R. P.127/38) — Preparation of novel glasses based on TeO2 doped with rare-earth and their optical applications (closed).",
       "Principal Investigator, Project (RCAMS-KKU-001-17) — Characterization of Novel Material Based on Tellurite Oxide for Nonlinear Application (closed).",
@@ -40,7 +50,13 @@
       "Principal Investigator, Project (MRMC 01-017-023) — Nano and microstructural of bioactive glasses for bone tissue regeneration (closed).",
       "Principal Investigator, Project (MRMC 01-017-024) — In vitro characterization and structure of nanobiomaterials with inert oxides for biomedical application (closed)."
     ],
-    "researchProjectsAr": null,
+    "researchProjectsAr": [
+      "الباحث الرئيسي، المشروع (G.R. P.127/38) — إعداد نظارات جديدة تعتمد على TeO2 مخدر بالأرض النادرة وتطبيقاتها البصرية (مغلقة).",
+      "الباحث الرئيسي، المشروع (RCAMS — KKU -001-17) — توصيف المواد الجديدة بناءً على أكسيد التيلوريت للتطبيق غير الخطي (مغلق).",
+      "الباحث الرئيسي، المشروع (R.G.P.2/1/38) — التحقيق في النظارات الجديدة كمواد واعدة للتطبيق البصري (مغلق).",
+      "الباحث الرئيسي، المشروع (MRMC 01-017-023) — النانو والبنية الدقيقة للنظارات النشطة بيولوجيًا لتجديد الأنسجة العظمية (مغلق).",
+      "الباحث الرئيسي، المشروع (MRMC 01-017-024) — توصيف في المختبر وهيكل المواد الحيوية النانوية مع أكاسيد خاملة للتطبيق الطبي الحيوي (مغلق)."
+    ],
     "publications": [
       {
         "url": "https://www.researchgate.net/profile/El-Yousef",
@@ -59,11 +75,11 @@
     "reviewedAt": "2026-08-20T03:42:39.238Z",
     "rejectionReason": null,
     "createdAt": "2026-08-20T03:42:39.242Z",
-    "updatedAt": "2026-08-25T07:30:27.019Z"
+    "updatedAt": "2026-09-14T11:16:28.986Z"
   },
   {
     "id": "cmtfh8zzg0000x8uztid7wjac",
-    "userId": null,
+    "userId": "cmu15migt00010wuzzf7coudi",
     "fullName": "Prof. Dr. Mohammed S. Alqahtani",
     "titleOrRole": "Management, KKU Central Labs",
     "titleOrRoleAr": null,
@@ -96,11 +112,11 @@
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-08-30T07:17:43.854Z",
-    "updatedAt": "2026-08-30T07:17:43.854Z"
+    "updatedAt": "2026-09-14T11:23:14.817Z"
   },
   {
     "id": "cmt5izjsj0000hwuzzz653j57",
-    "userId": null,
+    "userId": "cmu15mili00020wuzmy5mqbxc",
     "fullName": "Prof. Dr. Alaa Dahshan",
     "titleOrRole": "Professor of Physics, King Khalid University",
     "titleOrRoleAr": "أستاذ الفيزياء، جامعة الملك خالد",
@@ -155,48 +171,11 @@
     "reviewedAt": "2026-08-23T08:08:40.391Z",
     "rejectionReason": null,
     "createdAt": "2026-08-23T08:08:40.435Z",
-    "updatedAt": "2026-08-25T07:30:27.047Z"
-  },
-  {
-    "id": "cmtfh900c0003x8uzd50xm4nn",
-    "userId": null,
-    "fullName": "Dr. Fawaz Alqahtani",
-    "titleOrRole": "Management, KKU Central Labs",
-    "titleOrRoleAr": null,
-    "photoUrl": "/uploads/people/e431c7cb-4560-4df6-bcf6-aa1558f5f8cb.jpg",
-    "bio": "Dr. Fawaz Alqahtani is part of the management team of King Khalid University's Central Labs (KKU Central Labs), the shared research infrastructure within which AMIS Lab operates. He is a frequent research collaborator with AMIS Lab, co-authoring multiple publications on glass and materials science alongside the lab's director and members.",
-    "bioAr": null,
-    "category": "LAB_MANAGEMENT",
-    "sortOrder": 1,
-    "cvUrl": null,
-    "academicDegree": null,
-    "academicDegreeAr": null,
-    "email": null,
-    "phone": null,
-    "address": null,
-    "addressAr": null,
-    "discipline": null,
-    "disciplineAr": null,
-    "subdiscipline": null,
-    "subdisciplineAr": null,
-    "researchInterests": null,
-    "researchInterestsAr": null,
-    "researchProjects": null,
-    "researchProjectsAr": null,
-    "publications": null,
-    "citationCount": null,
-    "hIndex": null,
-    "state": "PUBLISHED",
-    "submittedById": null,
-    "reviewedById": null,
-    "reviewedAt": null,
-    "rejectionReason": null,
-    "createdAt": "2026-08-30T07:17:43.884Z",
-    "updatedAt": "2026-08-30T07:17:43.884Z"
+    "updatedAt": "2026-09-14T11:23:14.986Z"
   },
   {
     "id": "cmt5j2vrq0000ywuz1d6nhth5",
-    "userId": null,
+    "userId": "cmu15lrq30000a8uzsc2hddvz",
     "fullName": "Abdulaziz Ahmed Hadi Asiri",
     "titleOrRole": "PhD Student",
     "titleOrRoleAr": "طالب دكتوراه",
@@ -243,11 +222,48 @@
     "reviewedAt": "2026-08-23T08:11:15.904Z",
     "rejectionReason": null,
     "createdAt": "2026-08-23T08:11:15.927Z",
-    "updatedAt": "2026-08-23T08:49:02.562Z"
+    "updatedAt": "2026-09-14T11:22:40.187Z"
+  },
+  {
+    "id": "cmtfh900c0003x8uzd50xm4nn",
+    "userId": "cmu15lrw60001a8uzy9vqp8yq",
+    "fullName": "Dr. Fawaz Alqahtani",
+    "titleOrRole": "Management, KKU Central Labs",
+    "titleOrRoleAr": null,
+    "photoUrl": "/uploads/people/e431c7cb-4560-4df6-bcf6-aa1558f5f8cb.jpg",
+    "bio": "Dr. Fawaz Alqahtani is part of the management team of King Khalid University's Central Labs (KKU Central Labs), the shared research infrastructure within which AMIS Lab operates. He is a frequent research collaborator with AMIS Lab, co-authoring multiple publications on glass and materials science alongside the lab's director and members.",
+    "bioAr": null,
+    "category": "LAB_MANAGEMENT",
+    "sortOrder": 1,
+    "cvUrl": null,
+    "academicDegree": null,
+    "academicDegreeAr": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "addressAr": null,
+    "discipline": null,
+    "disciplineAr": null,
+    "subdiscipline": null,
+    "subdisciplineAr": null,
+    "researchInterests": null,
+    "researchInterestsAr": null,
+    "researchProjects": null,
+    "researchProjectsAr": null,
+    "publications": null,
+    "citationCount": null,
+    "hIndex": null,
+    "state": "PUBLISHED",
+    "submittedById": null,
+    "reviewedById": null,
+    "reviewedAt": null,
+    "rejectionReason": null,
+    "createdAt": "2026-08-30T07:17:43.884Z",
+    "updatedAt": "2026-09-14T11:22:40.379Z"
   },
   {
     "id": "cmtfa2wzk0000bcuz984vqm2a",
-    "userId": null,
+    "userId": "cmu15lstx0008a8uz5m933h2c",
     "fullName": "Reem Dhafer Alshehri",
     "titleOrRole": "Master's Student",
     "titleOrRoleAr": null,
@@ -294,11 +310,11 @@
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-08-30T03:57:02.721Z",
-    "updatedAt": "2026-08-30T04:18:50.534Z"
+    "updatedAt": "2026-09-14T11:22:41.593Z"
   },
   {
     "id": "cmtfa2x050001bcuzhygx2o4r",
-    "userId": null,
+    "userId": "cmu15ls6x0003a8uzvunfibcd",
     "fullName": "Elham Fahad Alkhammash",
     "titleOrRole": "PhD Student",
     "titleOrRoleAr": null,
@@ -353,11 +369,11 @@
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-08-30T03:57:02.741Z",
-    "updatedAt": "2026-08-30T04:18:50.534Z"
+    "updatedAt": "2026-09-14T11:22:40.765Z"
   },
   {
     "id": "cmt5oglaw00005kuzulu86bvh",
-    "userId": null,
+    "userId": "cmu15mic400000wuzvnpoqolp",
     "fullName": "Prof. Dr. Hany S. Hussein",
     "titleOrRole": "Professor, King Khalid University and Aswan University",
     "titleOrRoleAr": null,
@@ -416,11 +432,11 @@
     "reviewedAt": "2026-08-23T10:41:53.559Z",
     "rejectionReason": null,
     "createdAt": "2026-08-23T10:41:53.624Z",
-    "updatedAt": "2026-08-25T07:30:27.057Z"
+    "updatedAt": "2026-09-14T11:23:14.651Z"
   },
   {
     "id": "cmt5pc5qf0000icuzo17q4c7t",
-    "userId": null,
+    "userId": "cmu15ls1d0002a8uzu6ipe2pn",
     "fullName": "Dr. Khalid Ibrahim Hussein Ibrahim",
     "titleOrRole": "Associate Professor, Department of Radiological Sciences, King Khalid University",
     "titleOrRoleAr": null,
@@ -476,11 +492,11 @@
     "reviewedAt": "2026-08-23T11:06:26.363Z",
     "rejectionReason": null,
     "createdAt": "2026-08-23T11:06:26.439Z",
-    "updatedAt": "2026-08-25T07:30:27.061Z"
+    "updatedAt": "2026-09-14T11:22:40.564Z"
   },
   {
     "id": "cmtv3njxj0001dwuznnuxn0ba",
-    "userId": null,
+    "userId": "cmu15lscg0004a8uzl0occu11",
     "fullName": "Kinga Kowalska",
     "titleOrRole": "PhD Student, AGH University of Krakow, Poland",
     "titleOrRoleAr": null,
@@ -530,6 +546,6 @@
     "reviewedAt": null,
     "rejectionReason": null,
     "createdAt": "2026-09-10T05:41:27.079Z",
-    "updatedAt": "2026-09-10T05:41:27.079Z"
+    "updatedAt": "2026-09-14T11:22:40.964Z"
   }
 ]
