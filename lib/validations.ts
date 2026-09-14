@@ -86,7 +86,9 @@ export const serviceSchema = z.object({
   descriptionAr: z.string().optional(),
   ctaLabel: z.string().optional(),
   ctaLabelAr: z.string().optional(),
-  ctaUrl: z.union([z.url(), z.literal("")]).optional(),
+  // Absolute external link, or an internal path (e.g. a proxied service like
+  // /dashboard/services/plant-growth) starting with "/".
+  ctaUrl: z.union([z.url(), z.string().regex(/^\//), z.literal("")]).optional(),
   ctaEmail: z.union([z.email(), z.literal("")]).optional(),
 });
 

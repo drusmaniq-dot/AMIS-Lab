@@ -55,7 +55,7 @@ export function ServiceForm({
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="ctaUrl">Link</Label>
-          <Input id="ctaUrl" name="ctaUrl" type="url" defaultValue={defaultService?.ctaUrl ?? ""} />
+          <Input id="ctaUrl" name="ctaUrl" type="text" placeholder="https://... or /dashboard/services/..." defaultValue={defaultService?.ctaUrl ?? ""} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="ctaEmail">Or email</Label>

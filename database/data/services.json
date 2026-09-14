@@ -28,5 +28,20 @@
     "sortOrder": 0,
     "createdAt": "2026-08-20T03:42:39.362Z",
     "updatedAt": "2026-08-20T03:42:39.362Z"
+  },
+  {
+    "id": "cmu11biuv0000x4uzj2guliu4",
+    "title": "Plant-Growth",
+    "titleAr": "نمو النبات",
+    "description": "Overlaps a light source's emission spectrum with a plant (or pigment) sensitivity curve to estimate photosynthetic overlap, net growth efficiency, Daily Light Integral, and predicted daily biomass yield — with a downloadable PDF/PNG report.",
+    "descriptionAr": "يقارن الطيف الطيفي لمصدر الضوء مع منحنى حساسية النبات (أو الصبغة) لتقدير التداخل الضوئي التركيبي، وكفاءة النمو الصافية، والتكامل الضوئي اليومي، والإنتاجية الحيوية اليومية المتوقعة — مع تقرير PDF/PNG قابل للتنزيل.",
+    "ctaLabel": "Click to Start Service",
+    "ctaLabelAr": "انقر لبدء الخدمة",
+    "ctaUrl": "/dashboard/services/plant-growth",
+    "ctaEmail": null,
+    "state": "PUBLISHED",
+    "sortOrder": 1,
+    "createdAt": "2026-09-14T09:22:43.641Z",
+    "updatedAt": "2026-09-14T09:22:43.641Z"
   }
 ]

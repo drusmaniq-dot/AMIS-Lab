@@ -37,6 +37,8 @@ export default async function DashboardServicesPage() {
           {services.map((service) => {
             const title = pickLocalized(locale, service.title, service.titleAr);
             const description = pickLocalized(locale, service.description, service.descriptionAr);
+            const ctaLabel = pickLocalized(locale, service.ctaLabel, service.ctaLabelAr) || dict.dashboard.useService;
+            const isInternalLink = service.ctaUrl?.startsWith("/");
             const granted = allowedIds.has(service.id);
             const requested = requestedIds.has(service.id);
 
@@ -57,8 +59,20 @@ export default async function DashboardServicesPage() {
                   <div className="mt-3">
                     {granted ? (
                       service.ctaUrl ? (
-                        <Button size="sm" render={<Link href={service.ctaUrl} target="_blank" rel="noreferrer noopener" />}>
-                          {dict.dashboard.useService}
+                        <Button
+                          size="sm"
+                          render={
+                            <Link
+                              href={service.ctaUrl}
+                              // Internal links proxy through to another app (e.g. Plant-Growth) —
+                              // prefetching would send a background request through that proxy
+                              // for no benefit, since it's not a Next.js page.
+                              prefetch={isInternalLink ? false : undefined}
+                              {...(!isInternalLink && { target: "_blank", rel: "noreferrer noopener" })}
+                            />
+                          }
+                        >
+                          {ctaLabel}
                         </Button>
                       ) : null
                     ) : requested ? (
